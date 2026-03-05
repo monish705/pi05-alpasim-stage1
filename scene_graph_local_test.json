@@ -1,0 +1,162 @@
+{
+  "frame_count": 4,
+  "objects": {
+    "1": {
+      "track_id": 1,
+      "id": "ed5ee7a8",
+      "label": "red ceramic mug",
+      "position_world": [
+        0.0540438649815449,
+        -0.04001809555847258,
+        1.292660424645895
+      ],
+      "orientation": [
+        1,
+        0,
+        0,
+        0
+      ],
+      "collision_primitive": "cylinder",
+      "dimensions_m": {
+        "width": 0.1057444401739374,
+        "height": 0.10981153402678115,
+        "depth": 0.03982114791870117
+      },
+      "mass_kg": 0.3,
+      "friction": 0.5,
+      "material": "ceramic",
+      "is_graspable": true,
+      "is_deformable": false,
+      "confidence": 0.723,
+      "last_seen_frame": 4,
+      "frames_since_seen": 0,
+      "velocity_estimate": [
+        0.00011313631148746062,
+        9.080779771064584e-05,
+        3.6959011768367134e-05
+      ],
+      "relationships": [
+        "ON blue plastic box",
+        "ABOVE blue plastic box"
+      ]
+    },
+    "2": {
+      "track_id": 2,
+      "id": "c6b79159",
+      "label": "blue plastic box",
+      "position_world": [
+        0.031507128478714286,
+        -0.1653235589723714,
+        1.0961305871454106
+      ],
+      "orientation": [
+        1,
+        0,
+        0,
+        0
+      ],
+      "collision_primitive": "box",
+      "dimensions_m": {
+        "width": 0.057177875352378595,
+        "height": 0.06534614325986125,
+        "depth": 0.02105569839477539
+      },
+      "mass_kg": 0.15,
+      "friction": 0.4,
+      "material": "plastic",
+      "is_graspable": true,
+      "is_deformable": false,
+      "confidence": 0.779,
+      "last_seen_frame": 4,
+      "frames_since_seen": 0,
+      "velocity_estimate": [
+        2.84043041660631e-05,
+        -1.6618254343736538e-05,
+        1.1305061625055401e-05
+      ],
+      "relationships": [
+        "BELOW red ceramic mug"
+      ]
+    },
+    "3": {
+      "track_id": 3,
+      "id": "5a25cd10",
+      "label": "green glass bottle",
+      "position_world": [
+        0.6224919470510697,
+        0.05494942168858552,
+        0.532422166731037
+      ],
+      "orientation": [
+        1,
+        0,
+        0,
+        0
+      ],
+      "collision_primitive": "cylinder",
+      "dimensions_m": {
+        "width": 0.06131789629736061,
+        "height": 0.044966457284731115,
+        "depth": 0.017879009246826172
+      },
+      "mass_kg": 0.25,
+      "friction": 0.3,
+      "material": "glass",
+      "is_graspable": true,
+      "is_deformable": false,
+      "confidence": 0.771,
+      "last_seen_frame": 4,
+      "frames_since_seen": 0,
+      "velocity_estimate": [
+        -9.387893278423043e-05,
+        0.0001000530842329983,
+        -0.00010105990690312261
+      ],
+      "relationships": [
+        "ABOVE yellow rubber ball",
+        "LEFT_OF yellow rubber ball",
+        "IN_FRONT_OF yellow rubber ball"
+      ]
+    },
+    "4": {
+      "track_id": 4,
+      "id": "68aa056a",
+      "label": "yellow rubber ball",
+      "position_world": [
+        0.7530555207381298,
+        -0.19100891313498947,
+        0.4412248521720632
+      ],
+      "orientation": [
+        1,
+        0,
+        0,
+        0
+      ],
+      "collision_primitive": "sphere",
+      "dimensions_m": {
+        "width": 0.8793977123473092,
+        "height": 0.4881402555826166,
+        "depth": 0.47369301319122314
+      },
+      "mass_kg": 0.1,
+      "friction": 0.6,
+      "material": "rubber",
+      "is_graspable": true,
+      "is_deformable": true,
+      "confidence": 0.711,
+      "last_seen_frame": 4,
+      "frames_since_seen": 0,
+      "velocity_estimate": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "relationships": [
+        "BELOW green glass bottle",
+        "RIGHT_OF green glass bottle",
+        "BEHIND green glass bottle"
+      ]
+    }
+  }
+}
