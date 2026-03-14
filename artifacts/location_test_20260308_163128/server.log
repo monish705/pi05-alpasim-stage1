@@ -1,0 +1,60 @@
+[server] C:\Users\brind\Documents\New project\server.py:196: DeprecationWarning: 
+[server]         on_event is deprecated, use lifespan event handlers instead.
+[server] 
+[server]         Read more about it in the
+[server]         [FastAPI docs for Lifespan Events](https://fastapi.tiangolo.com/advanced/events/).
+[server]         
+[server]   @app.on_event("startup")
+[server] ====== INITIALIZING MUJOCO TELEMETRY SERVER ======
+[server] [Viewer] HEADLESS=1, skipping passive viewer
+[server] [Bridge] Initialised: 29 joints, 29 actuators, 4 bodies
+[server] [Bridge] Reset to manual stand pose (objects preserved)
+[server] [Recording] Writing overview_cam to C:\Users\brind\Documents\New project\artifacts\location_test_20260308_163128\location_test.mp4
+[server] [Loco] ✅ Loaded Unitree RL policy: C:\Users\brind\Documents\New project\unitree_rl_mjlab\deploy\robots\g1\config\policy\velocity\v0\exported\policy.onnx
+[server]        Input: [1, 96], Output: [1, 29]
+[server]        Step dt=0.02s, decimation=10
+[server] [Loco] Applied training PD gains to 29 actuators
+[server] [ArmCtrl] right arm: 10 DoF (3 waist + 7 arm), EE='right_wrist_yaw_link'
+[server] [Grasp] Initialised: 0 graspable objects
+[server] [Grasp] ⚠️  No graspable objects in scene (no bodies with freejoints)
+[server] [SemanticActions] Scene map: 0 objects, 4 named geoms
+[server] ====== MUJOCO MAIN THREAD ENGAGED ======
+[server]   [step 0] pos=(0.026,0.003) dist=3.606m aerr=-0.98 cmd=(0.00,-0.80)
+[server]   [step 50] pos=(0.047,-0.002) dist=3.589m aerr=-0.77 cmd=(0.10,-0.60)
+[server]   [step 100] pos=(0.040,0.008) dist=3.601m aerr=-0.72 cmd=(0.10,-0.60)
+[server]   [step 150] pos=(0.033,0.012) dist=3.609m aerr=-0.64 cmd=(0.10,-0.60)
+[server]   [step 200] pos=(0.095,-0.045) dist=3.527m aerr=-0.44 cmd=(0.50,-0.50)
+[server]   [step 250] pos=(0.452,-0.306) dist=3.114m aerr=-0.16 cmd=(0.80,-0.24)
+[server]   [step 300] pos=(0.883,-0.837) dist=2.438m aerr=-0.08 cmd=(0.80,-0.12)
+[server]   [step 350] pos=(1.291,-1.425) dist=1.726m aerr=-0.05 cmd=(0.80,-0.07)
+[server]   [step 400] pos=(1.629,-2.058) dist=1.009m aerr=-0.04 cmd=(0.80,-0.06)
+[server]   [step 450] pos=(1.960,-2.650) dist=0.333m aerr=-0.08 cmd=(0.40,-0.12)
+[server] [Loco] ✅ Arrived dist=0.290m
+[server]   [step 0] pos=(2.037,-2.801) dist=3.605m aerr=0.98 cmd=(0.00,0.80)
+[server]   [step 50] pos=(2.021,-2.806) dist=3.621m aerr=0.76 cmd=(0.10,0.60)
+[server]   [step 100] pos=(2.027,-2.828) dist=3.612m aerr=0.72 cmd=(0.10,0.60)
+[server]   [step 150] pos=(2.027,-2.829) dist=3.612m aerr=0.68 cmd=(0.10,0.60)
+[server] [Loco] ⚠️ Stall #1 at (2.03,-2.83), moved only 0.003m — escaping (dir=+1)
+[server]   [step 200] pos=(2.027,-2.832) dist=3.612m aerr=0.64 cmd=(0.10,0.60)
+[server]   [step 250] pos=(2.290,-2.842) dist=3.350m aerr=0.13 cmd=(0.80,0.19)
+[server]   [step 300] pos=(2.919,-2.979) dist=2.709m aerr=0.02 cmd=(0.80,0.04)
+[server]   [step 350] pos=(3.616,-3.038) dist=2.010m aerr=-0.00 cmd=(0.80,-0.00)
+[server]   [step 400] pos=(4.314,-3.127) dist=1.306m aerr=-0.01 cmd=(0.80,-0.02)
+[server]   [step 450] pos=(5.019,-3.174) dist=0.601m aerr=-0.04 cmd=(0.72,-0.06)
+[server] [Loco] ✅ Arrived dist=0.297m
+[server]   [step 0] pos=(5.436,-3.246) dist=2.005m aerr=1.76 cmd=(0.00,0.80)
+[server]   [step 50] pos=(5.391,-3.243) dist=1.998m aerr=1.52 cmd=(0.00,0.80)
+[server]   [step 100] pos=(5.397,-3.237) dist=1.992m aerr=1.43 cmd=(0.00,0.80)
+[server]   [step 150] pos=(5.400,-3.236) dist=1.992m aerr=1.35 cmd=(0.00,0.80)
+[server]   [step 200] pos=(5.406,-3.234) dist=1.990m aerr=1.27 cmd=(0.00,0.80)
+[server]   [step 250] pos=(5.412,-3.233) dist=1.989m aerr=1.20 cmd=(0.00,0.80)
+[server]   [step 300] pos=(5.418,-3.231) dist=1.988m aerr=1.12 cmd=(0.00,0.80)
+[server]   [step 350] pos=(5.423,-3.231) dist=1.988m aerr=1.03 cmd=(0.00,0.80)
+[server]   [step 400] pos=(5.423,-3.230) dist=1.988m aerr=0.92 cmd=(0.00,0.80)
+[server]   [step 450] pos=(5.414,-3.251) dist=2.008m aerr=0.74 cmd=(0.10,0.60)
+[server]   [step 500] pos=(5.413,-3.061) dist=1.819m aerr=0.25 cmd=(0.50,0.37)
+[server]   [step 550] pos=(5.403,-2.517) dist=1.277m aerr=0.09 cmd=(0.80,0.13)
+[server]   [step 600] pos=(5.361,-1.825) dist=0.586m aerr=0.05 cmd=(0.70,0.07)
+[server] [Loco] ✅ Arrived dist=0.292m
+[server] [Loco] Standing at [ 5.29451272 -1.42012547  0.78534468]
+[server] [Recording] Saved video to C:\Users\brind\Documents\New project\artifacts\location_test_20260308_163128\location_test.mp4

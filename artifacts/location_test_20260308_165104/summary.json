@@ -1,0 +1,26 @@
+{
+  "artifact_dir": "C:\\Users\\brind\\Documents\\New project\\artifacts\\location_test_20260308_165104",
+  "video_path": "C:\\Users\\brind\\Documents\\New project\\artifacts\\location_test_20260308_165104\\location_test.mp4",
+  "server_log": "C:\\Users\\brind\\Documents\\New project\\artifacts\\location_test_20260308_165104\\server.log",
+  "navigator_log": "C:\\Users\\brind\\Documents\\New project\\artifacts\\location_test_20260308_165104\\navigator.log",
+  "server_exit_code": 0,
+  "navigator_exit_code": 0,
+  "state": {
+    "base_pos": [
+      5.224689369587358,
+      0.26814982371731383,
+      0.7851127300902462
+    ],
+    "target_pos": [
+      4.5,
+      0.0,
+      0.5
+    ],
+    "distance_to_target_xy": 0.7727088781375224,
+    "distance_to_target_surface_xy": 0.22468936958735775,
+    "stable": true,
+    "sim_time_s": 887.8899999928279,
+    "recording_path": "C:\\Users\\brind\\Documents\\New project\\artifacts\\location_test_20260308_165104\\location_test.mp4"
+  },
+  "passed": false
+}

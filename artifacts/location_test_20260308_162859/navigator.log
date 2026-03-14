@@ -1,0 +1,36 @@
+[navigator] ====== VLM COGNITIVE LOOP v4 (Decoupled Waypoint Planner) ======
+[navigator] Discovering capabilities from http://localhost:8000/discover ...
+[navigator]   Discovered 11 semantic tools:
+[navigator]     • describe_scene
+[navigator]     • grasp_nearest
+[navigator]     • reach_for_object
+[navigator]     • release
+[navigator]     • stop
+[navigator]     • turn_left
+[navigator]     • turn_right
+[navigator]     • walk_backward
+[navigator]     • walk_forward
+[navigator]     • walk_to_waypoint
+[navigator]     • walk_toward_object
+[navigator] 
+[navigator] ============================================================
+[navigator] Goal: 'Navigate to the green target zone on the floor.'
+[navigator] 
+[navigator] [VLM Cognitive Loop — Decoupled Waypoint Planner]
+[navigator] 
+[navigator] 
+[navigator] [STEP 0] VLM → walk_to_waypoint({'dx': '2.0', 'dy': '-3.0'})
+[navigator]   ← Arrived at waypoint. Robot now at (2.0, -2.7)
+[navigator] 
+[navigator] [STEP 1] VLM → walk_to_waypoint({'dx': '2.0', 'dy': '2.0'})
+[navigator]   ← Arrived at waypoint. Robot now at (4.4, -3.7)
+[navigator] 
+[navigator] [STEP 2] VLM → walk_toward_object({'object_name': 'target_zone'})
+[navigator]   ← Could not reach 'target_zone' (got to 1.1m away). Target is 1.1m away, directly ahead.
+[navigator] 
+[navigator] [STEP 3] VLM → stop({})
+[navigator]   ← Stopped. Standing still.
+[navigator] 
+[navigator] [Goal reached — robot stopped.]
+[navigator] 
+[navigator] Goal loop finished.
