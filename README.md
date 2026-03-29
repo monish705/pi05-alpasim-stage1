@@ -1,109 +1,89 @@
-# Embodied AI and AV Simulation Workspace
+# PI0.5 AlpaSim Stage 0
 
-This repository is a working workspace for two related tracks:
+This repository contains a focused Stage 0 experiment that adapts `pi0.5` into a closed-loop driving policy for NVIDIA AlpaSim.
 
-- humanoid embodied AI experiments around the Unitree G1 stack
-- autonomous vehicle simulation and evaluation runbooks, including CARLA
+The exact scope of Stage 0 is narrow:
 
-It is not a polished single-product repository yet. It contains runnable code, stack notes, experiments, artifacts, and setup documentation that support ongoing system development.
+- fine-tune `pi0.5` on a tiny gated NVIDIA AV subset
+- preserve the native PI action tensor shape
+- remap the active action dimensions into a kinematically feasible driving trajectory
+- run the resulting policy as a custom external AlpaSim driver
+- validate that the model can complete a same-scene closed-loop rollout end-to-end
 
-## What Is Here
+This repository is not a general AV stack and is not a claim of production driving capability. It is a project repo for the Stage 0 transfer experiment and its artifacts.
 
-### Humanoid stack
+## Main Result
 
-The original core of this workspace is a Unitree G1 embodied AI pipeline built around:
+Stage 0 produced a completed same-scene closed-loop AlpaSim rollout using the fine-tuned PI0.5 checkpoint.
 
-- a headless simulation server
-- a VLM-driven high-level navigator
-- local low-level locomotion and control modules
-- perception and world-model experiments
+Recovered rollout summary:
 
-Main files for that path:
+- `collision_any = 0.0`
+- `offroad = 1.0`
+- `wrong_lane = 1.0`
+- `progress = 0.4772283417512127`
+- `dist_traveled_m = 56.191953509330936`
 
-- `server.py`
-- `vlm_navigator.py`
-- `motor/`
-- `perception/`
-- `world_model/`
-- `sim/`
+Interpretation:
 
-### AV simulation track
+- the integration worked end-to-end
+- repeated closed-loop inference worked
+- the rollout completed without collision
+- the policy quality is not yet sufficient for lane-keeping or road adherence
 
-This workspace also contains AV architecture notes and CARLA setup work used to stand up a reproducible remote simulator stack for end-to-end route execution and evaluation.
+## What Is In This Repo
 
-Main files for that path:
+### Core code
 
-- `architecture.md`
-- `docs/`
-- `sim/carla_recorded_agent_run.py`
-- `artifacts/carla/`
+- [ops/pi05_alpasim_stage0](C:\Users\brind\Documents\New project\ops\pi05_alpasim_stage0)
+  Stage 0 dataset conversion, norm-stat computation, token audit, training config, and bridge logic.
+- [alpasim_pi05_driver](C:\Users\brind\Documents\New project\alpasim_pi05_driver)
+  External AlpaSim driver implementation and runtime configs for the fine-tuned PI0.5 policy.
+- [tests/test_pi05_alpasim_stage0.py](C:\Users\brind\Documents\New project\tests\test_pi05_alpasim_stage0.py)
+  Stage 0 tests for manifest validation and trajectory-feasibility logic.
 
-## Recommended Starting Points
+### Documentation
 
-- [Docs index](docs/README.md)
-- [CARLA working stack](docs/carla_working_stack.md)
-- [AV complete stack](docs/av_complete_stack.md)
-- [AV driving stack](docs/av_driving_stack.md)
-- [Truck AV 2026 direction](docs/truck_av_2026_direction.md)
-- [PI0.5 AlpaSim Stage 0 public report](docs/pi05_alpasim_stage0_public_report.md)
-- [PI0.5 AlpaSim Stage 0 full paper draft](docs/pi05_alpasim_stage0_full_paper.md)
-- [PI0.5 AlpaSim Stage 0 publish checklist](docs/pi05_alpasim_stage0_publish_checklist.md)
+- [docs/README.md](C:\Users\brind\Documents\New project\docs\README.md)
+- [docs/pi05_alpasim_stage0_full_paper.md](C:\Users\brind\Documents\New project\docs\pi05_alpasim_stage0_full_paper.md)
+- [docs/pi05_alpasim_stage0_public_report.md](C:\Users\brind\Documents\New project\docs\pi05_alpasim_stage0_public_report.md)
+- [docs/pi05_alpasim_stage0_publish_checklist.md](C:\Users\brind\Documents\New project\docs\pi05_alpasim_stage0_publish_checklist.md)
 
-## Current CARLA Status
+### Artifacts
 
-A working CARLA stack was brought up on a remote GPU VM using:
+- [artifacts/stage0_test_bundle](C:\Users\brind\Documents\New project\artifacts\stage0_test_bundle)
+  Local bundle containing the rollout video, screenshots, metrics, logs, and simulator outputs referenced in the paper draft.
 
-- `CARLA 0.9.16`
-- `Ubuntu 22.04`
-- `RTX A4000`
-- matching `Python 3.10` CARLA client API
-- official Docker runtime in headless mode
+## Recommended Reading Order
 
-The exact reproducible setup, commands, compatibility notes, and artifact paths are documented here:
+1. [Full paper draft](C:\Users\brind\Documents\New project\docs\pi05_alpasim_stage0_full_paper.md)
+2. [Public report](C:\Users\brind\Documents\New project\docs\pi05_alpasim_stage0_public_report.md)
+3. [Publish checklist](C:\Users\brind\Documents\New project\docs\pi05_alpasim_stage0_publish_checklist.md)
 
-- [CARLA 0.9.16 working stack](docs/carla_working_stack.md)
+## Qualitative Proof
 
-## Humanoid Quick Start
+Main rollout video:
 
-If you are working on the Unitree humanoid path, the current entry flow is:
+- [stage0_same_scene_rollout.mp4](C:\Users\brind\Documents\New project\artifacts\stage0_test_bundle\stage0_same_scene_rollout.mp4)
 
-1. Install dependencies:
+Extracted frames:
 
-```bash
-pip install -r requirements.txt
-```
+- [stage0_same_scene_frame_01.png](C:\Users\brind\Documents\New project\artifacts\stage0_test_bundle\screenshots\stage0_same_scene_frame_01.png)
+- [stage0_same_scene_frame_02.png](C:\Users\brind\Documents\New project\artifacts\stage0_test_bundle\screenshots\stage0_same_scene_frame_02.png)
+- [stage0_same_scene_frame_03.png](C:\Users\brind\Documents\New project\artifacts\stage0_test_bundle\screenshots\stage0_same_scene_frame_03.png)
+- [stage0_same_scene_frame_04.png](C:\Users\brind\Documents\New project\artifacts\stage0_test_bundle\screenshots\stage0_same_scene_frame_04.png)
 
-2. Start the simulation server:
+## Publication Boundary
 
-```bash
-python server.py
-```
+This repo currently contains artifacts derived from gated NVIDIA data and simulator scenes.
 
-3. In a separate terminal, start the VLM loop:
+Before broad public promotion, verify redistribution rights for:
 
-```bash
-python vlm_navigator.py
-```
-
-This is still an experimental stack, so expect iteration rather than a one-command production setup.
-
-## Repository Shape
-
-High-signal directories:
-
-- `docs/` runbooks, plans, architecture notes
-- `motor/` locomotion and control logic
-- `perception/` perception-related code
-- `sim/` simulation utilities and scripts
-- `tests/` test code
-- `artifacts/` generated outputs, videos, and run results
-- `notebooks/` exploratory analysis
-
-## Notes
-
-- The repository mixes experiments, prototype infrastructure, and documentation.
-- Some docs reflect future direction rather than already-productized components.
-- For anything CARLA-related, prefer the docs in `docs/` over older ad hoc scripts.
+- rollout video
+- screenshots
+- simulator logs
+- ASL traces
+- any gated-data-derived bundle content
 
 ## License
 
