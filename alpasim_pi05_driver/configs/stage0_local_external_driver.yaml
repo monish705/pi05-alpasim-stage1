@@ -1,0 +1,51 @@
+# @package _global_
+
+defaults:
+  - _self_
+
+defines:
+  filesystem: ${repo-relative:"data"}
+
+wizard:
+  debug_flags:
+    use_localhost: true
+  run_sim_services:
+    ["sensorsim", "physics", "trafficsim", "controller", "runtime"]
+  external_services:
+    driver:
+      - "localhost:6789"
+
+services:
+  sensorsim:
+    replicas_per_container: 1
+    gpus: [0]
+  physics:
+    replicas_per_container: 1
+    gpus: [0]
+  controller:
+    replicas_per_container: 1
+    gpus: null
+
+runtime:
+  simulation_config:
+    control_timestep_us: 100_000
+    time_start_offset_us: 100_000
+    cameras:
+      - logical_id: camera_front_wide_120fov
+        height: 1080
+        width: 1920
+        frame_interval_us: 100_000
+        shutter_duration_us: 30_000
+        first_frame_offset_us: -30_000
+      - logical_id: camera_cross_left_120fov
+        height: 1080
+        width: 1920
+        frame_interval_us: 100_000
+        shutter_duration_us: 30_000
+        first_frame_offset_us: -30_000
+      - logical_id: camera_cross_right_120fov
+        height: 1080
+        width: 1920
+        frame_interval_us: 100_000
+        shutter_duration_us: 30_000
+        first_frame_offset_us: -30_000

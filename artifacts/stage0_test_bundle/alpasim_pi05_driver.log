@@ -1,0 +1,28 @@
+/mnt/data/repos/openpi/.venv/lib/python3.11/site-packages/pygame/pkgdata.py:25: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  from pkg_resources import resource_stream, resource_exists
+pygame 2.6.1 (SDL 2.28.4, Python 3.11.15)
+Hello from the pygame community. https://www.pygame.org/contribute.html
+[2026-03-29 15:14:49,476][datasets][INFO] - PyTorch version 2.7.1 available.
+[2026-03-29 15:14:49,477][datasets][INFO] - Polars version 1.30.0 available.
+[2026-03-29 15:14:49,478][datasets][INFO] - JAX version 0.5.3 available.
+[2026-03-29 15:14:49,720][root][INFO] - Loading model...
+INFO:2026-03-29 15:14:49,869:jax._src.xla_bridge:925: Unable to initialize backend 'rocm': module 'jaxlib.xla_extension' has no attribute 'GpuAllocatorConfig'
+[2026-03-29 15:14:49,869][jax._src.xla_bridge][INFO] - Unable to initialize backend 'rocm': module 'jaxlib.xla_extension' has no attribute 'GpuAllocatorConfig'
+INFO:2026-03-29 15:14:49,870:jax._src.xla_bridge:925: Unable to initialize backend 'tpu': INTERNAL: Failed to open libtpu.so: libtpu.so: cannot open shared object file: No such file or directory
+[2026-03-29 15:14:49,870][jax._src.xla_bridge][INFO] - Unable to initialize backend 'tpu': INTERNAL: Failed to open libtpu.so: libtpu.so: cannot open shared object file: No such file or directory
+[2026-03-29 15:14:49,871][absl][INFO] - orbax-checkpoint version: 0.11.13
+[2026-03-29 15:14:49,872][absl][INFO] - Created BasePyTreeCheckpointHandler: use_ocdbt=True, use_zarr3=False, pytree_metadata_options=PyTreeMetadataOptions(support_rich_types=False), array_metadata_store=<orbax.checkpoint._src.metadata.array_metadata_store.Store object at 0x772b03b3aa50>
+[2026-03-29 15:14:49,907][absl][INFO] - Restoring checkpoint from /mnt/data/checkpoints/pi05_stage0_av/pi05_stage0_av/1000/params.
+[2026-03-29 15:14:50,706][absl][INFO] - [thread=MainThread] Failed to get flag value for EXPERIMENTAL_ORBAX_USE_DISTRIBUTED_PROCESS_ID.
+[2026-03-29 15:14:58,051][absl][INFO] - [process=0] /jax/checkpoint/read/bytes_per_sec: 797.1 MiB/s (total bytes: 6.3 GiB) (time elapsed: 8 seconds) (per-host)
+[2026-03-29 15:14:58,051][absl][INFO] - Finished restoring checkpoint in 8.14 seconds from /mnt/data/checkpoints/pi05_stage0_av/pi05_stage0_av/1000/params.
+[2026-03-29 15:15:00,647][root][INFO] - Loaded norm stats from /mnt/data/assets/pi05_stage0_av/local/stage0_av_driving
+[2026-03-29 15:15:00,648][root][INFO] - Loaded norm stats from /mnt/data/checkpoints/pi05_stage0_av/pi05_stage0_av/1000/assets/local/stage0_av_driving
+[2026-03-29 15:15:00,650][alpasim_pi05_driver.pi05_stage0_model][INFO] - Loaded PI 0.5 Stage 0 policy from /mnt/data/checkpoints/pi05_stage0_av/pi05_stage0_av/1000
+[2026-03-29 15:15:00,651][__main__][INFO] - Initialized pi05_stage0 model with 3 cameras, context_length=1
+[2026-03-29 15:15:00,654][__main__][INFO] - Starting pi05_stage0 driver on 0.0.0.0:6789 (external IP: 10.0.0.16:6789)
+[2026-03-29 15:16:12,481][__main__][INFO] - Starting pi05_stage0 session 356b12fc-2b82-11f1-920a-dbe4b222060e
+[2026-03-29 15:17:45,789][__main__][INFO] - Inference batches: 100 processed, 100 total items, avg size 1.0
+[2026-03-29 15:18:31,269][__main__][INFO] - Closing session 356b12fc-2b82-11f1-920a-dbe4b222060e
+[2026-03-29 15:18:31,336][__main__][INFO] - shut_down requested, scheduling deferred shutdown
+[2026-03-29 15:18:31,437][__main__][INFO] - Executing deferred shutdown

@@ -1,0 +1,9 @@
+collision_any: 0.0
+offroad: 1.0
+wrong_lane: 1.0
+progress: 0.4772283417512127
+progress_rel: 1.0
+dist_to_gt_trajectory: 0.9977501128523617
+dist_to_gt_location: 12.51743121959909
+dist_traveled_m: 56.191953509330936
+plan_deviation: 0.46298382270814414

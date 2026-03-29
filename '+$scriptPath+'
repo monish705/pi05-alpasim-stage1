@@ -1,0 +1,15 @@
+mkdir -p ~/.vnc
+cat > ~/.vnc/xstartup <<'EOF'
+#!/bin/sh
+unset SESSION_MANAGER
+unset DBUS_SESSION_BUS_ADDRESS
+exec startxfce4
+EOF
+chmod +x ~/.vnc/xstartup
+printf 'codexvnc2026
+' | vncpasswd -f > ~/.vnc/passwd
+chmod 600 ~/.vnc/passwd
+vncserver -kill :1 >/dev/null 2>&1 || true
+vncserver :1 -geometry 1920x1080 -depth 24 -localhost no
+vncserver -list
+ss -ltnp | grep 5901 || true

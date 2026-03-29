@@ -1,0 +1,26 @@
+{
+  "timestamp_utc": "20260327T165023Z",
+  "image_path": "C:\\Users\\brind\\Documents\\New project\\test_frame.png",
+  "mission": "Drive from the marked start point to the marked destination while staying safe.",
+  "context": "",
+  "model": "meta-llama/llama-4-scout-17b-16e-instruct",
+  "parsed": {
+    "scene_summary": "The image shows a table with objects on it, but no road or driving scene.",
+    "risk_level": "low",
+    "recommended_action": "follow_route",
+    "reason": "There is no driving scene to interpret, so defaulting to follow_route.",
+    "confidence": 0.9
+  },
+  "usage": {
+    "completion_tokens": 72,
+    "prompt_tokens": 885,
+    "total_tokens": 957,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null,
+    "queue_time": 0.343523729,
+    "prompt_time": 0.035622456,
+    "completion_time": 0.168885501,
+    "total_time": 0.204507957
+  },
+  "raw_text": "{\n\"scene_summary\": \"The image shows a table with objects on it, but no road or driving scene.\",\n  \"risk_level\": \"low\",\n  \"recommended_action\": \"follow_route\",\n  \"reason\": \"There is no driving scene to interpret, so defaulting to follow_route.\",\n  \"confidence\": 0.9\n}"
+}

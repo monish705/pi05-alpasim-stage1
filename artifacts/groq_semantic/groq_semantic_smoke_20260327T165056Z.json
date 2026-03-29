@@ -1,0 +1,26 @@
+{
+  "timestamp_utc": "20260327T165056Z",
+  "image_path": "C:\\Users\\brind\\Documents\\New project\\alpasim_outputs\\a15_mission_frames\\frame_0051.png",
+  "mission": "Drive straight through the route corridor to the marked destination while staying safe and avoiding collisions.",
+  "context": "The colored route lines show the intended path; a vehicle appears ahead-left in the camera view.",
+  "model": "meta-llama/llama-4-scout-17b-16e-instruct",
+  "parsed": {
+    "scene_summary": "Driving straight on a road with multiple lanes, a vehicle visible ahead-left in the camera view.",
+    "risk_level": "medium",
+    "recommended_action": "yield",
+    "reason": "A vehicle is present ahead-left, suggesting a potential need to yield to maintain safe distance and avoid collision.",
+    "confidence": 0.7
+  },
+  "usage": {
+    "completion_tokens": 79,
+    "prompt_tokens": 1634,
+    "total_tokens": 1713,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null,
+    "queue_time": 0.365356305,
+    "prompt_time": 0.04968037,
+    "completion_time": 0.203453327,
+    "total_time": 0.253133697
+  },
+  "raw_text": "{\n\"scene_summary\": \"Driving straight on a road with multiple lanes, a vehicle visible ahead-left in the camera view.\",\n  \"risk_level\": \"medium\",\n  \"recommended_action\": \"yield\",\n  \"reason\": \"A vehicle is present ahead-left, suggesting a potential need to yield to maintain safe distance and avoid collision.\",\n  \"confidence\": 0.7\n}"
+}

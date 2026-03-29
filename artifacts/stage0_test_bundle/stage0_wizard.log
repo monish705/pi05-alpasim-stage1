@@ -1,0 +1,1444 @@
+[2026-03-29 15:15:46,244][alpasim_wizard][INFO] - Loading scene catalog: /mnt/data/repos/alpasim/data/scenes/sim_scenes.csv
+[2026-03-29 15:15:46,277][alpasim_wizard][INFO] - Loading scene catalog: /mnt/data/repos/alpasim/data/scenes/sim_suites.csv
+[2026-03-29 15:15:46,288][alpasim_wizard][INFO] - Scenes: 
+shape: (1, 2)
+┌─────────────────────────────────┬────────────────────┐
+│ scene_id                        ┆ nre_version_string │
+│ ---                             ┆ ---                │
+│ str                             ┆ str                │
+╞═════════════════════════════════╪════════════════════╡
+│ clipgt-048b974e-1546-488a-b8f9… ┆ 25.7.9-b85d0efd    │
+└─────────────────────────────────┴────────────────────┘
+[2026-03-29 15:15:46,292][alpasim_wizard][INFO] - Created sceneset directory at /mnt/data/repos/alpasim/data/nre-artifacts/scenesets/2f76108c71acff4583bf7cd8eaa4e31c
+[2026-03-29 15:15:46,294][alpasim_wizard.context][INFO] - Relative sceneset path: scenesets/2f76108c71acff4583bf7cd8eaa4e31c
+[2026-03-29 15:15:46,326][alpasim_wizard.services][INFO] - Built 3 simulation containers
+[2026-03-29 15:15:46,327][alpasim_wizard.deployment.docker_compose][INFO] - Writing docker compose YAML to /mnt/data/alpasim_runs/stage0_same_scene_048b/docker-compose.yaml
+[2026-03-29 15:15:46,331][alpasim_wizard.deployment.docker_compose][INFO] - Docker Compose configuration generated in /mnt/data/alpasim_runs/stage0_same_scene_048b
+[2026-03-29 15:15:46,340][alpasim_wizard.services][INFO] - Built 3 simulation containers
+[2026-03-29 15:15:46,340][alpasim_wizard.configuration][INFO] - Generating all configurations...
+[2026-03-29 15:15:46,343][alpasim_wizard.configuration][INFO] - Added external driver addresses: ['localhost:6789']
+[2026-03-29 15:15:46,400][root][INFO] - Validating saved wizard config against schema...
+[2026-03-29 15:15:47,191][alpasim_wizard.utils][INFO] - Validated saved config at /mnt/data/alpasim_runs/stage0_same_scene_048b/wizard-config-loadable.yaml against schema successfully.
+[2026-03-29 15:15:47,191][alpasim_wizard.configuration][INFO] - Generated 6 configuration files
+[2026-03-29 15:15:47,191][alpasim_wizard.deployment.docker_compose][INFO] - Running docker compose: /mnt/data/alpasim_runs/stage0_same_scene_048b/docker-compose.yaml
+ Container stage0_same_scene_048b-physics-0-1 Creating 
+ Container stage0_same_scene_048b-sensorsim-0-1 Creating 
+ Container stage0_same_scene_048b-controller-0-1 Creating 
+ Container stage0_same_scene_048b-runtime-0-1 Creating 
+ sensorsim-0 Published ports are discarded when using host network mode 
+ Container stage0_same_scene_048b-sensorsim-0-1 Created 
+ physics-0 Published ports are discarded when using host network mode 
+ Container stage0_same_scene_048b-physics-0-1 Created 
+ controller-0 Published ports are discarded when using host network mode 
+ Container stage0_same_scene_048b-controller-0-1 Created 
+ Container stage0_same_scene_048b-runtime-0-1 Created 
+Attaching to controller-0-1, physics-0-1, runtime-0-1, sensorsim-0-1
+ Container stage0_same_scene_048b-runtime-0-1 Starting 
+ Container stage0_same_scene_048b-sensorsim-0-1 Starting 
+ Container stage0_same_scene_048b-controller-0-1 Starting 
+ Container stage0_same_scene_048b-physics-0-1 Starting 
+ Container stage0_same_scene_048b-controller-0-1 Started 
+ Container stage0_same_scene_048b-sensorsim-0-1 Started 
+ Container stage0_same_scene_048b-physics-0-1 Started 
+ Container stage0_same_scene_048b-runtime-0-1 Started 
+controller-0-1  | /repo/.venv/lib/python3.12/site-packages/do_mpc/model/_model.py:828: SyntaxWarning: invalid escape sequence '\i'
+controller-0-1  |   For the introduced algebraic variables :math:`z \in \mathbb{R}^{n_z}`
+controller-0-1  | /repo/.venv/lib/python3.12/site-packages/do_mpc/controller/_mpc.py:958: SyntaxWarning: invalid escape sequence '\d'
+controller-0-1  |   The initial guess is simply the initial values for all :math:`k=0,\dots,N` instances of :math:`x_k`, :math:`u_k` and :math:`z_k`.
+controller-0-1  | /repo/.venv/lib/python3.12/site-packages/do_mpc/estimator/_ekf.py:288: SyntaxWarning: "is" with 'str' literal. Did you mean "=="?
+controller-0-1  |   if self.model.model_type is 'continuous':
+controller-0-1  | /repo/.venv/lib/python3.12/site-packages/do_mpc/estimator/_mhe.py:490: SyntaxWarning: invalid escape sequence '\c'
+controller-0-1  |   """Set the stage cost :math:`l(\cdot)` and arrival cost :math:`m(\cdot)` function for the MHE problem:
+controller-0-1  | /repo/.venv/lib/python3.12/site-packages/do_mpc/estimator/_mhe.py:627: SyntaxWarning: invalid escape sequence '\}'
+controller-0-1  |   \\end{aligned}\\right\} k=0,\\dots, N
+controller-0-1  | /repo/.venv/lib/python3.12/site-packages/do_mpc/estimator/_mhe.py:867: SyntaxWarning: invalid escape sequence '\d'
+controller-0-1  |   The initial guess is simply the initial values for all :math:`k=0,\dots,N` instances of :math:`x_k`, :math:`u_k` and :math:`z_k`, :math:`p_{\\text{est,k}}`.
+controller-0-1  | /repo/.venv/lib/python3.12/site-packages/do_mpc/graphics.py:73: SyntaxWarning: invalid escape sequence '\D'
+controller-0-1  |   ax[2].set_ylabel('\Delta T [K]')
+controller-0-1  | 15:15:55.853 INFO:	VDCServicer initialized logging to: /mnt/output
+controller-0-1  | 15:15:55.853 INFO:	SystemManager using linear MPC
+controller-0-1  | 15:15:55.855 INFO:	Starting server on 0.0.0.0:6002
+controller-0-1  | 15:15:55.856 INFO:	Server started
+physics-0-1     | 15:15:59.062 INFO:	Identifying as
+physics-0-1     | version_id: "0.2.0"
+physics-0-1     | git_hash: "<TODO>"
+physics-0-1     | grpc_api_version {
+physics-0-1     |   minor: 53
+physics-0-1     | }
+physics-0-1     | 
+physics-0-1     | 15:15:59.088 INFO:	Available scenes: ['clipgt-048b974e-1546-488a-b8f9-d32bff77f5aa'].
+physics-0-1     | 15:15:59.090 INFO:	Serving on 0.0.0.0:6001
+runtime-0-1     | Built 1 jobs to execute
+runtime-0-1     | runtime: version_id: "0.3.0"
+runtime-0-1     | git_hash: "Unknown"
+runtime-0-1     | grpc_api_version {
+runtime-0-1     |   minor: 53
+runtime-0-1     | }
+runtime-0-1     | 
+runtime-0-1     | Probing version for driver at localhost:6789...
+runtime-0-1     | Probing version for sensorsim at localhost:6000...
+runtime-0-1     | Probing version for physics at localhost:6001...
+runtime-0-1     | Probing version for controller at localhost:6002...
+physics-0-1     | 15:16:01.067 INFO:	get_version
+runtime-0-1     | Connected to physics at localhost:6001: version_id: "0.2.0"
+runtime-0-1     | git_hash: "<TODO>"
+runtime-0-1     | grpc_api_version {
+runtime-0-1     |   minor: 53
+runtime-0-1     | }
+runtime-0-1     | 
+runtime-0-1     | Connected to driver at localhost:6789: version_id: "pi05_stage0-driver-0.18.0"
+runtime-0-1     | git_hash: "unknown"
+runtime-0-1     | grpc_api_version {
+runtime-0-1     |   minor: 53
+runtime-0-1     | }
+runtime-0-1     | 
+runtime-0-1     | Connected to controller at localhost:6002: version_id: "0.21.0"
+runtime-0-1     | git_hash: "n/a"
+runtime-0-1     | grpc_api_version {
+runtime-0-1     |   minor: 53
+runtime-0-1     | }
+runtime-0-1     | 
+sensorsim-0-1   | [2026-03-29 15:16:02,534][matplotlib.font_manager][INFO] generated new fontManager
+sensorsim-0-1   | [2026-03-29 15:16:03,768][nre.grpc.serve][INFO] Starting grpc server with max_workers=1 cache_size=4
+sensorsim-0-1   | [2026-03-29 15:16:03,783][I1I1II1I1l1I1Ill1IIII111l][INFO] Scene cache initialized in /tmp/nre-cache-dir with max size 5
+sensorsim-0-1   | [2026-03-29 15:16:03,784][nre.grpc.serve][INFO] Identifying as self.version_id=version_id: "25.7.9"
+sensorsim-0-1   | git_hash: "e633dd23"
+sensorsim-0-1   | grpc_api_version {
+sensorsim-0-1   |   patch: 1
+sensorsim-0-1   | }
+sensorsim-0-1   | 
+sensorsim-0-1   | [2026-03-29 15:16:03,788][nre.grpc.serve][INFO] Available scenes: ['clipgt-048b974e-1546-488a-b8f9-d32bff77f5aa'].
+sensorsim-0-1   | [2026-03-29 15:16:04,472][nre.grpc.serve][INFO] Available egocar masks: EgocarRigBank(hyperion_8, hyperion_8_1).
+sensorsim-0-1   | [2026-03-29 15:16:04,474][nre.grpc.serve][INFO] BackendCache initialized with max size 4
+sensorsim-0-1   | [2026-03-29 15:16:04,477][nre.grpc.serve][INFO] Serving on 0.0.0.0:6000
+sensorsim-0-1   | [2026-03-29 15:16:06,236][nre.grpc.serve][INFO] get_version
+runtime-0-1     | Connected to sensorsim at localhost:6000: version_id: "25.7.9"
+runtime-0-1     | git_hash: "e633dd23"
+runtime-0-1     | grpc_api_version {
+runtime-0-1     |   patch: 1
+runtime-0-1     | }
+runtime-0-1     | 
+runtime-0-1     | Validating scenarios on sensorsim at localhost:6000...
+runtime-0-1     | Validating scenarios on physics at localhost:6001...
+sensorsim-0-1   | [2026-03-29 15:16:06,240][nre.grpc.serve][INFO] get_available_scenes
+runtime-0-1     | Scenario validation passed on sensorsim
+physics-0-1     | 15:16:06.240 INFO:	get_available_scenes
+runtime-0-1     | Scenario validation passed on physics
+runtime-0-1     | 15:16:06.270 [W0] INFO:	Worker 0 starting (num_workers=1, num_consumers=2)
+runtime-0-1     | 15:16:06.286 [W0] INFO:	GPU monitoring initialized: 1 GPU(s) detected
+runtime-0-1     | 15:16:06.286 [W0] INFO:	Worker 0 ready with num_consumers=2
+runtime-0-1     | 15:16:06.287 [W0] INFO:	Event loop idle profiler installed
+runtime-0-1     | 15:16:06.501 [W0] WARNING:	Max error in cubic spline approximation: 1.280408 m for track_id='19'
+runtime-0-1     | 15:16:06.590 [W0] WARNING:	Max error in cubic spline approximation: 2.771869 m for track_id='246'
+runtime-0-1     | 15:16:06.593 [W0] WARNING:	Max error in cubic spline approximation: 1.010286 m for track_id='191'
+runtime-0-1     | 15:16:06.645 [W0] WARNING:	Max error in cubic spline approximation: 1.384596 m for track_id='174'
+runtime-0-1     | 15:16:06.685 [W0] WARNING:	Max error in cubic spline approximation: 1.251944 m for track_id='109'
+runtime-0-1     | 15:16:06.714 [W0] INFO:	Filtering traffic objects with min duration 3000000 us
+runtime-0-1     | 15:16:06.714 [W0] INFO:	Number of traffic objects before filtering: 173
+runtime-0-1     | 15:16:06.714 [W0] INFO:	Number of traffic objects after filtering: 99
+runtime-0-1     | 15:16:06.717 [W0] INFO:	Loading USDZ map data into memory. This will take a few seconds...
+runtime-0-1     | 15:16:06.732 [W0] INFO:	Applied XODR ENU to Simulation coordinate transform for trajectory alignment
+runtime-0-1     | 15:16:07.191 [W0] INFO:	Successfully loaded map from XODR
+controller-0-1  | 15:16:07.237 INFO:	start_session for session_uuid: 356b12fc-2b82-11f1-920a-dbe4b222060e
+controller-0-1  | 15:16:07.237 INFO:	Registering session: 356b12fc-2b82-11f1-920a-dbe4b222060e
+runtime-0-1     | 15:16:07.238 [W0] INFO:	Requesting available cameras for scene_id='clipgt-048b974e-1546-488a-b8f9-d32bff77f5aa'
+sensorsim-0-1   | [2026-03-29 15:16:07,240][nre.grpc.serve][INFO] get_available_cameras
+sensorsim-0-1   | [2026-03-29 15:16:07,240][nre.grpc.serve][INFO] Creating new backend for clipgt-048b974e-1546-488a-b8f9-d32bff77f5aa from /mnt/nre-data/scenesets/2f76108c71acff4583bf7cd8eaa4e31c/367c276f-13d9-4287-8354-0e1defbca078.usdz
+sensorsim-0-1   | [2026-03-29 15:16:08,268][I11llIl11lllIll1I11l11ll1][INFO] Config v25.7.9 is already compatible with NuRec v25.7.9, no upgrade needed
+sensorsim-0-1   | [2026-03-29 15:16:08,530][lI1IIIllII1l1Il111lII11I1][INFO] SHGaussianModel/progressive_training: increase_frequency=1000 increase_step=1
+sensorsim-0-1   | [2026-03-29 15:16:08,534][lI1IIIllII1l1Il111lII11I1][INFO] SHGaussianModel/progressive_training: increase_frequency=1000 increase_step=1
+sensorsim-0-1   | [2026-03-29 15:16:08,610][lI1IIIllII1l1Il111lII11I1][INFO] SHGaussianModel/progressive_training: increase_frequency=1000 increase_step=1
+sensorsim-0-1   | [2026-03-29 15:16:08,610][I11l1IIl1II1IlI1I1I11l1ll][INFO] BaseTracksCalib: start_global_step=500
+sensorsim-0-1   | [2026-03-29 15:16:08,635][lI1IIIllII1l1Il111lII11I1][INFO] SHGaussianModel/progressive_training: increase_frequency=1000 increase_step=1
+sensorsim-0-1   | [2026-03-29 15:16:08,636][I11l1IIl1II1IlI1I1I11l1ll][INFO] BaseTracksCalib: start_global_step=500
+sensorsim-0-1   | [2026-03-29 15:16:08,647][lI1IIIllII1l1Il111lII11I1][INFO] DeformableGaussianModel: deformnet_start_iteration=1000
+sensorsim-0-1   | [2026-03-29 15:16:08,754][11I1IlIl1lll1llIII1lIIl11][INFO] TcnnMultiLevelEncoding/progressive_training: update_frequency=500
+sensorsim-0-1   | [2026-03-29 15:16:08,804][Illl11l1l1III1III11lIllII][INFO] MCMCStrategy/relocate: start_iteration=500 end_iteration=25000 frequency=100
+sensorsim-0-1   | [2026-03-29 15:16:08,804][Illl11l1l1III1III11lIllII][INFO] MCMCStrategy/add: start_iteration=500 end_iteration=25000 frequency=100
+sensorsim-0-1   | [2026-03-29 15:16:11,518][111IIIl11I1l1111l111lIllI][INFO] Model v$25.7.9 is already compatible with NuRec v25.7.9, no upgrade needed
+runtime-0-1     | 15:16:12.475 [W0] INFO:	Applying 1 camera override(s) for scene 'clipgt-048b974e-1546-488a-b8f9-d32bff77f5aa': ['camera_front_wide_120fov']
+runtime-0-1     | 15:16:12.476 [W0] INFO:	[camera_front_wide_120fov] Overriding rig_to_camera: translation_m (np.float32(2.0972028), np.float32(-0.07754567), np.float32(1.5833409)) -> [1.65897811, -0.01443456, 1.51539499], rotation_xyzw (np.float32(0.49287355), np.float32(-0.50182617), np.float32(0.50426793), np.float32(-0.5009591)) -> [-0.49929397355810856, 0.5039939168301356, -0.4972939976976715, 0.49939397235113037]
+physics-0-1     | 15:16:12.549 INFO:	Cache miss, loading artifact.scene_id='clipgt-048b974e-1546-488a-b8f9-d32bff77f5aa'
+physics-0-1     | 15:16:13.548 ERROR:	There are only 0 points in 3 dimensions.
+physics-0-1     | Traceback (most recent call last):
+physics-0-1     |   File "/repo/src/physics/alpasim_physics/backend.py", line 219, in update_pose
+physics-0-1     |     transl, rot = self.fit_planes_get_transl_rot(
+physics-0-1     |                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+physics-0-1     |   File "/repo/src/physics/alpasim_physics/backend.py", line 285, in fit_planes_get_transl_rot
+physics-0-1     |     point_o, normal_o = self.fit_plane(bottom_positions.T)
+physics-0-1     |                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+physics-0-1     |   File "/repo/src/physics/alpasim_physics/backend.py", line 325, in fit_plane
+physics-0-1     |     raise InsufficientPointsFitPlane(
+physics-0-1     | alpasim_physics.backend.InsufficientPointsFitPlane: There are only 0 points in 3 dimensions.
+physics-0-1     | 15:16:13.549 ERROR:	There are only 0 points in 3 dimensions.
+physics-0-1     | Traceback (most recent call last):
+physics-0-1     |   File "/repo/src/physics/alpasim_physics/backend.py", line 219, in update_pose
+physics-0-1     |     transl, rot = self.fit_planes_get_transl_rot(
+physics-0-1     |                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+physics-0-1     |   File "/repo/src/physics/alpasim_physics/backend.py", line 285, in fit_planes_get_transl_rot
+physics-0-1     |     point_o, normal_o = self.fit_plane(bottom_positions.T)
+physics-0-1     |                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+physics-0-1     |   File "/repo/src/physics/alpasim_physics/backend.py", line 325, in fit_plane
+physics-0-1     |     raise InsufficientPointsFitPlane(
+physics-0-1     | alpasim_physics.backend.InsufficientPointsFitPlane: There are only 0 points in 3 dimensions.
+runtime-0-1     | 15:16:13.551 [W0] INFO:	Session STARTING: uuid=356b12fc-2b82-11f1-920a-dbe4b222060e scene=clipgt-048b974e-1546-488a-b8f9-d32bff77f5aa steps=100
+runtime-0-1     | 15:16:13.551 [W0] INFO:	Warming up sensorsim with initial render request...
+sensorsim-0-1   | [2026-03-29 15:16:13,552][nre.grpc.serve][INFO] get_available_ego_masks
+runtime-0-1     | 15:16:13.553 [W0] INFO:	Available ego masks: ego_mask_metadata {
+runtime-0-1     |   ego_mask_id {
+runtime-0-1     |     camera_logical_id: "camera_front_wide_120fov"
+runtime-0-1     |     rig_config_id: "hyperion_8"
+runtime-0-1     |   }
+runtime-0-1     | }
+runtime-0-1     | ego_mask_metadata {
+runtime-0-1     |   ego_mask_id {
+runtime-0-1     |     camera_logical_id: "camera_front_wide_120fov"
+runtime-0-1     |     rig_config_id: "hyperion_8_1"
+runtime-0-1     |   }
+runtime-0-1     | }
+runtime-0-1     |  (session=356b12fc-2b82-11f1-920a-dbe4b222060e, service_addr=localhost:6000)
+sensorsim-0-1   | [2026-03-29 15:16:13,554][nre.grpc.serve][INFO] render_rgb
+runtime-0-1     | 15:16:32.018 [W0] INFO:	Sensorsim warmup complete in 18.467s
+runtime-0-1     | 15:16:32.018 [W0] INFO:	Event-based simulation loop timer started
+runtime-0-1     | 15:16:32.019 [W0] INFO:	sim_time 9_787_225_000us: StepEvent @ 9_787_225_000us
+runtime-0-1     | 15:16:32.021 [W0] INFO:	sim_time 9_787_325_000us: GroupedRenderEvent(now=9_787_325_000us)
+sensorsim-0-1   | [2026-03-29 15:16:32,025][nre.grpc.serve][INFO] render_rgb
+sensorsim-0-1   | [2026-03-29 15:16:32,124][nre.grpc.serve][INFO] render_rgb
+sensorsim-0-1   | [2026-03-29 15:16:32,191][nre.grpc.serve][INFO] render_rgb
+runtime-0-1     | 15:16:32.258 [W0] INFO:	sim_time 9_787_325_000us: PolicyEvent @ 9_787_325_000us
+runtime-0-1     | 15:16:32.259 [W0] INFO:	Draining 5 outstanding tasks
+runtime-0-1     | 15:16:56.307 [W0] INFO:	sim_time 9_787_325_000us: ControllerEvent @ 9_787_325_000us
+controller-0-1  | 15:16:56.310 INFO:	Creating system for session_uuid: 356b12fc-2b82-11f1-920a-dbe4b222060e (mpc: linear)
+runtime-0-1     | 15:16:56.338 [W0] INFO:	sim_time 9_787_325_000us: PhysicsEvent @ 9_787_325_000us
+runtime-0-1     | 15:16:56.339 [W0] INFO:	sim_time 9_787_325_000us: TrafficEvent @ 9_787_325_000us
+runtime-0-1     | 15:16:56.340 [W0] INFO:	sim_time 9_787_325_000us: PhysicsEvent @ 9_787_325_000us
+runtime-0-1     | 15:16:56.340 [W0] INFO:	sim_time 9_787_325_000us: StepEvent @ 9_787_325_000us
+runtime-0-1     | 15:16:56.342 [W0] INFO:	sim_time 9_787_425_000us: GroupedRenderEvent(now=9_787_425_000us)
+sensorsim-0-1   | [2026-03-29 15:16:56,345][nre.grpc.serve][INFO] render_rgb
+sensorsim-0-1   | [2026-03-29 15:16:56,432][nre.grpc.serve][INFO] render_rgb
+sensorsim-0-1   | [2026-03-29 15:16:56,499][nre.grpc.serve][INFO] render_rgb
+runtime-0-1     | 15:16:56.565 [W0] INFO:	sim_time 9_787_425_000us: PolicyEvent @ 9_787_425_000us
+runtime-0-1     | 15:16:56.565 [W0] INFO:	Draining 5 outstanding tasks
+runtime-0-1     | 15:16:56.829 [W0] INFO:	sim_time 9_787_425_000us: ControllerEvent @ 9_787_425_000us
+runtime-0-1     | 15:16:56.837 [W0] INFO:	sim_time 9_787_425_000us: PhysicsEvent @ 9_787_425_000us
+runtime-0-1     | 15:16:56.837 [W0] INFO:	sim_time 9_787_425_000us: TrafficEvent @ 9_787_425_000us
+runtime-0-1     | 15:16:56.838 [W0] INFO:	sim_time 9_787_425_000us: PhysicsEvent @ 9_787_425_000us
+runtime-0-1     | 15:16:56.839 [W0] INFO:	sim_time 9_787_425_000us: StepEvent @ 9_787_425_000us
+runtime-0-1     | 15:16:56.841 [W0] INFO:	sim_time 9_787_525_000us: GroupedRenderEvent(now=9_787_525_000us)
+sensorsim-0-1   | [2026-03-29 15:16:56,844][nre.grpc.serve][INFO] render_rgb
+sensorsim-0-1   | [2026-03-29 15:16:56,926][nre.grpc.serve][INFO] render_rgb
+sensorsim-0-1   | [2026-03-29 15:16:56,996][nre.grpc.serve][INFO] render_rgb
+runtime-0-1     | 15:16:57.063 [W0] INFO:	sim_time 9_787_525_000us: PolicyEvent @ 9_787_525_000us
+runtime-0-1     | 15:16:57.064 [W0] INFO:	Draining 5 outstanding tasks
+runtime-0-1     | 15:16:57.329 [W0] INFO:	sim_time 9_787_525_000us: ControllerEvent @ 9_787_525_000us
+runtime-0-1     | 15:16:57.338 [W0] INFO:	sim_time 9_787_525_000us: PhysicsEvent @ 9_787_525_000us
+runtime-0-1     | 15:16:57.338 [W0] INFO:	sim_time 9_787_525_000us: TrafficEvent @ 9_787_525_000us
+runtime-0-1     | 15:16:57.339 [W0] INFO:	sim_time 9_787_525_000us: PhysicsEvent @ 9_787_525_000us
+runtime-0-1     | 15:16:57.339 [W0] INFO:	sim_time 9_787_525_000us: StepEvent @ 9_787_525_000us
+runtime-0-1     | 15:16:57.341 [W0] INFO:	sim_time 9_787_625_000us: GroupedRenderEvent(now=9_787_625_000us)
+sensorsim-0-1   | [2026-03-29 15:16:57,344][nre.grpc.serve][INFO] render_rgb
+sensorsim-0-1   | [2026-03-29 15:16:57,426][nre.grpc.serve][INFO] render_rgb
+sensorsim-0-1   | [2026-03-29 15:16:57,491][nre.grpc.serve][INFO] render_rgb
+runtime-0-1     | 15:16:57.557 [W0] INFO:	sim_time 9_787_625_000us: PolicyEvent @ 9_787_625_000us
+runtime-0-1     | 15:16:57.558 [W0] INFO:	Draining 5 outstanding tasks
+runtime-0-1     | 15:16:57.818 [W0] INFO:	sim_time 9_787_625_000us: ControllerEvent @ 9_787_625_000us
+runtime-0-1     | 15:16:57.825 [W0] INFO:	sim_time 9_787_625_000us: PhysicsEvent @ 9_787_625_000us
+runtime-0-1     | 15:16:57.825 [W0] INFO:	sim_time 9_787_625_000us: TrafficEvent @ 9_787_625_000us
+runtime-0-1     | 15:16:57.826 [W0] INFO:	sim_time 9_787_625_000us: PhysicsEvent @ 9_787_625_000us
+runtime-0-1     | 15:16:57.827 [W0] INFO:	sim_time 9_787_625_000us: StepEvent @ 9_787_625_000us
+runtime-0-1     | 15:16:57.829 [W0] INFO:	sim_time 9_787_725_000us: GroupedRenderEvent(now=9_787_725_000us)
+sensorsim-0-1   | [2026-03-29 15:16:57,832][nre.grpc.serve][INFO] render_rgb
+sensorsim-0-1   | [2026-03-29 15:16:57,909][nre.grpc.serve][INFO] render_rgb
+sensorsim-0-1   | [2026-03-29 15:16:57,972][nre.grpc.serve][INFO] render_rgb
+runtime-0-1     | 15:16:58.037 [W0] INFO:	sim_time 9_787_725_000us: PolicyEvent @ 9_787_725_000us
+runtime-0-1     | 15:16:58.038 [W0] INFO:	Draining 5 outstanding tasks
+runtime-0-1     | 15:16:58.303 [W0] INFO:	sim_time 9_787_725_000us: ControllerEvent @ 9_787_725_000us
+runtime-0-1     | 15:16:58.310 [W0] INFO:	sim_time 9_787_725_000us: PhysicsEvent @ 9_787_725_000us
+runtime-0-1     | 15:16:58.310 [W0] INFO:	sim_time 9_787_725_000us: TrafficEvent @ 9_787_725_000us
+runtime-0-1     | 15:16:58.311 [W0] INFO:	sim_time 9_787_725_000us: PhysicsEvent @ 9_787_725_000us
+runtime-0-1     | 15:16:58.311 [W0] INFO:	sim_time 9_787_725_000us: StepEvent @ 9_787_725_000us
+runtime-0-1     | 15:16:58.313 [W0] INFO:	sim_time 9_787_825_000us: GroupedRenderEvent(now=9_787_825_000us)
+sensorsim-0-1   | [2026-03-29 15:16:58,317][nre.grpc.serve][INFO] render_rgb
+sensorsim-0-1   | [2026-03-29 15:16:58,394][nre.grpc.serve][INFO] render_rgb
+sensorsim-0-1   | [2026-03-29 15:16:58,458][nre.grpc.serve][INFO] render_rgb
+runtime-0-1     | 15:16:58.524 [W0] INFO:	sim_time 9_787_825_000us: PolicyEvent @ 9_787_825_000us
+runtime-0-1     | 15:16:58.524 [W0] INFO:	Draining 5 outstanding tasks
+runtime-0-1     | 15:16:58.787 [W0] INFO:	sim_time 9_787_825_000us: ControllerEvent @ 9_787_825_000us
+runtime-0-1     | 15:16:58.794 [W0] INFO:	sim_time 9_787_825_000us: PhysicsEvent @ 9_787_825_000us
+runtime-0-1     | 15:16:58.794 [W0] INFO:	sim_time 9_787_825_000us: TrafficEvent @ 9_787_825_000us
+runtime-0-1     | 15:16:58.797 [W0] INFO:	sim_time 9_787_825_000us: PhysicsEvent @ 9_787_825_000us
+runtime-0-1     | 15:16:58.797 [W0] INFO:	sim_time 9_787_825_000us: StepEvent @ 9_787_825_000us
+runtime-0-1     | 15:16:58.799 [W0] INFO:	sim_time 9_787_925_000us: GroupedRenderEvent(now=9_787_925_000us)
+sensorsim-0-1   | [2026-03-29 15:16:58,802][nre.grpc.serve][INFO] render_rgb
+sensorsim-0-1   | [2026-03-29 15:16:58,880][nre.grpc.serve][INFO] render_rgb
+sensorsim-0-1   | [2026-03-29 15:16:58,944][nre.grpc.serve][INFO] render_rgb
+runtime-0-1     | 15:16:59.010 [W0] INFO:	sim_time 9_787_925_000us: PolicyEvent @ 9_787_925_000us
+runtime-0-1     | 15:16:59.010 [W0] INFO:	Draining 5 outstanding tasks
+runtime-0-1     | 15:16:59.274 [W0] INFO:	sim_time 9_787_925_000us: ControllerEvent @ 9_787_925_000us
+runtime-0-1     | 15:16:59.280 [W0] INFO:	sim_time 9_787_925_000us: PhysicsEvent @ 9_787_925_000us
+runtime-0-1     | 15:16:59.280 [W0] INFO:	sim_time 9_787_925_000us: TrafficEvent @ 9_787_925_000us
+runtime-0-1     | 15:16:59.282 [W0] INFO:	sim_time 9_787_925_000us: PhysicsEvent @ 9_787_925_000us
+runtime-0-1     | 15:16:59.282 [W0] INFO:	sim_time 9_787_925_000us: StepEvent @ 9_787_925_000us
+runtime-0-1     | 15:16:59.284 [W0] INFO:	sim_time 9_788_025_000us: GroupedRenderEvent(now=9_788_025_000us)
+sensorsim-0-1   | [2026-03-29 15:16:59,287][nre.grpc.serve][INFO] render_rgb
+sensorsim-0-1   | [2026-03-29 15:16:59,367][nre.grpc.serve][INFO] render_rgb
+sensorsim-0-1   | [2026-03-29 15:16:59,432][nre.grpc.serve][INFO] render_rgb
+runtime-0-1     | 15:16:59.499 [W0] INFO:	sim_time 9_788_025_000us: PolicyEvent @ 9_788_025_000us
+runtime-0-1     | 15:16:59.500 [W0] INFO:	Draining 5 outstanding tasks
+runtime-0-1     | 15:16:59.763 [W0] INFO:	sim_time 9_788_025_000us: ControllerEvent @ 9_788_025_000us
+runtime-0-1     | 15:16:59.770 [W0] INFO:	sim_time 9_788_025_000us: PhysicsEvent @ 9_788_025_000us
+runtime-0-1     | 15:16:59.770 [W0] INFO:	sim_time 9_788_025_000us: TrafficEvent @ 9_788_025_000us
+runtime-0-1     | 15:16:59.771 [W0] INFO:	sim_time 9_788_025_000us: PhysicsEvent @ 9_788_025_000us
+runtime-0-1     | 15:16:59.772 [W0] INFO:	sim_time 9_788_025_000us: StepEvent @ 9_788_025_000us
+runtime-0-1     | 15:16:59.774 [W0] INFO:	sim_time 9_788_125_000us: GroupedRenderEvent(now=9_788_125_000us)
+sensorsim-0-1   | [2026-03-29 15:16:59,777][nre.grpc.serve][INFO] render_rgb
+sensorsim-0-1   | [2026-03-29 15:16:59,861][nre.grpc.serve][INFO] render_rgb
+sensorsim-0-1   | [2026-03-29 15:16:59,925][nre.grpc.serve][INFO] render_rgb
+runtime-0-1     | 15:16:59.992 [W0] INFO:	sim_time 9_788_125_000us: PolicyEvent @ 9_788_125_000us
+runtime-0-1     | 15:16:59.992 [W0] INFO:	Draining 5 outstanding tasks
+runtime-0-1     | 15:17:00.256 [W0] INFO:	sim_time 9_788_125_000us: ControllerEvent @ 9_788_125_000us
+runtime-0-1     | 15:17:00.263 [W0] INFO:	sim_time 9_788_125_000us: PhysicsEvent @ 9_788_125_000us
+runtime-0-1     | 15:17:00.263 [W0] INFO:	sim_time 9_788_125_000us: TrafficEvent @ 9_788_125_000us
+runtime-0-1     | 15:17:00.264 [W0] INFO:	sim_time 9_788_125_000us: PhysicsEvent @ 9_788_125_000us
+runtime-0-1     | 15:17:00.264 [W0] INFO:	sim_time 9_788_125_000us: StepEvent @ 9_788_125_000us
+runtime-0-1     | 15:17:00.267 [W0] INFO:	sim_time 9_788_225_000us: GroupedRenderEvent(now=9_788_225_000us)
+sensorsim-0-1   | [2026-03-29 15:17:00,270][nre.grpc.serve][INFO] render_rgb
+sensorsim-0-1   | [2026-03-29 15:17:00,349][nre.grpc.serve][INFO] render_rgb
+sensorsim-0-1   | [2026-03-29 15:17:00,412][nre.grpc.serve][INFO] render_rgb
+runtime-0-1     | 15:17:00.481 [W0] INFO:	sim_time 9_788_225_000us: PolicyEvent @ 9_788_225_000us
+runtime-0-1     | 15:17:00.481 [W0] INFO:	Draining 5 outstanding tasks
+runtime-0-1     | 15:17:00.745 [W0] INFO:	sim_time 9_788_225_000us: ControllerEvent @ 9_788_225_000us
+runtime-0-1     | 15:17:00.752 [W0] INFO:	sim_time 9_788_225_000us: PhysicsEvent @ 9_788_225_000us
+runtime-0-1     | 15:17:00.752 [W0] INFO:	sim_time 9_788_225_000us: TrafficEvent @ 9_788_225_000us
+runtime-0-1     | 15:17:00.753 [W0] INFO:	sim_time 9_788_225_000us: PhysicsEvent @ 9_788_225_000us
+runtime-0-1     | 15:17:00.754 [W0] INFO:	sim_time 9_788_225_000us: StepEvent @ 9_788_225_000us
+runtime-0-1     | 15:17:00.756 [W0] INFO:	sim_time 9_788_325_000us: GroupedRenderEvent(now=9_788_325_000us)
+sensorsim-0-1   | [2026-03-29 15:17:00,759][nre.grpc.serve][INFO] render_rgb
+sensorsim-0-1   | [2026-03-29 15:17:00,837][nre.grpc.serve][INFO] render_rgb
+sensorsim-0-1   | [2026-03-29 15:17:00,901][nre.grpc.serve][INFO] render_rgb
+runtime-0-1     | 15:17:00.968 [W0] INFO:	sim_time 9_788_325_000us: PolicyEvent @ 9_788_325_000us
+runtime-0-1     | 15:17:00.968 [W0] INFO:	Draining 5 outstanding tasks
+runtime-0-1     | 15:17:01.235 [W0] INFO:	sim_time 9_788_325_000us: ControllerEvent @ 9_788_325_000us
+runtime-0-1     | 15:17:01.242 [W0] INFO:	sim_time 9_788_325_000us: PhysicsEvent @ 9_788_325_000us
+runtime-0-1     | 15:17:01.242 [W0] INFO:	sim_time 9_788_325_000us: TrafficEvent @ 9_788_325_000us
+runtime-0-1     | 15:17:01.243 [W0] INFO:	sim_time 9_788_325_000us: PhysicsEvent @ 9_788_325_000us
+runtime-0-1     | 15:17:01.244 [W0] INFO:	sim_time 9_788_325_000us: StepEvent @ 9_788_325_000us
+runtime-0-1     | 15:17:01.245 [W0] INFO:	sim_time 9_788_425_000us: GroupedRenderEvent(now=9_788_425_000us)
+sensorsim-0-1   | [2026-03-29 15:17:01,248][nre.grpc.serve][INFO] render_rgb
+sensorsim-0-1   | [2026-03-29 15:17:01,328][nre.grpc.serve][INFO] render_rgb
+sensorsim-0-1   | [2026-03-29 15:17:01,393][nre.grpc.serve][INFO] render_rgb
+runtime-0-1     | 15:17:01.460 [W0] INFO:	sim_time 9_788_425_000us: PolicyEvent @ 9_788_425_000us
+runtime-0-1     | 15:17:01.460 [W0] INFO:	Draining 5 outstanding tasks
+runtime-0-1     | 15:17:01.725 [W0] INFO:	sim_time 9_788_425_000us: ControllerEvent @ 9_788_425_000us
+runtime-0-1     | 15:17:01.731 [W0] INFO:	sim_time 9_788_425_000us: PhysicsEvent @ 9_788_425_000us
+runtime-0-1     | 15:17:01.731 [W0] INFO:	sim_time 9_788_425_000us: TrafficEvent @ 9_788_425_000us
+runtime-0-1     | 15:17:01.732 [W0] INFO:	sim_time 9_788_425_000us: PhysicsEvent @ 9_788_425_000us
+runtime-0-1     | 15:17:01.733 [W0] INFO:	sim_time 9_788_425_000us: StepEvent @ 9_788_425_000us
+runtime-0-1     | 15:17:01.736 [W0] INFO:	sim_time 9_788_525_000us: GroupedRenderEvent(now=9_788_525_000us)
+sensorsim-0-1   | [2026-03-29 15:17:01,739][nre.grpc.serve][INFO] render_rgb
+sensorsim-0-1   | [2026-03-29 15:17:01,814][nre.grpc.serve][INFO] render_rgb
+sensorsim-0-1   | [2026-03-29 15:17:01,878][nre.grpc.serve][INFO] render_rgb
+runtime-0-1     | 15:17:01.946 [W0] INFO:	sim_time 9_788_525_000us: PolicyEvent @ 9_788_525_000us
+runtime-0-1     | 15:17:01.947 [W0] INFO:	Draining 5 outstanding tasks
+runtime-0-1     | 15:17:02.213 [W0] INFO:	sim_time 9_788_525_000us: ControllerEvent @ 9_788_525_000us
+runtime-0-1     | 15:17:02.220 [W0] INFO:	sim_time 9_788_525_000us: PhysicsEvent @ 9_788_525_000us
+runtime-0-1     | 15:17:02.220 [W0] INFO:	sim_time 9_788_525_000us: TrafficEvent @ 9_788_525_000us
+runtime-0-1     | 15:17:02.221 [W0] INFO:	sim_time 9_788_525_000us: PhysicsEvent @ 9_788_525_000us
+runtime-0-1     | 15:17:02.221 [W0] INFO:	sim_time 9_788_525_000us: StepEvent @ 9_788_525_000us
+runtime-0-1     | 15:17:02.224 [W0] INFO:	sim_time 9_788_625_000us: GroupedRenderEvent(now=9_788_625_000us)
+sensorsim-0-1   | [2026-03-29 15:17:02,227][nre.grpc.serve][INFO] render_rgb
+sensorsim-0-1   | [2026-03-29 15:17:02,306][nre.grpc.serve][INFO] render_rgb
+sensorsim-0-1   | [2026-03-29 15:17:02,370][nre.grpc.serve][INFO] render_rgb
+runtime-0-1     | 15:17:02.438 [W0] INFO:	sim_time 9_788_625_000us: PolicyEvent @ 9_788_625_000us
+runtime-0-1     | 15:17:02.438 [W0] INFO:	Draining 5 outstanding tasks
+runtime-0-1     | 15:17:02.704 [W0] INFO:	sim_time 9_788_625_000us: ControllerEvent @ 9_788_625_000us
+runtime-0-1     | 15:17:02.712 [W0] INFO:	sim_time 9_788_625_000us: PhysicsEvent @ 9_788_625_000us
+runtime-0-1     | 15:17:02.712 [W0] INFO:	sim_time 9_788_625_000us: TrafficEvent @ 9_788_625_000us
+runtime-0-1     | 15:17:02.714 [W0] INFO:	sim_time 9_788_625_000us: PhysicsEvent @ 9_788_625_000us
+runtime-0-1     | 15:17:02.714 [W0] INFO:	sim_time 9_788_625_000us: StepEvent @ 9_788_625_000us
+runtime-0-1     | 15:17:02.716 [W0] INFO:	sim_time 9_788_725_000us: GroupedRenderEvent(now=9_788_725_000us)
+sensorsim-0-1   | [2026-03-29 15:17:02,719][nre.grpc.serve][INFO] render_rgb
+sensorsim-0-1   | [2026-03-29 15:17:02,797][nre.grpc.serve][INFO] render_rgb
+sensorsim-0-1   | [2026-03-29 15:17:02,863][nre.grpc.serve][INFO] render_rgb
+runtime-0-1     | 15:17:02.932 [W0] INFO:	sim_time 9_788_725_000us: PolicyEvent @ 9_788_725_000us
+runtime-0-1     | 15:17:02.933 [W0] INFO:	Draining 5 outstanding tasks
+runtime-0-1     | 15:17:03.195 [W0] INFO:	sim_time 9_788_725_000us: ControllerEvent @ 9_788_725_000us
+runtime-0-1     | 15:17:03.202 [W0] INFO:	sim_time 9_788_725_000us: PhysicsEvent @ 9_788_725_000us
+runtime-0-1     | 15:17:03.202 [W0] INFO:	sim_time 9_788_725_000us: TrafficEvent @ 9_788_725_000us
+runtime-0-1     | 15:17:03.204 [W0] INFO:	sim_time 9_788_725_000us: PhysicsEvent @ 9_788_725_000us
+runtime-0-1     | 15:17:03.204 [W0] INFO:	sim_time 9_788_725_000us: StepEvent @ 9_788_725_000us
+runtime-0-1     | 15:17:03.206 [W0] INFO:	sim_time 9_788_825_000us: GroupedRenderEvent(now=9_788_825_000us)
+sensorsim-0-1   | [2026-03-29 15:17:03,210][nre.grpc.serve][INFO] render_rgb
+sensorsim-0-1   | [2026-03-29 15:17:03,289][nre.grpc.serve][INFO] render_rgb
+sensorsim-0-1   | [2026-03-29 15:17:03,353][nre.grpc.serve][INFO] render_rgb
+runtime-0-1     | 15:17:03.421 [W0] INFO:	sim_time 9_788_825_000us: PolicyEvent @ 9_788_825_000us
+runtime-0-1     | 15:17:03.421 [W0] INFO:	Draining 5 outstanding tasks
+runtime-0-1     | 15:17:03.686 [W0] INFO:	sim_time 9_788_825_000us: ControllerEvent @ 9_788_825_000us
+runtime-0-1     | 15:17:03.693 [W0] INFO:	sim_time 9_788_825_000us: PhysicsEvent @ 9_788_825_000us
+runtime-0-1     | 15:17:03.694 [W0] INFO:	sim_time 9_788_825_000us: TrafficEvent @ 9_788_825_000us
+runtime-0-1     | 15:17:03.695 [W0] INFO:	sim_time 9_788_825_000us: PhysicsEvent @ 9_788_825_000us
+runtime-0-1     | 15:17:03.695 [W0] INFO:	sim_time 9_788_825_000us: StepEvent @ 9_788_825_000us
+runtime-0-1     | 15:17:03.697 [W0] INFO:	sim_time 9_788_925_000us: GroupedRenderEvent(now=9_788_925_000us)
+sensorsim-0-1   | [2026-03-29 15:17:03,700][nre.grpc.serve][INFO] render_rgb
+sensorsim-0-1   | [2026-03-29 15:17:03,778][nre.grpc.serve][INFO] render_rgb
+sensorsim-0-1   | [2026-03-29 15:17:03,842][nre.grpc.serve][INFO] render_rgb
+runtime-0-1     | 15:17:03.909 [W0] INFO:	sim_time 9_788_925_000us: PolicyEvent @ 9_788_925_000us
+runtime-0-1     | 15:17:03.909 [W0] INFO:	Draining 5 outstanding tasks
+runtime-0-1     | 15:17:04.173 [W0] INFO:	sim_time 9_788_925_000us: ControllerEvent @ 9_788_925_000us
+runtime-0-1     | 15:17:04.179 [W0] INFO:	sim_time 9_788_925_000us: PhysicsEvent @ 9_788_925_000us
+runtime-0-1     | 15:17:04.179 [W0] INFO:	sim_time 9_788_925_000us: TrafficEvent @ 9_788_925_000us
+runtime-0-1     | 15:17:04.180 [W0] INFO:	sim_time 9_788_925_000us: PhysicsEvent @ 9_788_925_000us
+runtime-0-1     | 15:17:04.181 [W0] INFO:	sim_time 9_788_925_000us: StepEvent @ 9_788_925_000us
+runtime-0-1     | 15:17:04.182 [W0] INFO:	sim_time 9_789_025_000us: GroupedRenderEvent(now=9_789_025_000us)
+sensorsim-0-1   | [2026-03-29 15:17:04,185][nre.grpc.serve][INFO] render_rgb
+sensorsim-0-1   | [2026-03-29 15:17:04,263][nre.grpc.serve][INFO] render_rgb
+sensorsim-0-1   | [2026-03-29 15:17:04,327][nre.grpc.serve][INFO] render_rgb
+runtime-0-1     | 15:17:04.394 [W0] INFO:	sim_time 9_789_025_000us: PolicyEvent @ 9_789_025_000us
+runtime-0-1     | 15:17:04.394 [W0] INFO:	Draining 5 outstanding tasks
+runtime-0-1     | 15:17:04.657 [W0] INFO:	sim_time 9_789_025_000us: ControllerEvent @ 9_789_025_000us
+runtime-0-1     | 15:17:04.665 [W0] INFO:	sim_time 9_789_025_000us: PhysicsEvent @ 9_789_025_000us
+runtime-0-1     | 15:17:04.665 [W0] INFO:	sim_time 9_789_025_000us: TrafficEvent @ 9_789_025_000us
+runtime-0-1     | 15:17:04.667 [W0] INFO:	sim_time 9_789_025_000us: PhysicsEvent @ 9_789_025_000us
+runtime-0-1     | 15:17:04.667 [W0] INFO:	sim_time 9_789_025_000us: StepEvent @ 9_789_025_000us
+runtime-0-1     | 15:17:04.669 [W0] INFO:	sim_time 9_789_125_000us: GroupedRenderEvent(now=9_789_125_000us)
+sensorsim-0-1   | [2026-03-29 15:17:04,674][nre.grpc.serve][INFO] render_rgb
+sensorsim-0-1   | [2026-03-29 15:17:04,752][nre.grpc.serve][INFO] render_rgb
+sensorsim-0-1   | [2026-03-29 15:17:04,817][nre.grpc.serve][INFO] render_rgb
+runtime-0-1     | 15:17:04.885 [W0] INFO:	sim_time 9_789_125_000us: PolicyEvent @ 9_789_125_000us
+runtime-0-1     | 15:17:04.885 [W0] INFO:	Draining 5 outstanding tasks
+runtime-0-1     | 15:17:05.150 [W0] INFO:	sim_time 9_789_125_000us: ControllerEvent @ 9_789_125_000us
+runtime-0-1     | 15:17:05.158 [W0] INFO:	sim_time 9_789_125_000us: PhysicsEvent @ 9_789_125_000us
+runtime-0-1     | 15:17:05.158 [W0] INFO:	sim_time 9_789_125_000us: TrafficEvent @ 9_789_125_000us
+runtime-0-1     | 15:17:05.160 [W0] INFO:	sim_time 9_789_125_000us: PhysicsEvent @ 9_789_125_000us
+runtime-0-1     | 15:17:05.160 [W0] INFO:	sim_time 9_789_125_000us: StepEvent @ 9_789_125_000us
+runtime-0-1     | 15:17:05.162 [W0] INFO:	sim_time 9_789_225_000us: GroupedRenderEvent(now=9_789_225_000us)
+sensorsim-0-1   | [2026-03-29 15:17:05,165][nre.grpc.serve][INFO] render_rgb
+sensorsim-0-1   | [2026-03-29 15:17:05,245][nre.grpc.serve][INFO] render_rgb
+sensorsim-0-1   | [2026-03-29 15:17:05,310][nre.grpc.serve][INFO] render_rgb
+runtime-0-1     | 15:17:05.380 [W0] INFO:	sim_time 9_789_225_000us: PolicyEvent @ 9_789_225_000us
+runtime-0-1     | 15:17:05.381 [W0] INFO:	Draining 5 outstanding tasks
+runtime-0-1     | 15:17:05.641 [W0] INFO:	sim_time 9_789_225_000us: ControllerEvent @ 9_789_225_000us
+runtime-0-1     | 15:17:05.648 [W0] INFO:	sim_time 9_789_225_000us: PhysicsEvent @ 9_789_225_000us
+runtime-0-1     | 15:17:05.648 [W0] INFO:	sim_time 9_789_225_000us: TrafficEvent @ 9_789_225_000us
+runtime-0-1     | 15:17:05.649 [W0] INFO:	sim_time 9_789_225_000us: PhysicsEvent @ 9_789_225_000us
+runtime-0-1     | 15:17:05.650 [W0] INFO:	sim_time 9_789_225_000us: StepEvent @ 9_789_225_000us
+runtime-0-1     | 15:17:05.652 [W0] INFO:	sim_time 9_789_325_000us: GroupedRenderEvent(now=9_789_325_000us)
+sensorsim-0-1   | [2026-03-29 15:17:05,656][nre.grpc.serve][INFO] render_rgb
+sensorsim-0-1   | [2026-03-29 15:17:05,736][nre.grpc.serve][INFO] render_rgb
+sensorsim-0-1   | [2026-03-29 15:17:05,802][nre.grpc.serve][INFO] render_rgb
+runtime-0-1     | 15:17:05.870 [W0] INFO:	sim_time 9_789_325_000us: PolicyEvent @ 9_789_325_000us
+runtime-0-1     | 15:17:05.870 [W0] INFO:	Draining 5 outstanding tasks
+runtime-0-1     | 15:17:06.133 [W0] INFO:	sim_time 9_789_325_000us: ControllerEvent @ 9_789_325_000us
+runtime-0-1     | 15:17:06.140 [W0] INFO:	sim_time 9_789_325_000us: PhysicsEvent @ 9_789_325_000us
+runtime-0-1     | 15:17:06.140 [W0] INFO:	sim_time 9_789_325_000us: TrafficEvent @ 9_789_325_000us
+runtime-0-1     | 15:17:06.141 [W0] INFO:	sim_time 9_789_325_000us: PhysicsEvent @ 9_789_325_000us
+runtime-0-1     | 15:17:06.141 [W0] INFO:	sim_time 9_789_325_000us: StepEvent @ 9_789_325_000us
+runtime-0-1     | 15:17:06.143 [W0] INFO:	sim_time 9_789_425_000us: GroupedRenderEvent(now=9_789_425_000us)
+sensorsim-0-1   | [2026-03-29 15:17:06,148][nre.grpc.serve][INFO] render_rgb
+sensorsim-0-1   | [2026-03-29 15:17:06,227][nre.grpc.serve][INFO] render_rgb
+sensorsim-0-1   | [2026-03-29 15:17:06,293][nre.grpc.serve][INFO] render_rgb
+runtime-0-1     | 15:17:06.362 [W0] INFO:	sim_time 9_789_425_000us: PolicyEvent @ 9_789_425_000us
+runtime-0-1     | 15:17:06.362 [W0] INFO:	Draining 5 outstanding tasks
+runtime-0-1     | 15:17:06.626 [W0] INFO:	sim_time 9_789_425_000us: ControllerEvent @ 9_789_425_000us
+runtime-0-1     | 15:17:06.633 [W0] INFO:	sim_time 9_789_425_000us: PhysicsEvent @ 9_789_425_000us
+runtime-0-1     | 15:17:06.633 [W0] INFO:	sim_time 9_789_425_000us: TrafficEvent @ 9_789_425_000us
+runtime-0-1     | 15:17:06.635 [W0] INFO:	sim_time 9_789_425_000us: PhysicsEvent @ 9_789_425_000us
+runtime-0-1     | 15:17:06.635 [W0] INFO:	sim_time 9_789_425_000us: StepEvent @ 9_789_425_000us
+runtime-0-1     | 15:17:06.637 [W0] INFO:	sim_time 9_789_525_000us: GroupedRenderEvent(now=9_789_525_000us)
+sensorsim-0-1   | [2026-03-29 15:17:06,640][nre.grpc.serve][INFO] render_rgb
+sensorsim-0-1   | [2026-03-29 15:17:06,719][nre.grpc.serve][INFO] render_rgb
+sensorsim-0-1   | [2026-03-29 15:17:06,785][nre.grpc.serve][INFO] render_rgb
+runtime-0-1     | 15:17:06.853 [W0] INFO:	sim_time 9_789_525_000us: PolicyEvent @ 9_789_525_000us
+runtime-0-1     | 15:17:06.853 [W0] INFO:	Draining 5 outstanding tasks
+runtime-0-1     | 15:17:07.119 [W0] INFO:	sim_time 9_789_525_000us: ControllerEvent @ 9_789_525_000us
+runtime-0-1     | 15:17:07.125 [W0] INFO:	sim_time 9_789_525_000us: PhysicsEvent @ 9_789_525_000us
+runtime-0-1     | 15:17:07.125 [W0] INFO:	sim_time 9_789_525_000us: TrafficEvent @ 9_789_525_000us
+runtime-0-1     | 15:17:07.127 [W0] INFO:	sim_time 9_789_525_000us: PhysicsEvent @ 9_789_525_000us
+runtime-0-1     | 15:17:07.128 [W0] INFO:	sim_time 9_789_525_000us: StepEvent @ 9_789_525_000us
+runtime-0-1     | 15:17:07.130 [W0] INFO:	sim_time 9_789_625_000us: GroupedRenderEvent(now=9_789_625_000us)
+sensorsim-0-1   | [2026-03-29 15:17:07,134][nre.grpc.serve][INFO] render_rgb
+sensorsim-0-1   | [2026-03-29 15:17:07,209][nre.grpc.serve][INFO] render_rgb
+sensorsim-0-1   | [2026-03-29 15:17:07,274][nre.grpc.serve][INFO] render_rgb
+runtime-0-1     | 15:17:07.340 [W0] INFO:	sim_time 9_789_625_000us: PolicyEvent @ 9_789_625_000us
+runtime-0-1     | 15:17:07.341 [W0] INFO:	Draining 5 outstanding tasks
+runtime-0-1     | 15:17:07.649 [W0] INFO:	sim_time 9_789_625_000us: ControllerEvent @ 9_789_625_000us
+runtime-0-1     | 15:17:07.655 [W0] INFO:	sim_time 9_789_625_000us: PhysicsEvent @ 9_789_625_000us
+runtime-0-1     | 15:17:07.655 [W0] INFO:	sim_time 9_789_625_000us: TrafficEvent @ 9_789_625_000us
+runtime-0-1     | 15:17:07.657 [W0] INFO:	sim_time 9_789_625_000us: PhysicsEvent @ 9_789_625_000us
+runtime-0-1     | 15:17:07.657 [W0] INFO:	sim_time 9_789_625_000us: StepEvent @ 9_789_625_000us
+runtime-0-1     | 15:17:07.659 [W0] INFO:	sim_time 9_789_725_000us: GroupedRenderEvent(now=9_789_725_000us)
+sensorsim-0-1   | [2026-03-29 15:17:07,663][nre.grpc.serve][INFO] render_rgb
+sensorsim-0-1   | [2026-03-29 15:17:07,740][nre.grpc.serve][INFO] render_rgb
+sensorsim-0-1   | [2026-03-29 15:17:07,807][nre.grpc.serve][INFO] render_rgb
+runtime-0-1     | 15:17:07.875 [W0] INFO:	sim_time 9_789_725_000us: PolicyEvent @ 9_789_725_000us
+runtime-0-1     | 15:17:07.875 [W0] INFO:	Draining 5 outstanding tasks
+runtime-0-1     | 15:17:08.153 [W0] INFO:	sim_time 9_789_725_000us: ControllerEvent @ 9_789_725_000us
+runtime-0-1     | 15:17:08.161 [W0] INFO:	sim_time 9_789_725_000us: PhysicsEvent @ 9_789_725_000us
+runtime-0-1     | 15:17:08.161 [W0] INFO:	sim_time 9_789_725_000us: TrafficEvent @ 9_789_725_000us
+runtime-0-1     | 15:17:08.163 [W0] INFO:	sim_time 9_789_725_000us: PhysicsEvent @ 9_789_725_000us
+runtime-0-1     | 15:17:08.163 [W0] INFO:	sim_time 9_789_725_000us: StepEvent @ 9_789_725_000us
+runtime-0-1     | 15:17:08.166 [W0] INFO:	sim_time 9_789_825_000us: GroupedRenderEvent(now=9_789_825_000us)
+sensorsim-0-1   | [2026-03-29 15:17:08,169][nre.grpc.serve][INFO] render_rgb
+sensorsim-0-1   | [2026-03-29 15:17:08,245][nre.grpc.serve][INFO] render_rgb
+sensorsim-0-1   | [2026-03-29 15:17:08,310][nre.grpc.serve][INFO] render_rgb
+runtime-0-1     | 15:17:08.377 [W0] INFO:	sim_time 9_789_825_000us: PolicyEvent @ 9_789_825_000us
+runtime-0-1     | 15:17:08.378 [W0] INFO:	Draining 5 outstanding tasks
+runtime-0-1     | 15:17:08.643 [W0] INFO:	sim_time 9_789_825_000us: ControllerEvent @ 9_789_825_000us
+runtime-0-1     | 15:17:08.649 [W0] INFO:	sim_time 9_789_825_000us: PhysicsEvent @ 9_789_825_000us
+runtime-0-1     | 15:17:08.649 [W0] INFO:	sim_time 9_789_825_000us: TrafficEvent @ 9_789_825_000us
+runtime-0-1     | 15:17:08.651 [W0] INFO:	sim_time 9_789_825_000us: PhysicsEvent @ 9_789_825_000us
+runtime-0-1     | 15:17:08.651 [W0] INFO:	sim_time 9_789_825_000us: StepEvent @ 9_789_825_000us
+runtime-0-1     | 15:17:08.654 [W0] INFO:	sim_time 9_789_925_000us: GroupedRenderEvent(now=9_789_925_000us)
+sensorsim-0-1   | [2026-03-29 15:17:08,657][nre.grpc.serve][INFO] render_rgb
+sensorsim-0-1   | [2026-03-29 15:17:08,734][nre.grpc.serve][INFO] render_rgb
+sensorsim-0-1   | [2026-03-29 15:17:08,799][nre.grpc.serve][INFO] render_rgb
+runtime-0-1     | 15:17:08.867 [W0] INFO:	sim_time 9_789_925_000us: PolicyEvent @ 9_789_925_000us
+runtime-0-1     | 15:17:08.867 [W0] INFO:	Draining 5 outstanding tasks
+runtime-0-1     | 15:17:09.140 [W0] INFO:	sim_time 9_789_925_000us: ControllerEvent @ 9_789_925_000us
+runtime-0-1     | 15:17:09.147 [W0] INFO:	sim_time 9_789_925_000us: PhysicsEvent @ 9_789_925_000us
+runtime-0-1     | 15:17:09.147 [W0] INFO:	sim_time 9_789_925_000us: TrafficEvent @ 9_789_925_000us
+runtime-0-1     | 15:17:09.149 [W0] INFO:	sim_time 9_789_925_000us: PhysicsEvent @ 9_789_925_000us
+runtime-0-1     | 15:17:09.149 [W0] INFO:	sim_time 9_789_925_000us: StepEvent @ 9_789_925_000us
+runtime-0-1     | 15:17:09.152 [W0] INFO:	sim_time 9_790_025_000us: GroupedRenderEvent(now=9_790_025_000us)
+sensorsim-0-1   | [2026-03-29 15:17:09,156][nre.grpc.serve][INFO] render_rgb
+sensorsim-0-1   | [2026-03-29 15:17:09,234][nre.grpc.serve][INFO] render_rgb
+sensorsim-0-1   | [2026-03-29 15:17:09,298][nre.grpc.serve][INFO] render_rgb
+runtime-0-1     | 15:17:09.368 [W0] INFO:	sim_time 9_790_025_000us: PolicyEvent @ 9_790_025_000us
+runtime-0-1     | 15:17:09.369 [W0] INFO:	Draining 5 outstanding tasks
+runtime-0-1     | 15:17:09.641 [W0] INFO:	sim_time 9_790_025_000us: ControllerEvent @ 9_790_025_000us
+runtime-0-1     | 15:17:09.647 [W0] INFO:	sim_time 9_790_025_000us: PhysicsEvent @ 9_790_025_000us
+runtime-0-1     | 15:17:09.647 [W0] INFO:	sim_time 9_790_025_000us: TrafficEvent @ 9_790_025_000us
+runtime-0-1     | 15:17:09.650 [W0] INFO:	sim_time 9_790_025_000us: PhysicsEvent @ 9_790_025_000us
+runtime-0-1     | 15:17:09.651 [W0] INFO:	sim_time 9_790_025_000us: StepEvent @ 9_790_025_000us
+runtime-0-1     | 15:17:09.653 [W0] INFO:	sim_time 9_790_125_000us: GroupedRenderEvent(now=9_790_125_000us)
+sensorsim-0-1   | [2026-03-29 15:17:09,656][nre.grpc.serve][INFO] render_rgb
+sensorsim-0-1   | [2026-03-29 15:17:09,733][nre.grpc.serve][INFO] render_rgb
+sensorsim-0-1   | [2026-03-29 15:17:09,797][nre.grpc.serve][INFO] render_rgb
+runtime-0-1     | 15:17:09.866 [W0] INFO:	sim_time 9_790_125_000us: PolicyEvent @ 9_790_125_000us
+runtime-0-1     | 15:17:09.867 [W0] INFO:	Draining 5 outstanding tasks
+runtime-0-1     | 15:17:10.134 [W0] INFO:	sim_time 9_790_125_000us: ControllerEvent @ 9_790_125_000us
+runtime-0-1     | 15:17:10.142 [W0] INFO:	sim_time 9_790_125_000us: PhysicsEvent @ 9_790_125_000us
+runtime-0-1     | 15:17:10.142 [W0] INFO:	sim_time 9_790_125_000us: TrafficEvent @ 9_790_125_000us
+runtime-0-1     | 15:17:10.143 [W0] INFO:	sim_time 9_790_125_000us: PhysicsEvent @ 9_790_125_000us
+runtime-0-1     | 15:17:10.143 [W0] INFO:	sim_time 9_790_125_000us: StepEvent @ 9_790_125_000us
+runtime-0-1     | 15:17:10.145 [W0] INFO:	sim_time 9_790_225_000us: GroupedRenderEvent(now=9_790_225_000us)
+sensorsim-0-1   | [2026-03-29 15:17:10,149][nre.grpc.serve][INFO] render_rgb
+sensorsim-0-1   | [2026-03-29 15:17:10,227][nre.grpc.serve][INFO] render_rgb
+sensorsim-0-1   | [2026-03-29 15:17:10,292][nre.grpc.serve][INFO] render_rgb
+runtime-0-1     | 15:17:10.362 [W0] INFO:	sim_time 9_790_225_000us: PolicyEvent @ 9_790_225_000us
+runtime-0-1     | 15:17:10.362 [W0] INFO:	Draining 5 outstanding tasks
+runtime-0-1     | 15:17:10.626 [W0] INFO:	sim_time 9_790_225_000us: ControllerEvent @ 9_790_225_000us
+runtime-0-1     | 15:17:10.634 [W0] INFO:	sim_time 9_790_225_000us: PhysicsEvent @ 9_790_225_000us
+runtime-0-1     | 15:17:10.658 [W0] INFO:	sim_time 9_790_225_000us: TrafficEvent @ 9_790_225_000us
+runtime-0-1     | 15:17:10.660 [W0] INFO:	sim_time 9_790_225_000us: PhysicsEvent @ 9_790_225_000us
+runtime-0-1     | 15:17:10.661 [W0] INFO:	sim_time 9_790_225_000us: StepEvent @ 9_790_225_000us
+runtime-0-1     | 15:17:10.663 [W0] INFO:	sim_time 9_790_325_000us: GroupedRenderEvent(now=9_790_325_000us)
+sensorsim-0-1   | [2026-03-29 15:17:10,666][nre.grpc.serve][INFO] render_rgb
+sensorsim-0-1   | [2026-03-29 15:17:10,745][nre.grpc.serve][INFO] render_rgb
+sensorsim-0-1   | [2026-03-29 15:17:10,810][nre.grpc.serve][INFO] render_rgb
+runtime-0-1     | 15:17:10.877 [W0] INFO:	sim_time 9_790_325_000us: PolicyEvent @ 9_790_325_000us
+runtime-0-1     | 15:17:10.877 [W0] INFO:	Draining 5 outstanding tasks
+runtime-0-1     | 15:17:11.142 [W0] INFO:	sim_time 9_790_325_000us: ControllerEvent @ 9_790_325_000us
+runtime-0-1     | 15:17:11.149 [W0] INFO:	sim_time 9_790_325_000us: PhysicsEvent @ 9_790_325_000us
+runtime-0-1     | 15:17:11.152 [W0] INFO:	sim_time 9_790_325_000us: TrafficEvent @ 9_790_325_000us
+runtime-0-1     | 15:17:11.155 [W0] INFO:	sim_time 9_790_325_000us: PhysicsEvent @ 9_790_325_000us
+runtime-0-1     | 15:17:11.156 [W0] INFO:	sim_time 9_790_325_000us: StepEvent @ 9_790_325_000us
+runtime-0-1     | 15:17:11.162 [W0] INFO:	sim_time 9_790_425_000us: GroupedRenderEvent(now=9_790_425_000us)
+sensorsim-0-1   | [2026-03-29 15:17:11,165][nre.grpc.serve][INFO] render_rgb
+sensorsim-0-1   | [2026-03-29 15:17:11,244][nre.grpc.serve][INFO] render_rgb
+sensorsim-0-1   | [2026-03-29 15:17:11,310][nre.grpc.serve][INFO] render_rgb
+runtime-0-1     | 15:17:11.379 [W0] INFO:	sim_time 9_790_425_000us: PolicyEvent @ 9_790_425_000us
+runtime-0-1     | 15:17:11.379 [W0] INFO:	Draining 5 outstanding tasks
+runtime-0-1     | 15:17:11.648 [W0] INFO:	sim_time 9_790_425_000us: ControllerEvent @ 9_790_425_000us
+runtime-0-1     | 15:17:11.654 [W0] INFO:	sim_time 9_790_425_000us: PhysicsEvent @ 9_790_425_000us
+runtime-0-1     | 15:17:11.678 [W0] INFO:	sim_time 9_790_425_000us: TrafficEvent @ 9_790_425_000us
+runtime-0-1     | 15:17:11.679 [W0] INFO:	sim_time 9_790_425_000us: PhysicsEvent @ 9_790_425_000us
+runtime-0-1     | 15:17:11.680 [W0] INFO:	sim_time 9_790_425_000us: StepEvent @ 9_790_425_000us
+runtime-0-1     | 15:17:11.682 [W0] INFO:	sim_time 9_790_525_000us: GroupedRenderEvent(now=9_790_525_000us)
+sensorsim-0-1   | [2026-03-29 15:17:11,685][nre.grpc.serve][INFO] render_rgb
+sensorsim-0-1   | [2026-03-29 15:17:11,763][nre.grpc.serve][INFO] render_rgb
+sensorsim-0-1   | [2026-03-29 15:17:11,830][nre.grpc.serve][INFO] render_rgb
+runtime-0-1     | 15:17:11.900 [W0] INFO:	sim_time 9_790_525_000us: PolicyEvent @ 9_790_525_000us
+runtime-0-1     | 15:17:11.901 [W0] INFO:	Draining 5 outstanding tasks
+runtime-0-1     | 15:17:12.164 [W0] INFO:	sim_time 9_790_525_000us: ControllerEvent @ 9_790_525_000us
+runtime-0-1     | 15:17:12.171 [W0] INFO:	sim_time 9_790_525_000us: PhysicsEvent @ 9_790_525_000us
+runtime-0-1     | 15:17:12.175 [W0] INFO:	sim_time 9_790_525_000us: TrafficEvent @ 9_790_525_000us
+runtime-0-1     | 15:17:12.176 [W0] INFO:	sim_time 9_790_525_000us: PhysicsEvent @ 9_790_525_000us
+runtime-0-1     | 15:17:12.177 [W0] INFO:	sim_time 9_790_525_000us: StepEvent @ 9_790_525_000us
+runtime-0-1     | 15:17:12.179 [W0] INFO:	sim_time 9_790_625_000us: GroupedRenderEvent(now=9_790_625_000us)
+sensorsim-0-1   | [2026-03-29 15:17:12,182][nre.grpc.serve][INFO] render_rgb
+sensorsim-0-1   | [2026-03-29 15:17:12,261][nre.grpc.serve][INFO] render_rgb
+sensorsim-0-1   | [2026-03-29 15:17:12,326][nre.grpc.serve][INFO] render_rgb
+runtime-0-1     | 15:17:12.395 [W0] INFO:	sim_time 9_790_625_000us: PolicyEvent @ 9_790_625_000us
+runtime-0-1     | 15:17:12.395 [W0] INFO:	Draining 5 outstanding tasks
+runtime-0-1     | 15:17:12.663 [W0] INFO:	sim_time 9_790_625_000us: ControllerEvent @ 9_790_625_000us
+runtime-0-1     | 15:17:12.670 [W0] INFO:	sim_time 9_790_625_000us: PhysicsEvent @ 9_790_625_000us
+runtime-0-1     | 15:17:12.673 [W0] INFO:	sim_time 9_790_625_000us: TrafficEvent @ 9_790_625_000us
+runtime-0-1     | 15:17:12.676 [W0] INFO:	sim_time 9_790_625_000us: PhysicsEvent @ 9_790_625_000us
+runtime-0-1     | 15:17:12.676 [W0] INFO:	sim_time 9_790_625_000us: StepEvent @ 9_790_625_000us
+runtime-0-1     | 15:17:12.696 [W0] INFO:	sim_time 9_790_725_000us: GroupedRenderEvent(now=9_790_725_000us)
+sensorsim-0-1   | [2026-03-29 15:17:12,699][nre.grpc.serve][INFO] render_rgb
+sensorsim-0-1   | [2026-03-29 15:17:12,777][nre.grpc.serve][INFO] render_rgb
+sensorsim-0-1   | [2026-03-29 15:17:12,843][nre.grpc.serve][INFO] render_rgb
+runtime-0-1     | 15:17:12.911 [W0] INFO:	sim_time 9_790_725_000us: PolicyEvent @ 9_790_725_000us
+runtime-0-1     | 15:17:12.911 [W0] INFO:	Draining 5 outstanding tasks
+runtime-0-1     | 15:17:13.174 [W0] INFO:	sim_time 9_790_725_000us: ControllerEvent @ 9_790_725_000us
+runtime-0-1     | 15:17:13.180 [W0] INFO:	sim_time 9_790_725_000us: PhysicsEvent @ 9_790_725_000us
+runtime-0-1     | 15:17:13.183 [W0] INFO:	sim_time 9_790_725_000us: TrafficEvent @ 9_790_725_000us
+runtime-0-1     | 15:17:13.184 [W0] INFO:	sim_time 9_790_725_000us: PhysicsEvent @ 9_790_725_000us
+runtime-0-1     | 15:17:13.185 [W0] INFO:	sim_time 9_790_725_000us: StepEvent @ 9_790_725_000us
+runtime-0-1     | 15:17:13.187 [W0] INFO:	sim_time 9_790_825_000us: GroupedRenderEvent(now=9_790_825_000us)
+sensorsim-0-1   | [2026-03-29 15:17:13,190][nre.grpc.serve][INFO] render_rgb
+sensorsim-0-1   | [2026-03-29 15:17:13,268][nre.grpc.serve][INFO] render_rgb
+sensorsim-0-1   | [2026-03-29 15:17:13,336][nre.grpc.serve][INFO] render_rgb
+runtime-0-1     | 15:17:13.404 [W0] INFO:	sim_time 9_790_825_000us: PolicyEvent @ 9_790_825_000us
+runtime-0-1     | 15:17:13.405 [W0] INFO:	Draining 5 outstanding tasks
+runtime-0-1     | 15:17:13.666 [W0] INFO:	sim_time 9_790_825_000us: ControllerEvent @ 9_790_825_000us
+runtime-0-1     | 15:17:13.673 [W0] INFO:	sim_time 9_790_825_000us: PhysicsEvent @ 9_790_825_000us
+runtime-0-1     | 15:17:13.675 [W0] INFO:	sim_time 9_790_825_000us: TrafficEvent @ 9_790_825_000us
+runtime-0-1     | 15:17:13.677 [W0] INFO:	sim_time 9_790_825_000us: PhysicsEvent @ 9_790_825_000us
+runtime-0-1     | 15:17:13.678 [W0] INFO:	sim_time 9_790_825_000us: StepEvent @ 9_790_825_000us
+runtime-0-1     | 15:17:13.679 [W0] INFO:	sim_time 9_790_925_000us: GroupedRenderEvent(now=9_790_925_000us)
+sensorsim-0-1   | [2026-03-29 15:17:13,682][nre.grpc.serve][INFO] render_rgb
+sensorsim-0-1   | [2026-03-29 15:17:13,762][nre.grpc.serve][INFO] render_rgb
+sensorsim-0-1   | [2026-03-29 15:17:13,827][nre.grpc.serve][INFO] render_rgb
+runtime-0-1     | 15:17:13.895 [W0] INFO:	sim_time 9_790_925_000us: PolicyEvent @ 9_790_925_000us
+runtime-0-1     | 15:17:13.895 [W0] INFO:	Draining 5 outstanding tasks
+runtime-0-1     | 15:17:14.161 [W0] INFO:	sim_time 9_790_925_000us: ControllerEvent @ 9_790_925_000us
+runtime-0-1     | 15:17:14.167 [W0] INFO:	sim_time 9_790_925_000us: PhysicsEvent @ 9_790_925_000us
+runtime-0-1     | 15:17:14.170 [W0] INFO:	sim_time 9_790_925_000us: TrafficEvent @ 9_790_925_000us
+runtime-0-1     | 15:17:14.173 [W0] INFO:	sim_time 9_790_925_000us: PhysicsEvent @ 9_790_925_000us
+runtime-0-1     | 15:17:14.173 [W0] INFO:	sim_time 9_790_925_000us: StepEvent @ 9_790_925_000us
+runtime-0-1     | 15:17:14.175 [W0] INFO:	sim_time 9_791_025_000us: GroupedRenderEvent(now=9_791_025_000us)
+sensorsim-0-1   | [2026-03-29 15:17:14,179][nre.grpc.serve][INFO] render_rgb
+sensorsim-0-1   | [2026-03-29 15:17:14,255][nre.grpc.serve][INFO] render_rgb
+sensorsim-0-1   | [2026-03-29 15:17:14,320][nre.grpc.serve][INFO] render_rgb
+runtime-0-1     | 15:17:14.388 [W0] INFO:	sim_time 9_791_025_000us: PolicyEvent @ 9_791_025_000us
+runtime-0-1     | 15:17:14.389 [W0] INFO:	Draining 5 outstanding tasks
+runtime-0-1     | 15:17:14.653 [W0] INFO:	sim_time 9_791_025_000us: ControllerEvent @ 9_791_025_000us
+runtime-0-1     | 15:17:14.661 [W0] INFO:	sim_time 9_791_025_000us: PhysicsEvent @ 9_791_025_000us
+runtime-0-1     | 15:17:14.665 [W0] INFO:	sim_time 9_791_025_000us: TrafficEvent @ 9_791_025_000us
+runtime-0-1     | 15:17:14.666 [W0] INFO:	sim_time 9_791_025_000us: PhysicsEvent @ 9_791_025_000us
+runtime-0-1     | 15:17:14.667 [W0] INFO:	sim_time 9_791_025_000us: StepEvent @ 9_791_025_000us
+runtime-0-1     | 15:17:14.669 [W0] INFO:	sim_time 9_791_125_000us: GroupedRenderEvent(now=9_791_125_000us)
+sensorsim-0-1   | [2026-03-29 15:17:14,671][nre.grpc.serve][INFO] render_rgb
+sensorsim-0-1   | [2026-03-29 15:17:14,749][nre.grpc.serve][INFO] render_rgb
+sensorsim-0-1   | [2026-03-29 15:17:14,814][nre.grpc.serve][INFO] render_rgb
+runtime-0-1     | 15:17:14.881 [W0] INFO:	sim_time 9_791_125_000us: PolicyEvent @ 9_791_125_000us
+runtime-0-1     | 15:17:14.882 [W0] INFO:	Draining 5 outstanding tasks
+runtime-0-1     | 15:17:15.148 [W0] INFO:	sim_time 9_791_125_000us: ControllerEvent @ 9_791_125_000us
+runtime-0-1     | 15:17:15.155 [W0] INFO:	sim_time 9_791_125_000us: PhysicsEvent @ 9_791_125_000us
+runtime-0-1     | 15:17:15.158 [W0] INFO:	sim_time 9_791_125_000us: TrafficEvent @ 9_791_125_000us
+runtime-0-1     | 15:17:15.159 [W0] INFO:	sim_time 9_791_125_000us: PhysicsEvent @ 9_791_125_000us
+runtime-0-1     | 15:17:15.160 [W0] INFO:	sim_time 9_791_125_000us: StepEvent @ 9_791_125_000us
+runtime-0-1     | 15:17:15.162 [W0] INFO:	sim_time 9_791_225_000us: GroupedRenderEvent(now=9_791_225_000us)
+sensorsim-0-1   | [2026-03-29 15:17:15,165][nre.grpc.serve][INFO] render_rgb
+sensorsim-0-1   | [2026-03-29 15:17:15,242][nre.grpc.serve][INFO] render_rgb
+sensorsim-0-1   | [2026-03-29 15:17:15,308][nre.grpc.serve][INFO] render_rgb
+runtime-0-1     | 15:17:15.376 [W0] INFO:	sim_time 9_791_225_000us: PolicyEvent @ 9_791_225_000us
+runtime-0-1     | 15:17:15.376 [W0] INFO:	Draining 5 outstanding tasks
+runtime-0-1     | 15:17:15.639 [W0] INFO:	sim_time 9_791_225_000us: ControllerEvent @ 9_791_225_000us
+runtime-0-1     | 15:17:15.645 [W0] INFO:	sim_time 9_791_225_000us: PhysicsEvent @ 9_791_225_000us
+runtime-0-1     | 15:17:15.649 [W0] INFO:	sim_time 9_791_225_000us: TrafficEvent @ 9_791_225_000us
+runtime-0-1     | 15:17:15.652 [W0] INFO:	sim_time 9_791_225_000us: PhysicsEvent @ 9_791_225_000us
+runtime-0-1     | 15:17:15.653 [W0] INFO:	sim_time 9_791_225_000us: StepEvent @ 9_791_225_000us
+runtime-0-1     | 15:17:15.655 [W0] INFO:	sim_time 9_791_325_000us: GroupedRenderEvent(now=9_791_325_000us)
+sensorsim-0-1   | [2026-03-29 15:17:15,658][nre.grpc.serve][INFO] render_rgb
+sensorsim-0-1   | [2026-03-29 15:17:15,736][nre.grpc.serve][INFO] render_rgb
+sensorsim-0-1   | [2026-03-29 15:17:15,800][nre.grpc.serve][INFO] render_rgb
+runtime-0-1     | 15:17:15.869 [W0] INFO:	sim_time 9_791_325_000us: PolicyEvent @ 9_791_325_000us
+runtime-0-1     | 15:17:15.869 [W0] INFO:	Draining 5 outstanding tasks
+runtime-0-1     | 15:17:16.138 [W0] INFO:	sim_time 9_791_325_000us: ControllerEvent @ 9_791_325_000us
+runtime-0-1     | 15:17:16.144 [W0] INFO:	sim_time 9_791_325_000us: PhysicsEvent @ 9_791_325_000us
+runtime-0-1     | 15:17:16.147 [W0] INFO:	sim_time 9_791_325_000us: TrafficEvent @ 9_791_325_000us
+runtime-0-1     | 15:17:16.148 [W0] INFO:	sim_time 9_791_325_000us: PhysicsEvent @ 9_791_325_000us
+runtime-0-1     | 15:17:16.149 [W0] INFO:	sim_time 9_791_325_000us: StepEvent @ 9_791_325_000us
+runtime-0-1     | 15:17:16.151 [W0] INFO:	sim_time 9_791_425_000us: GroupedRenderEvent(now=9_791_425_000us)
+sensorsim-0-1   | [2026-03-29 15:17:16,154][nre.grpc.serve][INFO] render_rgb
+sensorsim-0-1   | [2026-03-29 15:17:16,231][nre.grpc.serve][INFO] render_rgb
+sensorsim-0-1   | [2026-03-29 15:17:16,295][nre.grpc.serve][INFO] render_rgb
+runtime-0-1     | 15:17:16.365 [W0] INFO:	sim_time 9_791_425_000us: PolicyEvent @ 9_791_425_000us
+runtime-0-1     | 15:17:16.365 [W0] INFO:	Draining 5 outstanding tasks
+runtime-0-1     | 15:17:16.630 [W0] INFO:	sim_time 9_791_425_000us: ControllerEvent @ 9_791_425_000us
+runtime-0-1     | 15:17:16.637 [W0] INFO:	sim_time 9_791_425_000us: PhysicsEvent @ 9_791_425_000us
+runtime-0-1     | 15:17:16.641 [W0] INFO:	sim_time 9_791_425_000us: TrafficEvent @ 9_791_425_000us
+runtime-0-1     | 15:17:16.642 [W0] INFO:	sim_time 9_791_425_000us: PhysicsEvent @ 9_791_425_000us
+runtime-0-1     | 15:17:16.644 [W0] INFO:	sim_time 9_791_425_000us: StepEvent @ 9_791_425_000us
+runtime-0-1     | 15:17:16.647 [W0] INFO:	sim_time 9_791_525_000us: GroupedRenderEvent(now=9_791_525_000us)
+sensorsim-0-1   | [2026-03-29 15:17:16,650][nre.grpc.serve][INFO] render_rgb
+sensorsim-0-1   | [2026-03-29 15:17:16,727][nre.grpc.serve][INFO] render_rgb
+sensorsim-0-1   | [2026-03-29 15:17:16,791][nre.grpc.serve][INFO] render_rgb
+runtime-0-1     | 15:17:16.859 [W0] INFO:	sim_time 9_791_525_000us: PolicyEvent @ 9_791_525_000us
+runtime-0-1     | 15:17:16.859 [W0] INFO:	Draining 5 outstanding tasks
+runtime-0-1     | 15:17:17.125 [W0] INFO:	sim_time 9_791_525_000us: ControllerEvent @ 9_791_525_000us
+runtime-0-1     | 15:17:17.133 [W0] INFO:	sim_time 9_791_525_000us: PhysicsEvent @ 9_791_525_000us
+runtime-0-1     | 15:17:17.136 [W0] INFO:	sim_time 9_791_525_000us: TrafficEvent @ 9_791_525_000us
+runtime-0-1     | 15:17:17.139 [W0] INFO:	sim_time 9_791_525_000us: PhysicsEvent @ 9_791_525_000us
+runtime-0-1     | 15:17:17.140 [W0] INFO:	sim_time 9_791_525_000us: StepEvent @ 9_791_525_000us
+runtime-0-1     | 15:17:17.142 [W0] INFO:	sim_time 9_791_625_000us: GroupedRenderEvent(now=9_791_625_000us)
+sensorsim-0-1   | [2026-03-29 15:17:17,145][nre.grpc.serve][INFO] render_rgb
+sensorsim-0-1   | [2026-03-29 15:17:17,222][nre.grpc.serve][INFO] render_rgb
+sensorsim-0-1   | [2026-03-29 15:17:17,286][nre.grpc.serve][INFO] render_rgb
+runtime-0-1     | 15:17:17.354 [W0] INFO:	sim_time 9_791_625_000us: PolicyEvent @ 9_791_625_000us
+runtime-0-1     | 15:17:17.355 [W0] INFO:	Draining 5 outstanding tasks
+runtime-0-1     | 15:17:17.623 [W0] INFO:	sim_time 9_791_625_000us: ControllerEvent @ 9_791_625_000us
+runtime-0-1     | 15:17:17.630 [W0] INFO:	sim_time 9_791_625_000us: PhysicsEvent @ 9_791_625_000us
+runtime-0-1     | 15:17:17.633 [W0] INFO:	sim_time 9_791_625_000us: TrafficEvent @ 9_791_625_000us
+runtime-0-1     | 15:17:17.635 [W0] INFO:	sim_time 9_791_625_000us: PhysicsEvent @ 9_791_625_000us
+runtime-0-1     | 15:17:17.636 [W0] INFO:	sim_time 9_791_625_000us: StepEvent @ 9_791_625_000us
+runtime-0-1     | 15:17:17.638 [W0] INFO:	sim_time 9_791_725_000us: GroupedRenderEvent(now=9_791_725_000us)
+sensorsim-0-1   | [2026-03-29 15:17:17,641][nre.grpc.serve][INFO] render_rgb
+sensorsim-0-1   | [2026-03-29 15:17:17,717][nre.grpc.serve][INFO] render_rgb
+sensorsim-0-1   | [2026-03-29 15:17:17,782][nre.grpc.serve][INFO] render_rgb
+runtime-0-1     | 15:17:17.850 [W0] INFO:	sim_time 9_791_725_000us: PolicyEvent @ 9_791_725_000us
+runtime-0-1     | 15:17:17.851 [W0] INFO:	Draining 5 outstanding tasks
+runtime-0-1     | 15:17:18.120 [W0] INFO:	sim_time 9_791_725_000us: ControllerEvent @ 9_791_725_000us
+runtime-0-1     | 15:17:18.127 [W0] INFO:	sim_time 9_791_725_000us: PhysicsEvent @ 9_791_725_000us
+runtime-0-1     | 15:17:18.131 [W0] INFO:	sim_time 9_791_725_000us: TrafficEvent @ 9_791_725_000us
+runtime-0-1     | 15:17:18.132 [W0] INFO:	sim_time 9_791_725_000us: PhysicsEvent @ 9_791_725_000us
+runtime-0-1     | 15:17:18.133 [W0] INFO:	sim_time 9_791_725_000us: StepEvent @ 9_791_725_000us
+runtime-0-1     | 15:17:18.135 [W0] INFO:	sim_time 9_791_825_000us: GroupedRenderEvent(now=9_791_825_000us)
+sensorsim-0-1   | [2026-03-29 15:17:18,139][nre.grpc.serve][INFO] render_rgb
+sensorsim-0-1   | [2026-03-29 15:17:18,217][nre.grpc.serve][INFO] render_rgb
+sensorsim-0-1   | [2026-03-29 15:17:18,280][nre.grpc.serve][INFO] render_rgb
+runtime-0-1     | 15:17:18.349 [W0] INFO:	sim_time 9_791_825_000us: PolicyEvent @ 9_791_825_000us
+runtime-0-1     | 15:17:18.349 [W0] INFO:	Draining 5 outstanding tasks
+runtime-0-1     | 15:17:18.613 [W0] INFO:	sim_time 9_791_825_000us: ControllerEvent @ 9_791_825_000us
+runtime-0-1     | 15:17:18.622 [W0] INFO:	sim_time 9_791_825_000us: PhysicsEvent @ 9_791_825_000us
+runtime-0-1     | 15:17:18.626 [W0] INFO:	sim_time 9_791_825_000us: TrafficEvent @ 9_791_825_000us
+runtime-0-1     | 15:17:18.627 [W0] INFO:	sim_time 9_791_825_000us: PhysicsEvent @ 9_791_825_000us
+runtime-0-1     | 15:17:18.628 [W0] INFO:	sim_time 9_791_825_000us: StepEvent @ 9_791_825_000us
+runtime-0-1     | 15:17:18.630 [W0] INFO:	sim_time 9_791_925_000us: GroupedRenderEvent(now=9_791_925_000us)
+sensorsim-0-1   | [2026-03-29 15:17:18,633][nre.grpc.serve][INFO] render_rgb
+sensorsim-0-1   | [2026-03-29 15:17:18,710][nre.grpc.serve][INFO] render_rgb
+sensorsim-0-1   | [2026-03-29 15:17:18,777][nre.grpc.serve][INFO] render_rgb
+runtime-0-1     | 15:17:18.846 [W0] INFO:	sim_time 9_791_925_000us: PolicyEvent @ 9_791_925_000us
+runtime-0-1     | 15:17:18.846 [W0] INFO:	Draining 5 outstanding tasks
+runtime-0-1     | 15:17:19.133 [W0] INFO:	sim_time 9_791_925_000us: ControllerEvent @ 9_791_925_000us
+runtime-0-1     | 15:17:19.140 [W0] INFO:	sim_time 9_791_925_000us: PhysicsEvent @ 9_791_925_000us
+runtime-0-1     | 15:17:19.143 [W0] INFO:	sim_time 9_791_925_000us: TrafficEvent @ 9_791_925_000us
+runtime-0-1     | 15:17:19.145 [W0] INFO:	sim_time 9_791_925_000us: PhysicsEvent @ 9_791_925_000us
+runtime-0-1     | 15:17:19.146 [W0] INFO:	sim_time 9_791_925_000us: StepEvent @ 9_791_925_000us
+runtime-0-1     | 15:17:19.149 [W0] INFO:	sim_time 9_792_025_000us: GroupedRenderEvent(now=9_792_025_000us)
+sensorsim-0-1   | [2026-03-29 15:17:19,151][nre.grpc.serve][INFO] render_rgb
+sensorsim-0-1   | [2026-03-29 15:17:19,229][nre.grpc.serve][INFO] render_rgb
+sensorsim-0-1   | [2026-03-29 15:17:19,295][nre.grpc.serve][INFO] render_rgb
+runtime-0-1     | 15:17:19.365 [W0] INFO:	sim_time 9_792_025_000us: PolicyEvent @ 9_792_025_000us
+runtime-0-1     | 15:17:19.365 [W0] INFO:	Draining 5 outstanding tasks
+runtime-0-1     | 15:17:19.654 [W0] INFO:	sim_time 9_792_025_000us: ControllerEvent @ 9_792_025_000us
+runtime-0-1     | 15:17:19.661 [W0] INFO:	sim_time 9_792_025_000us: PhysicsEvent @ 9_792_025_000us
+runtime-0-1     | 15:17:19.663 [W0] INFO:	sim_time 9_792_025_000us: TrafficEvent @ 9_792_025_000us
+runtime-0-1     | 15:17:19.665 [W0] INFO:	sim_time 9_792_025_000us: PhysicsEvent @ 9_792_025_000us
+runtime-0-1     | 15:17:19.666 [W0] INFO:	sim_time 9_792_025_000us: StepEvent @ 9_792_025_000us
+runtime-0-1     | 15:17:19.668 [W0] INFO:	sim_time 9_792_125_000us: GroupedRenderEvent(now=9_792_125_000us)
+sensorsim-0-1   | [2026-03-29 15:17:19,673][nre.grpc.serve][INFO] render_rgb
+sensorsim-0-1   | [2026-03-29 15:17:19,753][nre.grpc.serve][INFO] render_rgb
+sensorsim-0-1   | [2026-03-29 15:17:19,820][nre.grpc.serve][INFO] render_rgb
+runtime-0-1     | 15:17:19.890 [W0] INFO:	sim_time 9_792_125_000us: PolicyEvent @ 9_792_125_000us
+runtime-0-1     | 15:17:19.890 [W0] INFO:	Draining 5 outstanding tasks
+runtime-0-1     | 15:17:20.155 [W0] INFO:	sim_time 9_792_125_000us: ControllerEvent @ 9_792_125_000us
+runtime-0-1     | 15:17:20.162 [W0] INFO:	sim_time 9_792_125_000us: PhysicsEvent @ 9_792_125_000us
+runtime-0-1     | 15:17:20.164 [W0] INFO:	sim_time 9_792_125_000us: TrafficEvent @ 9_792_125_000us
+runtime-0-1     | 15:17:20.166 [W0] INFO:	sim_time 9_792_125_000us: PhysicsEvent @ 9_792_125_000us
+runtime-0-1     | 15:17:20.167 [W0] INFO:	sim_time 9_792_125_000us: StepEvent @ 9_792_125_000us
+runtime-0-1     | 15:17:20.169 [W0] INFO:	sim_time 9_792_225_000us: GroupedRenderEvent(now=9_792_225_000us)
+sensorsim-0-1   | [2026-03-29 15:17:20,172][nre.grpc.serve][INFO] render_rgb
+sensorsim-0-1   | [2026-03-29 15:17:20,251][nre.grpc.serve][INFO] render_rgb
+sensorsim-0-1   | [2026-03-29 15:17:20,318][nre.grpc.serve][INFO] render_rgb
+runtime-0-1     | 15:17:20.388 [W0] INFO:	sim_time 9_792_225_000us: PolicyEvent @ 9_792_225_000us
+runtime-0-1     | 15:17:20.388 [W0] INFO:	Draining 5 outstanding tasks
+runtime-0-1     | 15:17:20.652 [W0] INFO:	sim_time 9_792_225_000us: ControllerEvent @ 9_792_225_000us
+runtime-0-1     | 15:17:20.660 [W0] INFO:	sim_time 9_792_225_000us: PhysicsEvent @ 9_792_225_000us
+runtime-0-1     | 15:17:20.664 [W0] INFO:	sim_time 9_792_225_000us: TrafficEvent @ 9_792_225_000us
+runtime-0-1     | 15:17:20.665 [W0] INFO:	sim_time 9_792_225_000us: PhysicsEvent @ 9_792_225_000us
+runtime-0-1     | 15:17:20.666 [W0] INFO:	sim_time 9_792_225_000us: StepEvent @ 9_792_225_000us
+runtime-0-1     | 15:17:20.669 [W0] INFO:	sim_time 9_792_325_000us: GroupedRenderEvent(now=9_792_325_000us)
+sensorsim-0-1   | [2026-03-29 15:17:20,672][nre.grpc.serve][INFO] render_rgb
+sensorsim-0-1   | [2026-03-29 15:17:20,750][nre.grpc.serve][INFO] render_rgb
+sensorsim-0-1   | [2026-03-29 15:17:20,817][nre.grpc.serve][INFO] render_rgb
+runtime-0-1     | 15:17:20.886 [W0] INFO:	sim_time 9_792_325_000us: PolicyEvent @ 9_792_325_000us
+runtime-0-1     | 15:17:20.887 [W0] INFO:	Draining 5 outstanding tasks
+runtime-0-1     | 15:17:21.149 [W0] INFO:	sim_time 9_792_325_000us: ControllerEvent @ 9_792_325_000us
+runtime-0-1     | 15:17:21.156 [W0] INFO:	sim_time 9_792_325_000us: PhysicsEvent @ 9_792_325_000us
+runtime-0-1     | 15:17:21.159 [W0] INFO:	sim_time 9_792_325_000us: TrafficEvent @ 9_792_325_000us
+runtime-0-1     | 15:17:21.161 [W0] INFO:	sim_time 9_792_325_000us: PhysicsEvent @ 9_792_325_000us
+runtime-0-1     | 15:17:21.162 [W0] INFO:	sim_time 9_792_325_000us: StepEvent @ 9_792_325_000us
+runtime-0-1     | 15:17:21.165 [W0] INFO:	sim_time 9_792_425_000us: GroupedRenderEvent(now=9_792_425_000us)
+sensorsim-0-1   | [2026-03-29 15:17:21,169][nre.grpc.serve][INFO] render_rgb
+sensorsim-0-1   | [2026-03-29 15:17:21,248][nre.grpc.serve][INFO] render_rgb
+sensorsim-0-1   | [2026-03-29 15:17:21,314][nre.grpc.serve][INFO] render_rgb
+runtime-0-1     | 15:17:21.385 [W0] INFO:	sim_time 9_792_425_000us: PolicyEvent @ 9_792_425_000us
+runtime-0-1     | 15:17:21.385 [W0] INFO:	Draining 5 outstanding tasks
+runtime-0-1     | 15:17:21.655 [W0] INFO:	sim_time 9_792_425_000us: ControllerEvent @ 9_792_425_000us
+runtime-0-1     | 15:17:21.661 [W0] INFO:	sim_time 9_792_425_000us: PhysicsEvent @ 9_792_425_000us
+runtime-0-1     | 15:17:21.665 [W0] INFO:	sim_time 9_792_425_000us: TrafficEvent @ 9_792_425_000us
+runtime-0-1     | 15:17:21.666 [W0] INFO:	sim_time 9_792_425_000us: PhysicsEvent @ 9_792_425_000us
+runtime-0-1     | 15:17:21.667 [W0] INFO:	sim_time 9_792_425_000us: StepEvent @ 9_792_425_000us
+runtime-0-1     | 15:17:21.670 [W0] INFO:	sim_time 9_792_525_000us: GroupedRenderEvent(now=9_792_525_000us)
+sensorsim-0-1   | [2026-03-29 15:17:21,672][nre.grpc.serve][INFO] render_rgb
+sensorsim-0-1   | [2026-03-29 15:17:21,752][nre.grpc.serve][INFO] render_rgb
+sensorsim-0-1   | [2026-03-29 15:17:21,819][nre.grpc.serve][INFO] render_rgb
+runtime-0-1     | 15:17:21.889 [W0] INFO:	sim_time 9_792_525_000us: PolicyEvent @ 9_792_525_000us
+runtime-0-1     | 15:17:21.889 [W0] INFO:	Draining 5 outstanding tasks
+runtime-0-1     | 15:17:22.153 [W0] INFO:	sim_time 9_792_525_000us: ControllerEvent @ 9_792_525_000us
+runtime-0-1     | 15:17:22.160 [W0] INFO:	sim_time 9_792_525_000us: PhysicsEvent @ 9_792_525_000us
+runtime-0-1     | 15:17:22.164 [W0] INFO:	sim_time 9_792_525_000us: TrafficEvent @ 9_792_525_000us
+runtime-0-1     | 15:17:22.166 [W0] INFO:	sim_time 9_792_525_000us: PhysicsEvent @ 9_792_525_000us
+runtime-0-1     | 15:17:22.167 [W0] INFO:	sim_time 9_792_525_000us: StepEvent @ 9_792_525_000us
+runtime-0-1     | 15:17:22.169 [W0] INFO:	sim_time 9_792_625_000us: GroupedRenderEvent(now=9_792_625_000us)
+sensorsim-0-1   | [2026-03-29 15:17:22,175][nre.grpc.serve][INFO] render_rgb
+sensorsim-0-1   | [2026-03-29 15:17:22,253][nre.grpc.serve][INFO] render_rgb
+sensorsim-0-1   | [2026-03-29 15:17:22,319][nre.grpc.serve][INFO] render_rgb
+runtime-0-1     | 15:17:22.390 [W0] INFO:	sim_time 9_792_625_000us: PolicyEvent @ 9_792_625_000us
+runtime-0-1     | 15:17:22.390 [W0] INFO:	Draining 5 outstanding tasks
+runtime-0-1     | 15:17:22.656 [W0] INFO:	sim_time 9_792_625_000us: ControllerEvent @ 9_792_625_000us
+runtime-0-1     | 15:17:22.662 [W0] INFO:	sim_time 9_792_625_000us: PhysicsEvent @ 9_792_625_000us
+runtime-0-1     | 15:17:22.665 [W0] INFO:	sim_time 9_792_625_000us: TrafficEvent @ 9_792_625_000us
+runtime-0-1     | 15:17:22.667 [W0] INFO:	sim_time 9_792_625_000us: PhysicsEvent @ 9_792_625_000us
+runtime-0-1     | 15:17:22.668 [W0] INFO:	sim_time 9_792_625_000us: StepEvent @ 9_792_625_000us
+runtime-0-1     | 15:17:22.670 [W0] INFO:	sim_time 9_792_725_000us: GroupedRenderEvent(now=9_792_725_000us)
+sensorsim-0-1   | [2026-03-29 15:17:22,673][nre.grpc.serve][INFO] render_rgb
+sensorsim-0-1   | [2026-03-29 15:17:22,751][nre.grpc.serve][INFO] render_rgb
+sensorsim-0-1   | [2026-03-29 15:17:22,818][nre.grpc.serve][INFO] render_rgb
+runtime-0-1     | 15:17:22.886 [W0] INFO:	sim_time 9_792_725_000us: PolicyEvent @ 9_792_725_000us
+runtime-0-1     | 15:17:22.886 [W0] INFO:	Draining 5 outstanding tasks
+runtime-0-1     | 15:17:23.152 [W0] INFO:	sim_time 9_792_725_000us: ControllerEvent @ 9_792_725_000us
+runtime-0-1     | 15:17:23.161 [W0] INFO:	sim_time 9_792_725_000us: PhysicsEvent @ 9_792_725_000us
+runtime-0-1     | 15:17:23.164 [W0] INFO:	sim_time 9_792_725_000us: TrafficEvent @ 9_792_725_000us
+runtime-0-1     | 15:17:23.166 [W0] INFO:	sim_time 9_792_725_000us: PhysicsEvent @ 9_792_725_000us
+runtime-0-1     | 15:17:23.167 [W0] INFO:	sim_time 9_792_725_000us: StepEvent @ 9_792_725_000us
+runtime-0-1     | 15:17:23.169 [W0] INFO:	sim_time 9_792_825_000us: GroupedRenderEvent(now=9_792_825_000us)
+sensorsim-0-1   | [2026-03-29 15:17:23,173][nre.grpc.serve][INFO] render_rgb
+sensorsim-0-1   | [2026-03-29 15:17:23,250][nre.grpc.serve][INFO] render_rgb
+sensorsim-0-1   | [2026-03-29 15:17:23,316][nre.grpc.serve][INFO] render_rgb
+runtime-0-1     | 15:17:23.385 [W0] INFO:	sim_time 9_792_825_000us: PolicyEvent @ 9_792_825_000us
+runtime-0-1     | 15:17:23.386 [W0] INFO:	Draining 5 outstanding tasks
+runtime-0-1     | 15:17:23.646 [W0] INFO:	sim_time 9_792_825_000us: ControllerEvent @ 9_792_825_000us
+runtime-0-1     | 15:17:23.654 [W0] INFO:	sim_time 9_792_825_000us: PhysicsEvent @ 9_792_825_000us
+runtime-0-1     | 15:17:23.657 [W0] INFO:	sim_time 9_792_825_000us: TrafficEvent @ 9_792_825_000us
+runtime-0-1     | 15:17:23.661 [W0] INFO:	sim_time 9_792_825_000us: PhysicsEvent @ 9_792_825_000us
+runtime-0-1     | 15:17:23.662 [W0] INFO:	sim_time 9_792_825_000us: StepEvent @ 9_792_825_000us
+runtime-0-1     | 15:17:23.664 [W0] INFO:	sim_time 9_792_925_000us: GroupedRenderEvent(now=9_792_925_000us)
+sensorsim-0-1   | [2026-03-29 15:17:23,667][nre.grpc.serve][INFO] render_rgb
+sensorsim-0-1   | [2026-03-29 15:17:23,745][nre.grpc.serve][INFO] render_rgb
+sensorsim-0-1   | [2026-03-29 15:17:23,811][nre.grpc.serve][INFO] render_rgb
+runtime-0-1     | 15:17:23.880 [W0] INFO:	sim_time 9_792_925_000us: PolicyEvent @ 9_792_925_000us
+runtime-0-1     | 15:17:23.881 [W0] INFO:	Draining 5 outstanding tasks
+runtime-0-1     | 15:17:24.170 [W0] INFO:	sim_time 9_792_925_000us: ControllerEvent @ 9_792_925_000us
+runtime-0-1     | 15:17:24.179 [W0] INFO:	sim_time 9_792_925_000us: PhysicsEvent @ 9_792_925_000us
+runtime-0-1     | 15:17:24.182 [W0] INFO:	sim_time 9_792_925_000us: TrafficEvent @ 9_792_925_000us
+runtime-0-1     | 15:17:24.184 [W0] INFO:	sim_time 9_792_925_000us: PhysicsEvent @ 9_792_925_000us
+runtime-0-1     | 15:17:24.185 [W0] INFO:	sim_time 9_792_925_000us: StepEvent @ 9_792_925_000us
+runtime-0-1     | 15:17:24.187 [W0] INFO:	sim_time 9_793_025_000us: GroupedRenderEvent(now=9_793_025_000us)
+sensorsim-0-1   | [2026-03-29 15:17:24,190][nre.grpc.serve][INFO] render_rgb
+sensorsim-0-1   | [2026-03-29 15:17:24,267][nre.grpc.serve][INFO] render_rgb
+sensorsim-0-1   | [2026-03-29 15:17:24,333][nre.grpc.serve][INFO] render_rgb
+runtime-0-1     | 15:17:24.401 [W0] INFO:	sim_time 9_793_025_000us: PolicyEvent @ 9_793_025_000us
+runtime-0-1     | 15:17:24.401 [W0] INFO:	Draining 5 outstanding tasks
+runtime-0-1     | 15:17:24.660 [W0] INFO:	sim_time 9_793_025_000us: ControllerEvent @ 9_793_025_000us
+runtime-0-1     | 15:17:24.667 [W0] INFO:	sim_time 9_793_025_000us: PhysicsEvent @ 9_793_025_000us
+runtime-0-1     | 15:17:24.670 [W0] INFO:	sim_time 9_793_025_000us: TrafficEvent @ 9_793_025_000us
+runtime-0-1     | 15:17:24.672 [W0] INFO:	sim_time 9_793_025_000us: PhysicsEvent @ 9_793_025_000us
+runtime-0-1     | 15:17:24.673 [W0] INFO:	sim_time 9_793_025_000us: StepEvent @ 9_793_025_000us
+runtime-0-1     | 15:17:24.676 [W0] INFO:	sim_time 9_793_125_000us: GroupedRenderEvent(now=9_793_125_000us)
+sensorsim-0-1   | [2026-03-29 15:17:24,680][nre.grpc.serve][INFO] render_rgb
+sensorsim-0-1   | [2026-03-29 15:17:24,755][nre.grpc.serve][INFO] render_rgb
+sensorsim-0-1   | [2026-03-29 15:17:24,822][nre.grpc.serve][INFO] render_rgb
+runtime-0-1     | 15:17:24.891 [W0] INFO:	sim_time 9_793_125_000us: PolicyEvent @ 9_793_125_000us
+runtime-0-1     | 15:17:24.892 [W0] INFO:	Draining 5 outstanding tasks
+runtime-0-1     | 15:17:25.153 [W0] INFO:	sim_time 9_793_125_000us: ControllerEvent @ 9_793_125_000us
+runtime-0-1     | 15:17:25.159 [W0] INFO:	sim_time 9_793_125_000us: PhysicsEvent @ 9_793_125_000us
+runtime-0-1     | 15:17:25.162 [W0] INFO:	sim_time 9_793_125_000us: TrafficEvent @ 9_793_125_000us
+runtime-0-1     | 15:17:25.163 [W0] INFO:	sim_time 9_793_125_000us: PhysicsEvent @ 9_793_125_000us
+runtime-0-1     | 15:17:25.164 [W0] INFO:	sim_time 9_793_125_000us: StepEvent @ 9_793_125_000us
+runtime-0-1     | 15:17:25.167 [W0] INFO:	sim_time 9_793_225_000us: GroupedRenderEvent(now=9_793_225_000us)
+sensorsim-0-1   | [2026-03-29 15:17:25,169][nre.grpc.serve][INFO] render_rgb
+sensorsim-0-1   | [2026-03-29 15:17:25,245][nre.grpc.serve][INFO] render_rgb
+sensorsim-0-1   | [2026-03-29 15:17:25,310][nre.grpc.serve][INFO] render_rgb
+runtime-0-1     | 15:17:25.382 [W0] INFO:	sim_time 9_793_225_000us: PolicyEvent @ 9_793_225_000us
+runtime-0-1     | 15:17:25.382 [W0] INFO:	Draining 5 outstanding tasks
+runtime-0-1     | 15:17:25.645 [W0] INFO:	sim_time 9_793_225_000us: ControllerEvent @ 9_793_225_000us
+runtime-0-1     | 15:17:25.652 [W0] INFO:	sim_time 9_793_225_000us: PhysicsEvent @ 9_793_225_000us
+runtime-0-1     | 15:17:25.656 [W0] INFO:	sim_time 9_793_225_000us: TrafficEvent @ 9_793_225_000us
+runtime-0-1     | 15:17:25.657 [W0] INFO:	sim_time 9_793_225_000us: PhysicsEvent @ 9_793_225_000us
+runtime-0-1     | 15:17:25.658 [W0] INFO:	sim_time 9_793_225_000us: StepEvent @ 9_793_225_000us
+runtime-0-1     | 15:17:25.661 [W0] INFO:	sim_time 9_793_325_000us: GroupedRenderEvent(now=9_793_325_000us)
+sensorsim-0-1   | [2026-03-29 15:17:25,664][nre.grpc.serve][INFO] render_rgb
+sensorsim-0-1   | [2026-03-29 15:17:25,743][nre.grpc.serve][INFO] render_rgb
+sensorsim-0-1   | [2026-03-29 15:17:25,809][nre.grpc.serve][INFO] render_rgb
+runtime-0-1     | 15:17:25.877 [W0] INFO:	sim_time 9_793_325_000us: PolicyEvent @ 9_793_325_000us
+runtime-0-1     | 15:17:25.878 [W0] INFO:	Draining 5 outstanding tasks
+runtime-0-1     | 15:17:26.138 [W0] INFO:	sim_time 9_793_325_000us: ControllerEvent @ 9_793_325_000us
+runtime-0-1     | 15:17:26.145 [W0] INFO:	sim_time 9_793_325_000us: PhysicsEvent @ 9_793_325_000us
+runtime-0-1     | 15:17:26.147 [W0] INFO:	sim_time 9_793_325_000us: TrafficEvent @ 9_793_325_000us
+runtime-0-1     | 15:17:26.151 [W0] INFO:	sim_time 9_793_325_000us: PhysicsEvent @ 9_793_325_000us
+runtime-0-1     | 15:17:26.152 [W0] INFO:	sim_time 9_793_325_000us: StepEvent @ 9_793_325_000us
+runtime-0-1     | 15:17:26.154 [W0] INFO:	sim_time 9_793_425_000us: GroupedRenderEvent(now=9_793_425_000us)
+sensorsim-0-1   | [2026-03-29 15:17:26,157][nre.grpc.serve][INFO] render_rgb
+sensorsim-0-1   | [2026-03-29 15:17:26,233][nre.grpc.serve][INFO] render_rgb
+sensorsim-0-1   | [2026-03-29 15:17:26,299][nre.grpc.serve][INFO] render_rgb
+runtime-0-1     | 15:17:26.369 [W0] INFO:	sim_time 9_793_425_000us: PolicyEvent @ 9_793_425_000us
+runtime-0-1     | 15:17:26.370 [W0] INFO:	Draining 5 outstanding tasks
+runtime-0-1     | 15:17:26.632 [W0] INFO:	sim_time 9_793_425_000us: ControllerEvent @ 9_793_425_000us
+runtime-0-1     | 15:17:26.638 [W0] INFO:	sim_time 9_793_425_000us: PhysicsEvent @ 9_793_425_000us
+runtime-0-1     | 15:17:26.641 [W0] INFO:	sim_time 9_793_425_000us: TrafficEvent @ 9_793_425_000us
+runtime-0-1     | 15:17:26.643 [W0] INFO:	sim_time 9_793_425_000us: PhysicsEvent @ 9_793_425_000us
+runtime-0-1     | 15:17:26.644 [W0] INFO:	sim_time 9_793_425_000us: StepEvent @ 9_793_425_000us
+runtime-0-1     | 15:17:26.646 [W0] INFO:	sim_time 9_793_525_000us: GroupedRenderEvent(now=9_793_525_000us)
+sensorsim-0-1   | [2026-03-29 15:17:26,649][nre.grpc.serve][INFO] render_rgb
+sensorsim-0-1   | [2026-03-29 15:17:26,725][nre.grpc.serve][INFO] render_rgb
+sensorsim-0-1   | [2026-03-29 15:17:26,790][nre.grpc.serve][INFO] render_rgb
+runtime-0-1     | 15:17:26.859 [W0] INFO:	sim_time 9_793_525_000us: PolicyEvent @ 9_793_525_000us
+runtime-0-1     | 15:17:26.859 [W0] INFO:	Draining 5 outstanding tasks
+runtime-0-1     | 15:17:27.123 [W0] INFO:	sim_time 9_793_525_000us: ControllerEvent @ 9_793_525_000us
+runtime-0-1     | 15:17:27.130 [W0] INFO:	sim_time 9_793_525_000us: PhysicsEvent @ 9_793_525_000us
+runtime-0-1     | 15:17:27.133 [W0] INFO:	sim_time 9_793_525_000us: TrafficEvent @ 9_793_525_000us
+runtime-0-1     | 15:17:27.135 [W0] INFO:	sim_time 9_793_525_000us: PhysicsEvent @ 9_793_525_000us
+runtime-0-1     | 15:17:27.136 [W0] INFO:	sim_time 9_793_525_000us: StepEvent @ 9_793_525_000us
+runtime-0-1     | 15:17:27.138 [W0] INFO:	sim_time 9_793_625_000us: GroupedRenderEvent(now=9_793_625_000us)
+sensorsim-0-1   | [2026-03-29 15:17:27,143][nre.grpc.serve][INFO] render_rgb
+sensorsim-0-1   | [2026-03-29 15:17:27,221][nre.grpc.serve][INFO] render_rgb
+sensorsim-0-1   | [2026-03-29 15:17:27,287][nre.grpc.serve][INFO] render_rgb
+runtime-0-1     | 15:17:27.357 [W0] INFO:	sim_time 9_793_625_000us: PolicyEvent @ 9_793_625_000us
+runtime-0-1     | 15:17:27.357 [W0] INFO:	Draining 5 outstanding tasks
+runtime-0-1     | 15:17:27.620 [W0] INFO:	sim_time 9_793_625_000us: ControllerEvent @ 9_793_625_000us
+runtime-0-1     | 15:17:27.626 [W0] INFO:	sim_time 9_793_625_000us: PhysicsEvent @ 9_793_625_000us
+runtime-0-1     | 15:17:27.629 [W0] INFO:	sim_time 9_793_625_000us: TrafficEvent @ 9_793_625_000us
+runtime-0-1     | 15:17:27.631 [W0] INFO:	sim_time 9_793_625_000us: PhysicsEvent @ 9_793_625_000us
+runtime-0-1     | 15:17:27.632 [W0] INFO:	sim_time 9_793_625_000us: StepEvent @ 9_793_625_000us
+runtime-0-1     | 15:17:27.634 [W0] INFO:	sim_time 9_793_725_000us: GroupedRenderEvent(now=9_793_725_000us)
+sensorsim-0-1   | [2026-03-29 15:17:27,637][nre.grpc.serve][INFO] render_rgb
+sensorsim-0-1   | [2026-03-29 15:17:27,715][nre.grpc.serve][INFO] render_rgb
+sensorsim-0-1   | [2026-03-29 15:17:27,782][nre.grpc.serve][INFO] render_rgb
+runtime-0-1     | 15:17:27.851 [W0] INFO:	sim_time 9_793_725_000us: PolicyEvent @ 9_793_725_000us
+runtime-0-1     | 15:17:27.855 [W0] INFO:	Draining 5 outstanding tasks
+runtime-0-1     | 15:17:28.119 [W0] INFO:	sim_time 9_793_725_000us: ControllerEvent @ 9_793_725_000us
+runtime-0-1     | 15:17:28.126 [W0] INFO:	sim_time 9_793_725_000us: PhysicsEvent @ 9_793_725_000us
+runtime-0-1     | 15:17:28.129 [W0] INFO:	sim_time 9_793_725_000us: TrafficEvent @ 9_793_725_000us
+runtime-0-1     | 15:17:28.131 [W0] INFO:	sim_time 9_793_725_000us: PhysicsEvent @ 9_793_725_000us
+runtime-0-1     | 15:17:28.132 [W0] INFO:	sim_time 9_793_725_000us: StepEvent @ 9_793_725_000us
+runtime-0-1     | 15:17:28.134 [W0] INFO:	sim_time 9_793_825_000us: GroupedRenderEvent(now=9_793_825_000us)
+sensorsim-0-1   | [2026-03-29 15:17:28,139][nre.grpc.serve][INFO] render_rgb
+sensorsim-0-1   | [2026-03-29 15:17:28,217][nre.grpc.serve][INFO] render_rgb
+sensorsim-0-1   | [2026-03-29 15:17:28,286][nre.grpc.serve][INFO] render_rgb
+runtime-0-1     | 15:17:28.356 [W0] INFO:	sim_time 9_793_825_000us: PolicyEvent @ 9_793_825_000us
+runtime-0-1     | 15:17:28.357 [W0] INFO:	Draining 5 outstanding tasks
+runtime-0-1     | 15:17:28.620 [W0] INFO:	sim_time 9_793_825_000us: ControllerEvent @ 9_793_825_000us
+runtime-0-1     | 15:17:28.626 [W0] INFO:	sim_time 9_793_825_000us: PhysicsEvent @ 9_793_825_000us
+runtime-0-1     | 15:17:28.630 [W0] INFO:	sim_time 9_793_825_000us: TrafficEvent @ 9_793_825_000us
+runtime-0-1     | 15:17:28.632 [W0] INFO:	sim_time 9_793_825_000us: PhysicsEvent @ 9_793_825_000us
+runtime-0-1     | 15:17:28.633 [W0] INFO:	sim_time 9_793_825_000us: StepEvent @ 9_793_825_000us
+runtime-0-1     | 15:17:28.635 [W0] INFO:	sim_time 9_793_925_000us: GroupedRenderEvent(now=9_793_925_000us)
+sensorsim-0-1   | [2026-03-29 15:17:28,638][nre.grpc.serve][INFO] render_rgb
+sensorsim-0-1   | [2026-03-29 15:17:28,714][nre.grpc.serve][INFO] render_rgb
+sensorsim-0-1   | [2026-03-29 15:17:28,781][nre.grpc.serve][INFO] render_rgb
+runtime-0-1     | 15:17:28.851 [W0] INFO:	sim_time 9_793_925_000us: PolicyEvent @ 9_793_925_000us
+runtime-0-1     | 15:17:28.851 [W0] INFO:	Draining 5 outstanding tasks
+runtime-0-1     | 15:17:29.117 [W0] INFO:	sim_time 9_793_925_000us: ControllerEvent @ 9_793_925_000us
+runtime-0-1     | 15:17:29.123 [W0] INFO:	sim_time 9_793_925_000us: PhysicsEvent @ 9_793_925_000us
+runtime-0-1     | 15:17:29.126 [W0] INFO:	sim_time 9_793_925_000us: TrafficEvent @ 9_793_925_000us
+runtime-0-1     | 15:17:29.128 [W0] INFO:	sim_time 9_793_925_000us: PhysicsEvent @ 9_793_925_000us
+runtime-0-1     | 15:17:29.129 [W0] INFO:	sim_time 9_793_925_000us: StepEvent @ 9_793_925_000us
+runtime-0-1     | 15:17:29.131 [W0] INFO:	sim_time 9_794_025_000us: GroupedRenderEvent(now=9_794_025_000us)
+sensorsim-0-1   | [2026-03-29 15:17:29,134][nre.grpc.serve][INFO] render_rgb
+sensorsim-0-1   | [2026-03-29 15:17:29,211][nre.grpc.serve][INFO] render_rgb
+sensorsim-0-1   | [2026-03-29 15:17:29,277][nre.grpc.serve][INFO] render_rgb
+runtime-0-1     | 15:17:29.346 [W0] INFO:	sim_time 9_794_025_000us: PolicyEvent @ 9_794_025_000us
+runtime-0-1     | 15:17:29.347 [W0] INFO:	Draining 5 outstanding tasks
+runtime-0-1     | 15:17:29.619 [W0] INFO:	sim_time 9_794_025_000us: ControllerEvent @ 9_794_025_000us
+runtime-0-1     | 15:17:29.626 [W0] INFO:	sim_time 9_794_025_000us: PhysicsEvent @ 9_794_025_000us
+runtime-0-1     | 15:17:29.630 [W0] INFO:	sim_time 9_794_025_000us: TrafficEvent @ 9_794_025_000us
+runtime-0-1     | 15:17:29.632 [W0] INFO:	sim_time 9_794_025_000us: PhysicsEvent @ 9_794_025_000us
+runtime-0-1     | 15:17:29.633 [W0] INFO:	sim_time 9_794_025_000us: StepEvent @ 9_794_025_000us
+runtime-0-1     | 15:17:29.635 [W0] INFO:	sim_time 9_794_125_000us: GroupedRenderEvent(now=9_794_125_000us)
+sensorsim-0-1   | [2026-03-29 15:17:29,639][nre.grpc.serve][INFO] render_rgb
+sensorsim-0-1   | [2026-03-29 15:17:29,718][nre.grpc.serve][INFO] render_rgb
+sensorsim-0-1   | [2026-03-29 15:17:29,786][nre.grpc.serve][INFO] render_rgb
+runtime-0-1     | 15:17:29.857 [W0] INFO:	sim_time 9_794_125_000us: PolicyEvent @ 9_794_125_000us
+runtime-0-1     | 15:17:29.857 [W0] INFO:	Draining 5 outstanding tasks
+runtime-0-1     | 15:17:30.126 [W0] INFO:	sim_time 9_794_125_000us: ControllerEvent @ 9_794_125_000us
+runtime-0-1     | 15:17:30.137 [W0] INFO:	sim_time 9_794_125_000us: PhysicsEvent @ 9_794_125_000us
+runtime-0-1     | 15:17:30.140 [W0] INFO:	sim_time 9_794_125_000us: TrafficEvent @ 9_794_125_000us
+runtime-0-1     | 15:17:30.142 [W0] INFO:	sim_time 9_794_125_000us: PhysicsEvent @ 9_794_125_000us
+runtime-0-1     | 15:17:30.143 [W0] INFO:	sim_time 9_794_125_000us: StepEvent @ 9_794_125_000us
+runtime-0-1     | 15:17:30.145 [W0] INFO:	sim_time 9_794_225_000us: GroupedRenderEvent(now=9_794_225_000us)
+sensorsim-0-1   | [2026-03-29 15:17:30,148][nre.grpc.serve][INFO] render_rgb
+sensorsim-0-1   | [2026-03-29 15:17:30,228][nre.grpc.serve][INFO] render_rgb
+sensorsim-0-1   | [2026-03-29 15:17:30,296][nre.grpc.serve][INFO] render_rgb
+runtime-0-1     | 15:17:30.367 [W0] INFO:	sim_time 9_794_225_000us: PolicyEvent @ 9_794_225_000us
+runtime-0-1     | 15:17:30.367 [W0] INFO:	Draining 5 outstanding tasks
+runtime-0-1     | 15:17:30.646 [W0] INFO:	sim_time 9_794_225_000us: ControllerEvent @ 9_794_225_000us
+runtime-0-1     | 15:17:30.651 [W0] INFO:	sim_time 9_794_225_000us: PhysicsEvent @ 9_794_225_000us
+runtime-0-1     | 15:17:30.655 [W0] INFO:	sim_time 9_794_225_000us: TrafficEvent @ 9_794_225_000us
+runtime-0-1     | 15:17:30.658 [W0] INFO:	sim_time 9_794_225_000us: PhysicsEvent @ 9_794_225_000us
+runtime-0-1     | 15:17:30.660 [W0] INFO:	sim_time 9_794_225_000us: StepEvent @ 9_794_225_000us
+runtime-0-1     | 15:17:30.663 [W0] INFO:	sim_time 9_794_325_000us: GroupedRenderEvent(now=9_794_325_000us)
+sensorsim-0-1   | [2026-03-29 15:17:30,667][nre.grpc.serve][INFO] render_rgb
+sensorsim-0-1   | [2026-03-29 15:17:30,751][nre.grpc.serve][INFO] render_rgb
+sensorsim-0-1   | [2026-03-29 15:17:30,818][nre.grpc.serve][INFO] render_rgb
+runtime-0-1     | 15:17:30.889 [W0] INFO:	sim_time 9_794_325_000us: PolicyEvent @ 9_794_325_000us
+runtime-0-1     | 15:17:30.889 [W0] INFO:	Draining 5 outstanding tasks
+runtime-0-1     | 15:17:31.171 [W0] INFO:	sim_time 9_794_325_000us: ControllerEvent @ 9_794_325_000us
+runtime-0-1     | 15:17:31.178 [W0] INFO:	sim_time 9_794_325_000us: PhysicsEvent @ 9_794_325_000us
+runtime-0-1     | 15:17:31.181 [W0] INFO:	sim_time 9_794_325_000us: TrafficEvent @ 9_794_325_000us
+runtime-0-1     | 15:17:31.183 [W0] INFO:	sim_time 9_794_325_000us: PhysicsEvent @ 9_794_325_000us
+runtime-0-1     | 15:17:31.184 [W0] INFO:	sim_time 9_794_325_000us: StepEvent @ 9_794_325_000us
+runtime-0-1     | 15:17:31.186 [W0] INFO:	sim_time 9_794_425_000us: GroupedRenderEvent(now=9_794_425_000us)
+sensorsim-0-1   | [2026-03-29 15:17:31,189][nre.grpc.serve][INFO] render_rgb
+sensorsim-0-1   | [2026-03-29 15:17:31,268][nre.grpc.serve][INFO] render_rgb
+sensorsim-0-1   | [2026-03-29 15:17:31,335][nre.grpc.serve][INFO] render_rgb
+runtime-0-1     | 15:17:31.405 [W0] INFO:	sim_time 9_794_425_000us: PolicyEvent @ 9_794_425_000us
+runtime-0-1     | 15:17:31.405 [W0] INFO:	Draining 5 outstanding tasks
+runtime-0-1     | 15:17:31.673 [W0] INFO:	sim_time 9_794_425_000us: ControllerEvent @ 9_794_425_000us
+runtime-0-1     | 15:17:31.680 [W0] INFO:	sim_time 9_794_425_000us: PhysicsEvent @ 9_794_425_000us
+runtime-0-1     | 15:17:31.683 [W0] INFO:	sim_time 9_794_425_000us: TrafficEvent @ 9_794_425_000us
+runtime-0-1     | 15:17:31.684 [W0] INFO:	sim_time 9_794_425_000us: PhysicsEvent @ 9_794_425_000us
+runtime-0-1     | 15:17:31.685 [W0] INFO:	sim_time 9_794_425_000us: StepEvent @ 9_794_425_000us
+runtime-0-1     | 15:17:31.689 [W0] INFO:	sim_time 9_794_525_000us: GroupedRenderEvent(now=9_794_525_000us)
+sensorsim-0-1   | [2026-03-29 15:17:31,692][nre.grpc.serve][INFO] render_rgb
+sensorsim-0-1   | [2026-03-29 15:17:31,771][nre.grpc.serve][INFO] render_rgb
+sensorsim-0-1   | [2026-03-29 15:17:31,839][nre.grpc.serve][INFO] render_rgb
+runtime-0-1     | 15:17:31.913 [W0] INFO:	sim_time 9_794_525_000us: PolicyEvent @ 9_794_525_000us
+runtime-0-1     | 15:17:31.914 [W0] INFO:	Draining 5 outstanding tasks
+runtime-0-1     | 15:17:32.183 [W0] INFO:	sim_time 9_794_525_000us: ControllerEvent @ 9_794_525_000us
+runtime-0-1     | 15:17:32.189 [W0] INFO:	sim_time 9_794_525_000us: PhysicsEvent @ 9_794_525_000us
+runtime-0-1     | 15:17:32.193 [W0] INFO:	sim_time 9_794_525_000us: TrafficEvent @ 9_794_525_000us
+runtime-0-1     | 15:17:32.194 [W0] INFO:	sim_time 9_794_525_000us: PhysicsEvent @ 9_794_525_000us
+runtime-0-1     | 15:17:32.195 [W0] INFO:	sim_time 9_794_525_000us: StepEvent @ 9_794_525_000us
+runtime-0-1     | 15:17:32.197 [W0] INFO:	sim_time 9_794_625_000us: GroupedRenderEvent(now=9_794_625_000us)
+sensorsim-0-1   | [2026-03-29 15:17:32,201][nre.grpc.serve][INFO] render_rgb
+sensorsim-0-1   | [2026-03-29 15:17:32,280][nre.grpc.serve][INFO] render_rgb
+sensorsim-0-1   | [2026-03-29 15:17:32,347][nre.grpc.serve][INFO] render_rgb
+runtime-0-1     | 15:17:32.419 [W0] INFO:	sim_time 9_794_625_000us: PolicyEvent @ 9_794_625_000us
+runtime-0-1     | 15:17:32.419 [W0] INFO:	Draining 5 outstanding tasks
+runtime-0-1     | 15:17:32.680 [W0] INFO:	sim_time 9_794_625_000us: ControllerEvent @ 9_794_625_000us
+runtime-0-1     | 15:17:32.687 [W0] INFO:	sim_time 9_794_625_000us: PhysicsEvent @ 9_794_625_000us
+runtime-0-1     | 15:17:32.690 [W0] INFO:	sim_time 9_794_625_000us: TrafficEvent @ 9_794_625_000us
+runtime-0-1     | 15:17:32.692 [W0] INFO:	sim_time 9_794_625_000us: PhysicsEvent @ 9_794_625_000us
+runtime-0-1     | 15:17:32.692 [W0] INFO:	sim_time 9_794_625_000us: StepEvent @ 9_794_625_000us
+runtime-0-1     | 15:17:32.695 [W0] INFO:	sim_time 9_794_725_000us: GroupedRenderEvent(now=9_794_725_000us)
+sensorsim-0-1   | [2026-03-29 15:17:32,699][nre.grpc.serve][INFO] render_rgb
+sensorsim-0-1   | [2026-03-29 15:17:32,778][nre.grpc.serve][INFO] render_rgb
+sensorsim-0-1   | [2026-03-29 15:17:32,846][nre.grpc.serve][INFO] render_rgb
+runtime-0-1     | 15:17:32.916 [W0] INFO:	sim_time 9_794_725_000us: PolicyEvent @ 9_794_725_000us
+runtime-0-1     | 15:17:32.917 [W0] INFO:	Draining 5 outstanding tasks
+runtime-0-1     | 15:17:33.182 [W0] INFO:	sim_time 9_794_725_000us: ControllerEvent @ 9_794_725_000us
+runtime-0-1     | 15:17:33.189 [W0] INFO:	sim_time 9_794_725_000us: PhysicsEvent @ 9_794_725_000us
+runtime-0-1     | 15:17:33.193 [W0] INFO:	sim_time 9_794_725_000us: TrafficEvent @ 9_794_725_000us
+runtime-0-1     | 15:17:33.194 [W0] INFO:	sim_time 9_794_725_000us: PhysicsEvent @ 9_794_725_000us
+runtime-0-1     | 15:17:33.195 [W0] INFO:	sim_time 9_794_725_000us: StepEvent @ 9_794_725_000us
+runtime-0-1     | 15:17:33.197 [W0] INFO:	sim_time 9_794_825_000us: GroupedRenderEvent(now=9_794_825_000us)
+sensorsim-0-1   | [2026-03-29 15:17:33,201][nre.grpc.serve][INFO] render_rgb
+sensorsim-0-1   | [2026-03-29 15:17:33,279][nre.grpc.serve][INFO] render_rgb
+sensorsim-0-1   | [2026-03-29 15:17:33,347][nre.grpc.serve][INFO] render_rgb
+runtime-0-1     | 15:17:33.418 [W0] INFO:	sim_time 9_794_825_000us: PolicyEvent @ 9_794_825_000us
+runtime-0-1     | 15:17:33.418 [W0] INFO:	Draining 5 outstanding tasks
+runtime-0-1     | 15:17:33.680 [W0] INFO:	sim_time 9_794_825_000us: ControllerEvent @ 9_794_825_000us
+runtime-0-1     | 15:17:33.687 [W0] INFO:	sim_time 9_794_825_000us: PhysicsEvent @ 9_794_825_000us
+runtime-0-1     | 15:17:33.691 [W0] INFO:	sim_time 9_794_825_000us: TrafficEvent @ 9_794_825_000us
+runtime-0-1     | 15:17:33.692 [W0] INFO:	sim_time 9_794_825_000us: PhysicsEvent @ 9_794_825_000us
+runtime-0-1     | 15:17:33.693 [W0] INFO:	sim_time 9_794_825_000us: StepEvent @ 9_794_825_000us
+runtime-0-1     | 15:17:33.696 [W0] INFO:	sim_time 9_794_925_000us: GroupedRenderEvent(now=9_794_925_000us)
+sensorsim-0-1   | [2026-03-29 15:17:33,699][nre.grpc.serve][INFO] render_rgb
+sensorsim-0-1   | [2026-03-29 15:17:33,778][nre.grpc.serve][INFO] render_rgb
+sensorsim-0-1   | [2026-03-29 15:17:33,847][nre.grpc.serve][INFO] render_rgb
+runtime-0-1     | 15:17:33.919 [W0] INFO:	sim_time 9_794_925_000us: PolicyEvent @ 9_794_925_000us
+runtime-0-1     | 15:17:33.919 [W0] INFO:	Draining 5 outstanding tasks
+runtime-0-1     | 15:17:34.181 [W0] INFO:	sim_time 9_794_925_000us: ControllerEvent @ 9_794_925_000us
+runtime-0-1     | 15:17:34.190 [W0] INFO:	sim_time 9_794_925_000us: PhysicsEvent @ 9_794_925_000us
+runtime-0-1     | 15:17:34.194 [W0] INFO:	sim_time 9_794_925_000us: TrafficEvent @ 9_794_925_000us
+runtime-0-1     | 15:17:34.196 [W0] INFO:	sim_time 9_794_925_000us: PhysicsEvent @ 9_794_925_000us
+runtime-0-1     | 15:17:34.197 [W0] INFO:	sim_time 9_794_925_000us: StepEvent @ 9_794_925_000us
+runtime-0-1     | 15:17:34.201 [W0] INFO:	sim_time 9_795_025_000us: GroupedRenderEvent(now=9_795_025_000us)
+sensorsim-0-1   | [2026-03-29 15:17:34,205][nre.grpc.serve][INFO] render_rgb
+sensorsim-0-1   | [2026-03-29 15:17:34,281][nre.grpc.serve][INFO] render_rgb
+sensorsim-0-1   | [2026-03-29 15:17:34,348][nre.grpc.serve][INFO] render_rgb
+runtime-0-1     | 15:17:34.421 [W0] INFO:	sim_time 9_795_025_000us: PolicyEvent @ 9_795_025_000us
+runtime-0-1     | 15:17:34.421 [W0] INFO:	Draining 5 outstanding tasks
+runtime-0-1     | 15:17:34.686 [W0] INFO:	sim_time 9_795_025_000us: ControllerEvent @ 9_795_025_000us
+runtime-0-1     | 15:17:34.694 [W0] INFO:	sim_time 9_795_025_000us: PhysicsEvent @ 9_795_025_000us
+runtime-0-1     | 15:17:34.697 [W0] INFO:	sim_time 9_795_025_000us: TrafficEvent @ 9_795_025_000us
+runtime-0-1     | 15:17:34.699 [W0] INFO:	sim_time 9_795_025_000us: PhysicsEvent @ 9_795_025_000us
+runtime-0-1     | 15:17:34.700 [W0] INFO:	sim_time 9_795_025_000us: StepEvent @ 9_795_025_000us
+runtime-0-1     | 15:17:34.702 [W0] INFO:	sim_time 9_795_125_000us: GroupedRenderEvent(now=9_795_125_000us)
+sensorsim-0-1   | [2026-03-29 15:17:34,706][nre.grpc.serve][INFO] render_rgb
+sensorsim-0-1   | [2026-03-29 15:17:34,782][nre.grpc.serve][INFO] render_rgb
+sensorsim-0-1   | [2026-03-29 15:17:34,848][nre.grpc.serve][INFO] render_rgb
+runtime-0-1     | 15:17:34.919 [W0] INFO:	sim_time 9_795_125_000us: PolicyEvent @ 9_795_125_000us
+runtime-0-1     | 15:17:34.919 [W0] INFO:	Draining 5 outstanding tasks
+runtime-0-1     | 15:17:35.182 [W0] INFO:	sim_time 9_795_125_000us: ControllerEvent @ 9_795_125_000us
+runtime-0-1     | 15:17:35.189 [W0] INFO:	sim_time 9_795_125_000us: PhysicsEvent @ 9_795_125_000us
+runtime-0-1     | 15:17:35.192 [W0] INFO:	sim_time 9_795_125_000us: TrafficEvent @ 9_795_125_000us
+runtime-0-1     | 15:17:35.194 [W0] INFO:	sim_time 9_795_125_000us: PhysicsEvent @ 9_795_125_000us
+runtime-0-1     | 15:17:35.195 [W0] INFO:	sim_time 9_795_125_000us: StepEvent @ 9_795_125_000us
+runtime-0-1     | 15:17:35.200 [W0] INFO:	sim_time 9_795_225_000us: GroupedRenderEvent(now=9_795_225_000us)
+sensorsim-0-1   | [2026-03-29 15:17:35,204][nre.grpc.serve][INFO] render_rgb
+sensorsim-0-1   | [2026-03-29 15:17:35,280][nre.grpc.serve][INFO] render_rgb
+sensorsim-0-1   | [2026-03-29 15:17:35,349][nre.grpc.serve][INFO] render_rgb
+runtime-0-1     | 15:17:35.420 [W0] INFO:	sim_time 9_795_225_000us: PolicyEvent @ 9_795_225_000us
+runtime-0-1     | 15:17:35.420 [W0] INFO:	Draining 5 outstanding tasks
+runtime-0-1     | 15:17:35.689 [W0] INFO:	sim_time 9_795_225_000us: ControllerEvent @ 9_795_225_000us
+runtime-0-1     | 15:17:35.696 [W0] INFO:	sim_time 9_795_225_000us: PhysicsEvent @ 9_795_225_000us
+runtime-0-1     | 15:17:35.699 [W0] INFO:	sim_time 9_795_225_000us: TrafficEvent @ 9_795_225_000us
+runtime-0-1     | 15:17:35.701 [W0] INFO:	sim_time 9_795_225_000us: PhysicsEvent @ 9_795_225_000us
+runtime-0-1     | 15:17:35.703 [W0] INFO:	sim_time 9_795_225_000us: StepEvent @ 9_795_225_000us
+runtime-0-1     | 15:17:35.706 [W0] INFO:	sim_time 9_795_325_000us: GroupedRenderEvent(now=9_795_325_000us)
+sensorsim-0-1   | [2026-03-29 15:17:35,711][nre.grpc.serve][INFO] render_rgb
+sensorsim-0-1   | [2026-03-29 15:17:35,789][nre.grpc.serve][INFO] render_rgb
+sensorsim-0-1   | [2026-03-29 15:17:35,857][nre.grpc.serve][INFO] render_rgb
+runtime-0-1     | 15:17:35.927 [W0] INFO:	sim_time 9_795_325_000us: PolicyEvent @ 9_795_325_000us
+runtime-0-1     | 15:17:35.927 [W0] INFO:	Draining 5 outstanding tasks
+runtime-0-1     | 15:17:36.191 [W0] INFO:	sim_time 9_795_325_000us: ControllerEvent @ 9_795_325_000us
+runtime-0-1     | 15:17:36.198 [W0] INFO:	sim_time 9_795_325_000us: PhysicsEvent @ 9_795_325_000us
+runtime-0-1     | 15:17:36.201 [W0] INFO:	sim_time 9_795_325_000us: TrafficEvent @ 9_795_325_000us
+runtime-0-1     | 15:17:36.203 [W0] INFO:	sim_time 9_795_325_000us: PhysicsEvent @ 9_795_325_000us
+runtime-0-1     | 15:17:36.204 [W0] INFO:	sim_time 9_795_325_000us: StepEvent @ 9_795_325_000us
+runtime-0-1     | 15:17:36.206 [W0] INFO:	sim_time 9_795_425_000us: GroupedRenderEvent(now=9_795_425_000us)
+sensorsim-0-1   | [2026-03-29 15:17:36,212][nre.grpc.serve][INFO] render_rgb
+sensorsim-0-1   | [2026-03-29 15:17:36,293][nre.grpc.serve][INFO] render_rgb
+sensorsim-0-1   | [2026-03-29 15:17:36,361][nre.grpc.serve][INFO] render_rgb
+runtime-0-1     | 15:17:36.431 [W0] INFO:	sim_time 9_795_425_000us: PolicyEvent @ 9_795_425_000us
+runtime-0-1     | 15:17:36.431 [W0] INFO:	Draining 5 outstanding tasks
+runtime-0-1     | 15:17:36.699 [W0] INFO:	sim_time 9_795_425_000us: ControllerEvent @ 9_795_425_000us
+runtime-0-1     | 15:17:36.705 [W0] INFO:	sim_time 9_795_425_000us: PhysicsEvent @ 9_795_425_000us
+runtime-0-1     | 15:17:36.708 [W0] INFO:	sim_time 9_795_425_000us: TrafficEvent @ 9_795_425_000us
+runtime-0-1     | 15:17:36.710 [W0] INFO:	sim_time 9_795_425_000us: PhysicsEvent @ 9_795_425_000us
+runtime-0-1     | 15:17:36.711 [W0] INFO:	sim_time 9_795_425_000us: StepEvent @ 9_795_425_000us
+runtime-0-1     | 15:17:36.713 [W0] INFO:	sim_time 9_795_525_000us: GroupedRenderEvent(now=9_795_525_000us)
+sensorsim-0-1   | [2026-03-29 15:17:36,717][nre.grpc.serve][INFO] render_rgb
+sensorsim-0-1   | [2026-03-29 15:17:36,794][nre.grpc.serve][INFO] render_rgb
+sensorsim-0-1   | [2026-03-29 15:17:36,861][nre.grpc.serve][INFO] render_rgb
+runtime-0-1     | 15:17:36.931 [W0] INFO:	sim_time 9_795_525_000us: PolicyEvent @ 9_795_525_000us
+runtime-0-1     | 15:17:36.931 [W0] INFO:	Draining 5 outstanding tasks
+runtime-0-1     | 15:17:37.193 [W0] INFO:	sim_time 9_795_525_000us: ControllerEvent @ 9_795_525_000us
+runtime-0-1     | 15:17:37.200 [W0] INFO:	sim_time 9_795_525_000us: PhysicsEvent @ 9_795_525_000us
+runtime-0-1     | 15:17:37.203 [W0] INFO:	sim_time 9_795_525_000us: TrafficEvent @ 9_795_525_000us
+runtime-0-1     | 15:17:37.205 [W0] INFO:	sim_time 9_795_525_000us: PhysicsEvent @ 9_795_525_000us
+runtime-0-1     | 15:17:37.206 [W0] INFO:	sim_time 9_795_525_000us: StepEvent @ 9_795_525_000us
+runtime-0-1     | 15:17:37.208 [W0] INFO:	sim_time 9_795_625_000us: GroupedRenderEvent(now=9_795_625_000us)
+sensorsim-0-1   | [2026-03-29 15:17:37,212][nre.grpc.serve][INFO] render_rgb
+sensorsim-0-1   | [2026-03-29 15:17:37,287][nre.grpc.serve][INFO] render_rgb
+sensorsim-0-1   | [2026-03-29 15:17:37,355][nre.grpc.serve][INFO] render_rgb
+runtime-0-1     | 15:17:37.426 [W0] INFO:	sim_time 9_795_625_000us: PolicyEvent @ 9_795_625_000us
+runtime-0-1     | 15:17:37.426 [W0] INFO:	Draining 5 outstanding tasks
+runtime-0-1     | 15:17:37.690 [W0] INFO:	sim_time 9_795_625_000us: ControllerEvent @ 9_795_625_000us
+runtime-0-1     | 15:17:37.697 [W0] INFO:	sim_time 9_795_625_000us: PhysicsEvent @ 9_795_625_000us
+runtime-0-1     | 15:17:37.700 [W0] INFO:	sim_time 9_795_625_000us: TrafficEvent @ 9_795_625_000us
+runtime-0-1     | 15:17:37.704 [W0] INFO:	sim_time 9_795_625_000us: PhysicsEvent @ 9_795_625_000us
+runtime-0-1     | 15:17:37.705 [W0] INFO:	sim_time 9_795_625_000us: StepEvent @ 9_795_625_000us
+runtime-0-1     | 15:17:37.707 [W0] INFO:	sim_time 9_795_725_000us: GroupedRenderEvent(now=9_795_725_000us)
+sensorsim-0-1   | [2026-03-29 15:17:37,710][nre.grpc.serve][INFO] render_rgb
+sensorsim-0-1   | [2026-03-29 15:17:37,786][nre.grpc.serve][INFO] render_rgb
+sensorsim-0-1   | [2026-03-29 15:17:37,853][nre.grpc.serve][INFO] render_rgb
+runtime-0-1     | 15:17:37.924 [W0] INFO:	sim_time 9_795_725_000us: PolicyEvent @ 9_795_725_000us
+runtime-0-1     | 15:17:37.925 [W0] INFO:	Draining 5 outstanding tasks
+runtime-0-1     | 15:17:38.188 [W0] INFO:	sim_time 9_795_725_000us: ControllerEvent @ 9_795_725_000us
+runtime-0-1     | 15:17:38.195 [W0] INFO:	sim_time 9_795_725_000us: PhysicsEvent @ 9_795_725_000us
+runtime-0-1     | 15:17:38.199 [W0] INFO:	sim_time 9_795_725_000us: TrafficEvent @ 9_795_725_000us
+runtime-0-1     | 15:17:38.200 [W0] INFO:	sim_time 9_795_725_000us: PhysicsEvent @ 9_795_725_000us
+runtime-0-1     | 15:17:38.201 [W0] INFO:	sim_time 9_795_725_000us: StepEvent @ 9_795_725_000us
+runtime-0-1     | 15:17:38.203 [W0] INFO:	sim_time 9_795_825_000us: GroupedRenderEvent(now=9_795_825_000us)
+sensorsim-0-1   | [2026-03-29 15:17:38,207][nre.grpc.serve][INFO] render_rgb
+sensorsim-0-1   | [2026-03-29 15:17:38,284][nre.grpc.serve][INFO] render_rgb
+sensorsim-0-1   | [2026-03-29 15:17:38,350][nre.grpc.serve][INFO] render_rgb
+runtime-0-1     | 15:17:38.421 [W0] INFO:	sim_time 9_795_825_000us: PolicyEvent @ 9_795_825_000us
+runtime-0-1     | 15:17:38.421 [W0] INFO:	Draining 5 outstanding tasks
+runtime-0-1     | 15:17:38.681 [W0] INFO:	sim_time 9_795_825_000us: ControllerEvent @ 9_795_825_000us
+runtime-0-1     | 15:17:38.687 [W0] INFO:	sim_time 9_795_825_000us: PhysicsEvent @ 9_795_825_000us
+runtime-0-1     | 15:17:38.690 [W0] INFO:	sim_time 9_795_825_000us: TrafficEvent @ 9_795_825_000us
+runtime-0-1     | 15:17:38.691 [W0] INFO:	sim_time 9_795_825_000us: PhysicsEvent @ 9_795_825_000us
+runtime-0-1     | 15:17:38.692 [W0] INFO:	sim_time 9_795_825_000us: StepEvent @ 9_795_825_000us
+runtime-0-1     | 15:17:38.696 [W0] INFO:	sim_time 9_795_925_000us: GroupedRenderEvent(now=9_795_925_000us)
+sensorsim-0-1   | [2026-03-29 15:17:38,700][nre.grpc.serve][INFO] render_rgb
+sensorsim-0-1   | [2026-03-29 15:17:38,777][nre.grpc.serve][INFO] render_rgb
+sensorsim-0-1   | [2026-03-29 15:17:38,844][nre.grpc.serve][INFO] render_rgb
+runtime-0-1     | 15:17:38.915 [W0] INFO:	sim_time 9_795_925_000us: PolicyEvent @ 9_795_925_000us
+runtime-0-1     | 15:17:38.915 [W0] INFO:	Draining 5 outstanding tasks
+runtime-0-1     | 15:17:39.193 [W0] INFO:	sim_time 9_795_925_000us: ControllerEvent @ 9_795_925_000us
+runtime-0-1     | 15:17:39.200 [W0] INFO:	sim_time 9_795_925_000us: PhysicsEvent @ 9_795_925_000us
+runtime-0-1     | 15:17:39.204 [W0] INFO:	sim_time 9_795_925_000us: TrafficEvent @ 9_795_925_000us
+runtime-0-1     | 15:17:39.206 [W0] INFO:	sim_time 9_795_925_000us: PhysicsEvent @ 9_795_925_000us
+runtime-0-1     | 15:17:39.207 [W0] INFO:	sim_time 9_795_925_000us: StepEvent @ 9_795_925_000us
+runtime-0-1     | 15:17:39.209 [W0] INFO:	sim_time 9_796_025_000us: GroupedRenderEvent(now=9_796_025_000us)
+sensorsim-0-1   | [2026-03-29 15:17:39,213][nre.grpc.serve][INFO] render_rgb
+sensorsim-0-1   | [2026-03-29 15:17:39,289][nre.grpc.serve][INFO] render_rgb
+sensorsim-0-1   | [2026-03-29 15:17:39,358][nre.grpc.serve][INFO] render_rgb
+runtime-0-1     | 15:17:39.429 [W0] INFO:	sim_time 9_796_025_000us: PolicyEvent @ 9_796_025_000us
+runtime-0-1     | 15:17:39.429 [W0] INFO:	Draining 5 outstanding tasks
+runtime-0-1     | 15:17:39.694 [W0] INFO:	sim_time 9_796_025_000us: ControllerEvent @ 9_796_025_000us
+runtime-0-1     | 15:17:39.700 [W0] INFO:	sim_time 9_796_025_000us: PhysicsEvent @ 9_796_025_000us
+runtime-0-1     | 15:17:39.704 [W0] INFO:	sim_time 9_796_025_000us: TrafficEvent @ 9_796_025_000us
+runtime-0-1     | 15:17:39.705 [W0] INFO:	sim_time 9_796_025_000us: PhysicsEvent @ 9_796_025_000us
+runtime-0-1     | 15:17:39.706 [W0] INFO:	sim_time 9_796_025_000us: StepEvent @ 9_796_025_000us
+runtime-0-1     | 15:17:39.708 [W0] INFO:	sim_time 9_796_125_000us: GroupedRenderEvent(now=9_796_125_000us)
+sensorsim-0-1   | [2026-03-29 15:17:39,713][nre.grpc.serve][INFO] render_rgb
+sensorsim-0-1   | [2026-03-29 15:17:39,790][nre.grpc.serve][INFO] render_rgb
+sensorsim-0-1   | [2026-03-29 15:17:39,858][nre.grpc.serve][INFO] render_rgb
+runtime-0-1     | 15:17:39.929 [W0] INFO:	sim_time 9_796_125_000us: PolicyEvent @ 9_796_125_000us
+runtime-0-1     | 15:17:39.929 [W0] INFO:	Draining 5 outstanding tasks
+runtime-0-1     | 15:17:40.212 [W0] INFO:	sim_time 9_796_125_000us: ControllerEvent @ 9_796_125_000us
+runtime-0-1     | 15:17:40.219 [W0] INFO:	sim_time 9_796_125_000us: PhysicsEvent @ 9_796_125_000us
+runtime-0-1     | 15:17:40.222 [W0] INFO:	sim_time 9_796_125_000us: TrafficEvent @ 9_796_125_000us
+runtime-0-1     | 15:17:40.224 [W0] INFO:	sim_time 9_796_125_000us: PhysicsEvent @ 9_796_125_000us
+runtime-0-1     | 15:17:40.225 [W0] INFO:	sim_time 9_796_125_000us: StepEvent @ 9_796_125_000us
+runtime-0-1     | 15:17:40.227 [W0] INFO:	sim_time 9_796_225_000us: GroupedRenderEvent(now=9_796_225_000us)
+sensorsim-0-1   | [2026-03-29 15:17:40,230][nre.grpc.serve][INFO] render_rgb
+sensorsim-0-1   | [2026-03-29 15:17:40,307][nre.grpc.serve][INFO] render_rgb
+sensorsim-0-1   | [2026-03-29 15:17:40,375][nre.grpc.serve][INFO] render_rgb
+runtime-0-1     | 15:17:40.445 [W0] INFO:	sim_time 9_796_225_000us: PolicyEvent @ 9_796_225_000us
+runtime-0-1     | 15:17:40.445 [W0] INFO:	Draining 5 outstanding tasks
+runtime-0-1     | 15:17:40.705 [W0] INFO:	sim_time 9_796_225_000us: ControllerEvent @ 9_796_225_000us
+runtime-0-1     | 15:17:40.712 [W0] INFO:	sim_time 9_796_225_000us: PhysicsEvent @ 9_796_225_000us
+runtime-0-1     | 15:17:40.715 [W0] INFO:	sim_time 9_796_225_000us: TrafficEvent @ 9_796_225_000us
+runtime-0-1     | 15:17:40.717 [W0] INFO:	sim_time 9_796_225_000us: PhysicsEvent @ 9_796_225_000us
+runtime-0-1     | 15:17:40.718 [W0] INFO:	sim_time 9_796_225_000us: StepEvent @ 9_796_225_000us
+runtime-0-1     | 15:17:40.720 [W0] INFO:	sim_time 9_796_325_000us: GroupedRenderEvent(now=9_796_325_000us)
+sensorsim-0-1   | [2026-03-29 15:17:40,724][nre.grpc.serve][INFO] render_rgb
+sensorsim-0-1   | [2026-03-29 15:17:40,801][nre.grpc.serve][INFO] render_rgb
+sensorsim-0-1   | [2026-03-29 15:17:40,870][nre.grpc.serve][INFO] render_rgb
+runtime-0-1     | 15:17:40.941 [W0] INFO:	sim_time 9_796_325_000us: PolicyEvent @ 9_796_325_000us
+runtime-0-1     | 15:17:40.941 [W0] INFO:	Draining 5 outstanding tasks
+runtime-0-1     | 15:17:41.203 [W0] INFO:	sim_time 9_796_325_000us: ControllerEvent @ 9_796_325_000us
+runtime-0-1     | 15:17:41.210 [W0] INFO:	sim_time 9_796_325_000us: PhysicsEvent @ 9_796_325_000us
+runtime-0-1     | 15:17:41.230 [W0] INFO:	sim_time 9_796_325_000us: TrafficEvent @ 9_796_325_000us
+runtime-0-1     | 15:17:41.234 [W0] INFO:	sim_time 9_796_325_000us: PhysicsEvent @ 9_796_325_000us
+runtime-0-1     | 15:17:41.234 [W0] INFO:	sim_time 9_796_325_000us: StepEvent @ 9_796_325_000us
+runtime-0-1     | 15:17:41.237 [W0] INFO:	sim_time 9_796_425_000us: GroupedRenderEvent(now=9_796_425_000us)
+sensorsim-0-1   | [2026-03-29 15:17:41,241][nre.grpc.serve][INFO] render_rgb
+sensorsim-0-1   | [2026-03-29 15:17:41,317][nre.grpc.serve][INFO] render_rgb
+sensorsim-0-1   | [2026-03-29 15:17:41,385][nre.grpc.serve][INFO] render_rgb
+runtime-0-1     | 15:17:41.458 [W0] INFO:	sim_time 9_796_425_000us: PolicyEvent @ 9_796_425_000us
+runtime-0-1     | 15:17:41.458 [W0] INFO:	Draining 5 outstanding tasks
+runtime-0-1     | 15:17:41.723 [W0] INFO:	sim_time 9_796_425_000us: ControllerEvent @ 9_796_425_000us
+runtime-0-1     | 15:17:41.730 [W0] INFO:	sim_time 9_796_425_000us: PhysicsEvent @ 9_796_425_000us
+runtime-0-1     | 15:17:41.732 [W0] INFO:	sim_time 9_796_425_000us: TrafficEvent @ 9_796_425_000us
+runtime-0-1     | 15:17:41.734 [W0] INFO:	sim_time 9_796_425_000us: PhysicsEvent @ 9_796_425_000us
+runtime-0-1     | 15:17:41.735 [W0] INFO:	sim_time 9_796_425_000us: StepEvent @ 9_796_425_000us
+runtime-0-1     | 15:17:41.737 [W0] INFO:	sim_time 9_796_525_000us: GroupedRenderEvent(now=9_796_525_000us)
+sensorsim-0-1   | [2026-03-29 15:17:41,741][nre.grpc.serve][INFO] render_rgb
+sensorsim-0-1   | [2026-03-29 15:17:41,815][nre.grpc.serve][INFO] render_rgb
+sensorsim-0-1   | [2026-03-29 15:17:41,882][nre.grpc.serve][INFO] render_rgb
+runtime-0-1     | 15:17:41.952 [W0] INFO:	sim_time 9_796_525_000us: PolicyEvent @ 9_796_525_000us
+runtime-0-1     | 15:17:41.953 [W0] INFO:	Draining 5 outstanding tasks
+runtime-0-1     | 15:17:42.224 [W0] INFO:	sim_time 9_796_525_000us: ControllerEvent @ 9_796_525_000us
+runtime-0-1     | 15:17:42.249 [W0] INFO:	sim_time 9_796_525_000us: PhysicsEvent @ 9_796_525_000us
+runtime-0-1     | 15:17:42.253 [W0] INFO:	sim_time 9_796_525_000us: TrafficEvent @ 9_796_525_000us
+runtime-0-1     | 15:17:42.254 [W0] INFO:	sim_time 9_796_525_000us: PhysicsEvent @ 9_796_525_000us
+runtime-0-1     | 15:17:42.255 [W0] INFO:	sim_time 9_796_525_000us: StepEvent @ 9_796_525_000us
+runtime-0-1     | 15:17:42.259 [W0] INFO:	sim_time 9_796_625_000us: GroupedRenderEvent(now=9_796_625_000us)
+sensorsim-0-1   | [2026-03-29 15:17:42,263][nre.grpc.serve][INFO] render_rgb
+sensorsim-0-1   | [2026-03-29 15:17:42,338][nre.grpc.serve][INFO] render_rgb
+sensorsim-0-1   | [2026-03-29 15:17:42,404][nre.grpc.serve][INFO] render_rgb
+runtime-0-1     | 15:17:42.475 [W0] INFO:	sim_time 9_796_625_000us: PolicyEvent @ 9_796_625_000us
+runtime-0-1     | 15:17:42.475 [W0] INFO:	Draining 5 outstanding tasks
+runtime-0-1     | 15:17:42.754 [W0] INFO:	sim_time 9_796_625_000us: ControllerEvent @ 9_796_625_000us
+runtime-0-1     | 15:17:42.761 [W0] INFO:	sim_time 9_796_625_000us: PhysicsEvent @ 9_796_625_000us
+runtime-0-1     | 15:17:42.763 [W0] INFO:	sim_time 9_796_625_000us: TrafficEvent @ 9_796_625_000us
+runtime-0-1     | 15:17:42.765 [W0] INFO:	sim_time 9_796_625_000us: PhysicsEvent @ 9_796_625_000us
+runtime-0-1     | 15:17:42.766 [W0] INFO:	sim_time 9_796_625_000us: StepEvent @ 9_796_625_000us
+runtime-0-1     | 15:17:42.768 [W0] INFO:	sim_time 9_796_725_000us: GroupedRenderEvent(now=9_796_725_000us)
+sensorsim-0-1   | [2026-03-29 15:17:42,771][nre.grpc.serve][INFO] render_rgb
+sensorsim-0-1   | [2026-03-29 15:17:42,846][nre.grpc.serve][INFO] render_rgb
+sensorsim-0-1   | [2026-03-29 15:17:42,913][nre.grpc.serve][INFO] render_rgb
+runtime-0-1     | 15:17:42.983 [W0] INFO:	sim_time 9_796_725_000us: PolicyEvent @ 9_796_725_000us
+runtime-0-1     | 15:17:42.984 [W0] INFO:	Draining 5 outstanding tasks
+runtime-0-1     | 15:17:43.246 [W0] INFO:	sim_time 9_796_725_000us: ControllerEvent @ 9_796_725_000us
+runtime-0-1     | 15:17:43.268 [W0] INFO:	sim_time 9_796_725_000us: PhysicsEvent @ 9_796_725_000us
+runtime-0-1     | 15:17:43.271 [W0] INFO:	sim_time 9_796_725_000us: TrafficEvent @ 9_796_725_000us
+runtime-0-1     | 15:17:43.272 [W0] INFO:	sim_time 9_796_725_000us: PhysicsEvent @ 9_796_725_000us
+runtime-0-1     | 15:17:43.273 [W0] INFO:	sim_time 9_796_725_000us: StepEvent @ 9_796_725_000us
+runtime-0-1     | 15:17:43.275 [W0] INFO:	sim_time 9_796_825_000us: GroupedRenderEvent(now=9_796_825_000us)
+sensorsim-0-1   | [2026-03-29 15:17:43,280][nre.grpc.serve][INFO] render_rgb
+sensorsim-0-1   | [2026-03-29 15:17:43,360][nre.grpc.serve][INFO] render_rgb
+sensorsim-0-1   | [2026-03-29 15:17:43,426][nre.grpc.serve][INFO] render_rgb
+runtime-0-1     | 15:17:43.497 [W0] INFO:	sim_time 9_796_825_000us: PolicyEvent @ 9_796_825_000us
+runtime-0-1     | 15:17:43.497 [W0] INFO:	Draining 5 outstanding tasks
+runtime-0-1     | 15:17:43.761 [W0] INFO:	sim_time 9_796_825_000us: ControllerEvent @ 9_796_825_000us
+runtime-0-1     | 15:17:43.769 [W0] INFO:	sim_time 9_796_825_000us: PhysicsEvent @ 9_796_825_000us
+runtime-0-1     | 15:17:43.772 [W0] INFO:	sim_time 9_796_825_000us: TrafficEvent @ 9_796_825_000us
+runtime-0-1     | 15:17:43.774 [W0] INFO:	sim_time 9_796_825_000us: PhysicsEvent @ 9_796_825_000us
+runtime-0-1     | 15:17:43.775 [W0] INFO:	sim_time 9_796_825_000us: StepEvent @ 9_796_825_000us
+runtime-0-1     | 15:17:43.777 [W0] INFO:	sim_time 9_796_925_000us: GroupedRenderEvent(now=9_796_925_000us)
+sensorsim-0-1   | [2026-03-29 15:17:43,780][nre.grpc.serve][INFO] render_rgb
+sensorsim-0-1   | [2026-03-29 15:17:43,861][nre.grpc.serve][INFO] render_rgb
+sensorsim-0-1   | [2026-03-29 15:17:43,929][nre.grpc.serve][INFO] render_rgb
+runtime-0-1     | 15:17:44.000 [W0] INFO:	sim_time 9_796_925_000us: PolicyEvent @ 9_796_925_000us
+runtime-0-1     | 15:17:44.000 [W0] INFO:	Draining 5 outstanding tasks
+runtime-0-1     | 15:17:44.259 [W0] INFO:	sim_time 9_796_925_000us: ControllerEvent @ 9_796_925_000us
+runtime-0-1     | 15:17:44.266 [W0] INFO:	sim_time 9_796_925_000us: PhysicsEvent @ 9_796_925_000us
+runtime-0-1     | 15:17:44.285 [W0] INFO:	sim_time 9_796_925_000us: TrafficEvent @ 9_796_925_000us
+runtime-0-1     | 15:17:44.287 [W0] INFO:	sim_time 9_796_925_000us: PhysicsEvent @ 9_796_925_000us
+runtime-0-1     | 15:17:44.288 [W0] INFO:	sim_time 9_796_925_000us: StepEvent @ 9_796_925_000us
+runtime-0-1     | 15:17:44.290 [W0] INFO:	sim_time 9_797_025_000us: GroupedRenderEvent(now=9_797_025_000us)
+sensorsim-0-1   | [2026-03-29 15:17:44,293][nre.grpc.serve][INFO] render_rgb
+sensorsim-0-1   | [2026-03-29 15:17:44,372][nre.grpc.serve][INFO] render_rgb
+sensorsim-0-1   | [2026-03-29 15:17:44,438][nre.grpc.serve][INFO] render_rgb
+runtime-0-1     | 15:17:44.508 [W0] INFO:	sim_time 9_797_025_000us: PolicyEvent @ 9_797_025_000us
+runtime-0-1     | 15:17:44.509 [W0] INFO:	Draining 5 outstanding tasks
+runtime-0-1     | 15:17:44.775 [W0] INFO:	sim_time 9_797_025_000us: ControllerEvent @ 9_797_025_000us
+runtime-0-1     | 15:17:44.782 [W0] INFO:	sim_time 9_797_025_000us: PhysicsEvent @ 9_797_025_000us
+runtime-0-1     | 15:17:44.785 [W0] INFO:	sim_time 9_797_025_000us: TrafficEvent @ 9_797_025_000us
+runtime-0-1     | 15:17:44.788 [W0] INFO:	sim_time 9_797_025_000us: PhysicsEvent @ 9_797_025_000us
+runtime-0-1     | 15:17:44.789 [W0] INFO:	sim_time 9_797_025_000us: StepEvent @ 9_797_025_000us
+runtime-0-1     | 15:17:44.791 [W0] INFO:	sim_time 9_797_125_000us: GroupedRenderEvent(now=9_797_125_000us)
+sensorsim-0-1   | [2026-03-29 15:17:44,794][nre.grpc.serve][INFO] render_rgb
+sensorsim-0-1   | [2026-03-29 15:17:44,872][nre.grpc.serve][INFO] render_rgb
+sensorsim-0-1   | [2026-03-29 15:17:44,940][nre.grpc.serve][INFO] render_rgb
+runtime-0-1     | 15:17:45.012 [W0] INFO:	sim_time 9_797_125_000us: PolicyEvent @ 9_797_125_000us
+runtime-0-1     | 15:17:45.012 [W0] INFO:	Draining 5 outstanding tasks
+runtime-0-1     | 15:17:45.275 [W0] INFO:	sim_time 9_797_125_000us: ControllerEvent @ 9_797_125_000us
+runtime-0-1     | 15:17:45.283 [W0] INFO:	sim_time 9_797_125_000us: PhysicsEvent @ 9_797_125_000us
+runtime-0-1     | 15:17:45.305 [W0] INFO:	sim_time 9_797_125_000us: TrafficEvent @ 9_797_125_000us
+runtime-0-1     | 15:17:45.306 [W0] INFO:	sim_time 9_797_125_000us: PhysicsEvent @ 9_797_125_000us
+runtime-0-1     | 15:17:45.307 [W0] INFO:	sim_time 9_797_125_000us: StepEvent @ 9_797_125_000us
+runtime-0-1     | 15:17:45.310 [W0] INFO:	sim_time 9_797_225_000us: GroupedRenderEvent(now=9_797_225_000us)
+sensorsim-0-1   | [2026-03-29 15:17:45,313][nre.grpc.serve][INFO] render_rgb
+sensorsim-0-1   | [2026-03-29 15:17:45,392][nre.grpc.serve][INFO] render_rgb
+sensorsim-0-1   | [2026-03-29 15:17:45,458][nre.grpc.serve][INFO] render_rgb
+runtime-0-1     | 15:17:45.528 [W0] INFO:	sim_time 9_797_225_000us: PolicyEvent @ 9_797_225_000us
+runtime-0-1     | 15:17:45.529 [W0] INFO:	Draining 5 outstanding tasks
+runtime-0-1     | 15:17:45.792 [W0] INFO:	sim_time 9_797_225_000us: ControllerEvent @ 9_797_225_000us
+runtime-0-1     | 15:17:45.799 [W0] INFO:	sim_time 9_797_225_000us: PhysicsEvent @ 9_797_225_000us
+runtime-0-1     | 15:17:45.802 [W0] INFO:	sim_time 9_797_225_000us: TrafficEvent @ 9_797_225_000us
+runtime-0-1     | 15:17:45.804 [W0] INFO:	sim_time 9_797_225_000us: PhysicsEvent @ 9_797_225_000us
+runtime-0-1     | 15:17:45.805 [W0] INFO:	sim_time 9_797_225_000us: StepEvent @ 9_797_225_000us
+runtime-0-1     | 15:17:45.809 [W0] INFO:	sim_time 9_797_325_000us: GroupedRenderEvent(now=9_797_325_000us)
+sensorsim-0-1   | [2026-03-29 15:17:45,812][nre.grpc.serve][INFO] render_rgb
+sensorsim-0-1   | [2026-03-29 15:17:45,891][nre.grpc.serve][INFO] render_rgb
+sensorsim-0-1   | [2026-03-29 15:17:45,959][nre.grpc.serve][INFO] render_rgb
+runtime-0-1     | 15:17:46.030 [W0] INFO:	sim_time 9_797_325_000us: PolicyEvent @ 9_797_325_000us
+runtime-0-1     | 15:17:46.030 [W0] INFO:	Draining 5 outstanding tasks
+runtime-0-1     | 15:17:46.292 [W0] INFO:	sim_time 9_797_325_000us: SimulationEndEvent @ 9_797_325_000us
+runtime-0-1     | 15:17:46.292 [W0] INFO:	Simulation ended via SimulationEndEvent
+runtime-0-1     | 15:17:46.292 [W0] INFO:	Event-based simulation loop timer stopped
+runtime-0-1     | Running in-runtime evaluation for session 356b12fc-2b82-11f1-920a-dbe4b222060e
+runtime-0-1     | Saved 1430 metric rows to /mnt/log_dir/rollouts/clipgt-048b974e-1546-488a-b8f9-d32bff77f5aa/356b12fc-2b82-11f1-920a-dbe4b222060e/metrics.parquet
+runtime-0-1     | Aggregated metrics for 356b12fc-2b82-11f1-920a-dbe4b222060e: {'collision_front': '0.0000', 'collision_rear': '0.0000', 'collision_lateral': '0.0000', 'collision_any': '0.0000', 'offroad': '1.0000', 'wrong_lane': '1.0000', 'progress': '0.4772', 'progress_rel': '0.9981', 'dist_to_gt_trajectory': '0.9978', 'dist_to_gt_location': '13.2263', 'dist_traveled_m': '56.1920', 'min_ade@0.5s(gt)': 'nan', 'min_ade@1.0s(gt)': 'nan', 'min_ade@2.5s(gt)': 'nan', 'min_ade@5.0s(gt)': 'nan', 'plan_deviation': '0.8545', 'img_is_black': '0.0000', 'safety_monitor_triggered': '0.0000'}
+runtime-0-1     | Rendering video for clipgt-clipgt-048b974e-1546-488a-b8f9-d32bff77f5aa/0/356b12fc-2b82-11f1-920a-dbe4b222060e
+runtime-0-1     | Applying modification: 'offroad_or_collision': AddCombinedEvent([([(col("collision_any")) > (dyn float: 0)]) | ([(col("offroad")) > (dyn float: 0)])]) ±(0 rows, 1 trajectories)
+runtime-0-1     | Applying modification: 'collision_at_fault': AddCombinedEvent([([(col("collision_front")) > (dyn float: 0)]) | ([(col("collision_lateral")) > (dyn int: 0)])]) ±(0 rows, 1 trajectories)
+runtime-0-1     | Applying modification: 'offroad_or_collision_at_fault': AddCombinedEvent([([(col("collision_at_fault")) > (dyn float: 0)]) | ([(col("offroad")) > (dyn float: 0)])]) ±(0 rows, 1 trajectories)
+runtime-0-1     | Applying modification: 'duration_frac_20s': AddCombinedEvent([([(col("timestamps_us")) - (col("timestamps_us").min().over([col("trajectory_uid")]))]) / (dyn float: 20000000)]) ±(0 rows, 1 trajectories)
+runtime-0-1     | Applying modification: RemoveTrajectoryWithEvent([(col("img_is_black")) > (dyn float: 0)]) ±(0 rows, 1 trajectories)
+runtime-0-1     | Applying modification: RemoveTimestepsAfterEvent([(col("offroad_or_collision")) > (dyn float: 0)]) ±(102 rows, 1 trajectories)
+runtime-0-1     | Rendering video for clipgt-clipgt-048b974e-1546-488a-b8f9-d32bff77f5aa/0/356b12fc-2b82-11f1-920a-dbe4b222060e
+runtime-0-1     | Animation.save using <class 'matplotlib.animation.FFMpegWriter'>
+runtime-0-1     | MovieWriter._run: running command: ffmpeg -f rawvideo -vcodec rawvideo -s 900x1000 -pix_fmt rgba -framerate 10.0 -loglevel error -i pipe: -vcodec h264 -pix_fmt yuv420p -y /mnt/log_dir/rollouts/clipgt-048b974e-1546-488a-b8f9-d32bff77f5aa/356b12fc-2b82-11f1-920a-dbe4b222060e/clipgt-clipgt-048b974e-1546-488a-b8f9-d32bff77f5aa_0_356b12fc-2b82-11f1-920a-dbe4b222060e_camera_front_wide_120fov_default.mp4
+runtime-0-1     | Video saved to /mnt/log_dir/rollouts/clipgt-048b974e-1546-488a-b8f9-d32bff77f5aa/356b12fc-2b82-11f1-920a-dbe4b222060e/videos/
+runtime-0-1     | 15:18:31.267 [W0] INFO:	Session COMPLETED: uuid=356b12fc-2b82-11f1-920a-dbe4b222060e scene=clipgt-048b974e-1546-488a-b8f9-d32bff77f5aa simulated 10.10 sim seconds in 74.27 wall clock seconds for 0.14x real time (total rollout 99.06s incl. setup/warmup)
+controller-0-1  | 15:18:31.288 INFO:	close_session for session_uuid: 356b12fc-2b82-11f1-920a-dbe4b222060e
+controller-0-1  | 15:18:31.289 INFO:	Closing session: 356b12fc-2b82-11f1-920a-dbe4b222060e
+runtime-0-1     | 15:18:31.309 [W0] INFO:	Received shutdown signal
+runtime-0-1     | 15:18:31.309 [W0] INFO:	Received shutdown signal
+runtime-0-1     | 15:18:31.319 [W0] INFO:	Exporting GPU metrics for 1 GPU(s)
+runtime-0-1     | 15:18:31.330 [W0] INFO:	Metrics written to /mnt/log_dir/telemetry/metrics_worker_0.prom
+runtime-0-1     | 15:18:31.330 [W0] INFO:	Worker 0 exiting
+runtime-0-1     | Shutting down services...
+sensorsim-0-1   | [2026-03-29 15:18:31,338][nre.grpc.serve][INFO] shut_down
+physics-0-1     | 15:18:31.340 INFO:	shut_down
+physics-0-1     | Warp 1.12.0 initialized:
+physics-0-1     |    CUDA Toolkit 12.9, Driver 12.4
+physics-0-1     |    Devices:
+physics-0-1     |      "cpu"      : "x86_64"
+physics-0-1     |      "cuda:0"   : "NVIDIA RTX A6000" (48 GiB, sm_86, mempool enabled)
+physics-0-1     |    Kernel cache:
+physics-0-1     |      /repo/'/mnt/warp'
+physics-0-1     | Module alpasim_physics.backend 604307b load on device 'cuda:0' took 775.06 ms  (compiled)
+controller-0-1  | 15:18:31.344 INFO:	shut_down
+runtime-0-1     | Service shutdown complete
+runtime-0-1     | 15:18:31.349 [W0] INFO:	Merged 1 Prometheus files into /mnt/log_dir/telemetry/metrics.prom
+runtime-0-1     | 15:18:31.350 [W0] INFO:	Loading metrics from: /mnt/log_dir/telemetry/metrics.prom
+runtime-0-1     | Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+runtime-0-1     | Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+runtime-0-1     | Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+runtime-0-1     | Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+runtime-0-1     | Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+runtime-0-1     | Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+[Kcontroller-0-1 exited with code 0
+runtime-0-1     | Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+runtime-0-1     | Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+[Kphysics-0-1 exited with code 0
+runtime-0-1     | Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+runtime-0-1     | Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+runtime-0-1     | 15:18:33.666 [W0] INFO:	Metrics plot saved to: /mnt/log_dir/metrics_plot.png
+runtime-0-1     | Generated telemetry metrics plot: /mnt/log_dir/metrics_plot.png
+runtime-0-1     | Running post-rollout aggregation...
+runtime-0-1     | No array job, don't need to check counter.
+runtime-0-1     | Skipping directory /mnt/array_job_dir/metrics_plot.png - not recognized as job dir (wizard config missing)
+runtime-0-1     | Skipping directory /mnt/array_job_dir/outputs - not recognized as job dir (wizard config missing)
+runtime-0-1     | Skipping directory /mnt/array_job_dir/run_metadata.yaml - not recognized as job dir (wizard config missing)
+runtime-0-1     | Skipping directory /mnt/array_job_dir/controller - not recognized as job dir (wizard config missing)
+runtime-0-1     | Skipping directory /mnt/array_job_dir/eval-config.yaml - not recognized as job dir (wizard config missing)
+runtime-0-1     | Skipping directory /mnt/array_job_dir/driver-config.yaml - not recognized as job dir (wizard config missing)
+runtime-0-1     | Skipping directory /mnt/array_job_dir/wizard-config.yaml - not recognized as job dir (wizard config missing)
+runtime-0-1     | Skipping directory /mnt/array_job_dir/telemetry - not recognized as job dir (wizard config missing)
+runtime-0-1     | Skipping directory /mnt/array_job_dir/trafficsim-config.yaml - not recognized as job dir (wizard config missing)
+runtime-0-1     | Skipping directory /mnt/array_job_dir/docker-compose.yaml - not recognized as job dir (wizard config missing)
+runtime-0-1     | Skipping directory /mnt/array_job_dir/txt-logs - not recognized as job dir (wizard config missing)
+runtime-0-1     | Skipping directory /mnt/array_job_dir/rollouts - not recognized as job dir (wizard config missing)
+runtime-0-1     | Skipping directory /mnt/array_job_dir/generated-network-config.yaml - not recognized as job dir (wizard config missing)
+runtime-0-1     | Skipping directory /mnt/array_job_dir/generated-user-config-0.yaml - not recognized as job dir (wizard config missing)
+runtime-0-1     | Skipping directory /mnt/array_job_dir/wizard-config-loadable.yaml - not recognized as job dir (wizard config missing)
+runtime-0-1     | Running aggregation. Found 1 job directories: /mnt/array_job_dir
+runtime-0-1     | Loaded metrics from 1 files in /mnt/array_job_dir
+runtime-0-1     | Aggregating metrics from 1 job directories with data (of 1 total)
+runtime-0-1     | Applying modification: 'offroad_or_collision': AddCombinedEvent([([(col("collision_any")) > (dyn float: 0)]) | ([(col("offroad")) > (dyn float: 0)])]) ±(0 rows, 1 trajectories)
+runtime-0-1     | Applying modification: 'collision_at_fault': AddCombinedEvent([([(col("collision_front")) > (dyn float: 0)]) | ([(col("collision_lateral")) > (dyn int: 0)])]) ±(0 rows, 1 trajectories)
+runtime-0-1     | Applying modification: 'offroad_or_collision_at_fault': AddCombinedEvent([([(col("collision_at_fault")) > (dyn float: 0)]) | ([(col("offroad")) > (dyn float: 0)])]) ±(0 rows, 1 trajectories)
+runtime-0-1     | Applying modification: 'duration_frac_20s': AddCombinedEvent([([(col("timestamps_us")) - (col("timestamps_us").min().over([col("trajectory_uid")]))]) / (dyn float: 20000000)]) ±(0 rows, 1 trajectories)
+runtime-0-1     | Applying modification: RemoveTrajectoryWithEvent([(col("img_is_black")) > (dyn float: 0)]) ±(0 rows, 1 trajectories)
+runtime-0-1     | Applying modification: RemoveTimestepsAfterEvent([(col("offroad_or_collision")) > (dyn float: 0)]) ±(102 rows, 1 trajectories)
+runtime-0-1     | Applying modification: RemoveTimestepsAfterEvent([(col("dist_to_gt_trajectory")) >= (dyn float: 4)]) ±(0 rows, 0 trajectories)
+runtime-0-1     | ────────────────────────────────────────────────────────────────────── Modifiers applied: ──────────────────────────────────────────────────────────────────────
+runtime-0-1     | 'offroad_or_collision': AddCombinedEvent([([(col("collision_any")) > (dyn float: 0)]) | ([(col("offroad")) > (dyn float: 0)])]) ±(0 rows, 1 trajectories)
+runtime-0-1     | 'collision_at_fault': AddCombinedEvent([([(col("collision_front")) > (dyn float: 0)]) | ([(col("collision_lateral")) > (dyn int: 0)])]) ±(0 rows, 1 
+runtime-0-1     | trajectories)
+runtime-0-1     | 'offroad_or_collision_at_fault': AddCombinedEvent([([(col("collision_at_fault")) > (dyn float: 0)]) | ([(col("offroad")) > (dyn float: 0)])]) ±(0 rows, 1 
+runtime-0-1     | trajectories)
+runtime-0-1     | 'duration_frac_20s': AddCombinedEvent([([(col("timestamps_us")) - (col("timestamps_us").min().over([col("trajectory_uid")]))]) / (dyn float: 20000000)]) ±(0 
+runtime-0-1     | rows, 1 trajectories)
+runtime-0-1     | RemoveTrajectoryWithEvent([(col("img_is_black")) > (dyn float: 0)]) ±(0 rows, 1 trajectories)
+runtime-0-1     | RemoveTimestepsAfterEvent([(col("offroad_or_collision")) > (dyn float: 0)]) ±(102 rows, 1 trajectories)
+runtime-0-1     | RemoveTimestepsAfterEvent([(col("dist_to_gt_trajectory")) >= (dyn float: 4)]) ±(0 rows, 0 trajectories)
+runtime-0-1     | ─────────────────────────────────────────────────────────────────────────── Results ────────────────────────────────────────────────────────────────────────────
+[Ksensorsim-0-1 exited with code 0
+runtime-0-1     |               Run: LR-09f37cdf-5cc4-4041-8389-269f1c9f7b6b               
+runtime-0-1     | ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━┓
+runtime-0-1     | ┃ Metric Name                         ┃ Metric Value ┃ Time Aggregation ┃
+runtime-0-1     | ┡━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━┩
+runtime-0-1     | │ avg_dist_between_incidents          │     0.00     │                  │
+runtime-0-1     | │ avg_dist_between_incidents_at_fault │     0.00     │                  │
+runtime-0-1     | │ collision_any                       │     0.00     │       max        │
+runtime-0-1     | │ collision_at_fault                  │     0.00     │       max        │
+runtime-0-1     | │ collision_front                     │     0.00     │       max        │
+runtime-0-1     | │ collision_lateral                   │     0.00     │       max        │
+runtime-0-1     | │ collision_rear                      │     0.00     │       max        │
+runtime-0-1     | │ dist_to_gt_location                 │     0.00     │       max        │
+runtime-0-1     | │ dist_to_gt_trajectory               │     0.00     │       max        │
+runtime-0-1     | │ dist_traveled_m                     │     0.00     │       last       │
+runtime-0-1     | │ duration_frac_20s                   │     0.00     │       last       │
+runtime-0-1     | │ img_is_black                        │     0.00     │       max        │
+runtime-0-1     | │ min_ade@0.5s(gt)                    │     N/A      │       mean       │
+runtime-0-1     | │ min_ade@1.0s(gt)                    │     N/A      │       mean       │
+runtime-0-1     | │ min_ade@2.5s(gt)                    │     N/A      │       mean       │
+runtime-0-1     | │ min_ade@5.0s(gt)                    │     N/A      │       mean       │
+runtime-0-1     | │ offroad                             │     1.00     │       max        │
+runtime-0-1     | │ offroad_or_collision                │     1.00     │       max        │
+runtime-0-1     | │ offroad_or_collision_at_fault       │     1.00     │       max        │
+runtime-0-1     | │ plan_deviation                      │     N/A      │       mean       │
+runtime-0-1     | │ progress                            │     0.00     │       last       │
+runtime-0-1     | │ progress_rel                        │     1.00     │       min        │
+runtime-0-1     | │ safety_monitor_triggered            │     0.00     │       max        │
+runtime-0-1     | │ wrong_lane                          │     0.00     │       max        │
+runtime-0-1     | └─────────────────────────────────────┴──────────────┴──────────────────┘
+runtime-0-1     |                     n_clips: 1.0, n_rollouts/clip: 1                     
+runtime-0-1     |                      Std deviation is over rollouts.                     
+runtime-0-1     | Aggregation complete. Results saved to /mnt/array_job_dir/aggregate
+runtime-0-1     | Aggregating eval videos across all array jobs.
+runtime-0-1     | Found and linked 1 videos from 1 job directories
+runtime-0-1     | Alpasim finished.
+runtime-0-1     | Results saved to /mnt/array_job_dir/aggregate/metrics_results.txt.
+runtime-0-1     | Results plotted to /mnt/array_job_dir/aggregate/metrics_results.png.
+[Kruntime-0-1 exited with code 0
+[2026-03-29 15:18:35,041][alpasim_wizard.deployment.docker_compose][INFO] - Docker Compose deployment completed successfully
+[2026-03-29 15:18:35,041][alpasim_wizard][INFO] - Alpasim finished

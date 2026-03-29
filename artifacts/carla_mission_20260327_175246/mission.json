@@ -1,0 +1,28 @@
+{
+  "mission_text": "Drive to the marked destination smoothly and safely without aggressive maneuvers.",
+  "model": "meta-llama/llama-4-scout-17b-16e-instruct",
+  "usage": {
+    "completion_tokens": 78,
+    "prompt_tokens": 175,
+    "total_tokens": 253,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null,
+    "queue_time": 0.074220243,
+    "prompt_time": 0.006869247,
+    "completion_time": 0.18051149,
+    "total_time": 0.187380737
+  },
+  "parsed": {
+    "mission_title": "Smooth and Safe Drive to Destination",
+    "behavior": "cautious",
+    "target_speed_kmh": 25,
+    "completion_radius_m": 5.0,
+    "risk_posture": "low",
+    "fallback_if_blocked": "stop",
+    "notes": [
+      "Avoid aggressive maneuvers",
+      "Maintain safe distance"
+    ]
+  },
+  "raw_text": "{\n\"mission_title\": \"Smooth and Safe Drive to Destination\",\n  \"behavior\": \"cautious\",\n  \"target_speed_kmh\": 25,\n  \"completion_radius_m\": 5,\n  \"risk_posture\": \"low\",\n  \"fallback_if_blocked\": \"stop\",\n  \"notes\": [\"Avoid aggressive maneuvers\", \"Maintain safe distance\"]\n}"
+}
