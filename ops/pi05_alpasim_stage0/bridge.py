@@ -14,6 +14,26 @@ class ClampReport:
     yaw_rate_clamps: int
     lateral_accel_clamps: int
 
+    @property
+    def any_clamp(self) -> bool:
+        return any(
+            (
+                self.speed_clamps,
+                self.accel_clamps,
+                self.yaw_rate_clamps,
+                self.lateral_accel_clamps,
+            )
+        )
+
+    def to_dict(self) -> dict[str, int | bool]:
+        return {
+            "speed_clamps": self.speed_clamps,
+            "accel_clamps": self.accel_clamps,
+            "yaw_rate_clamps": self.yaw_rate_clamps,
+            "lateral_accel_clamps": self.lateral_accel_clamps,
+            "any_clamp": self.any_clamp,
+        }
+
 
 def denormalize_actions(
     normalized_actions: np.ndarray,
@@ -98,4 +118,3 @@ def rollout_feasible_trajectory(
         lateral_accel_clamps=lateral_accel_clamps,
     )
     return xy, headings, report
-

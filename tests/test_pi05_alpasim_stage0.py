@@ -6,7 +6,7 @@ from pathlib import Path
 import numpy as np
 import pytest
 
-from ops.pi05_alpasim_stage0.bridge import denormalize_actions, rollout_feasible_trajectory
+from ops.pi05_alpasim_stage0.bridge import ClampReport, denormalize_actions, rollout_feasible_trajectory
 from ops.pi05_alpasim_stage0.contracts import ACTION_DIM, ACTION_HORIZON, ClipRef, KinematicLimits, REQUIRED_CAMERAS
 from ops.pi05_alpasim_stage0.manifest import SceneLabels, Stage0Manifest, infer_maneuver, load_manifest, write_manifest
 
@@ -63,6 +63,13 @@ def test_rollout_feasible_trajectory_clamps_unrealistic_motion() -> None:
     assert report.speed_clamps > 0
     assert report.yaw_rate_clamps > 0 or report.lateral_accel_clamps > 0
     assert np.all(np.isfinite(xy))
+
+
+def test_clamp_report_to_dict_marks_any_clamp() -> None:
+    report = ClampReport(speed_clamps=1, accel_clamps=0, yaw_rate_clamps=0, lateral_accel_clamps=0)
+    payload = report.to_dict()
+    assert payload["speed_clamps"] == 1
+    assert payload["any_clamp"] is True
 
 
 def test_manifest_rejects_missing_turns(tmp_path: Path) -> None:

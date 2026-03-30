@@ -48,6 +48,8 @@ Interpretation:
 - [docs/pi05_alpasim_stage0_full_paper.md](C:\Users\brind\Documents\New project\docs\pi05_alpasim_stage0_full_paper.md)
 - [docs/pi05_alpasim_stage0_public_report.md](C:\Users\brind\Documents\New project\docs\pi05_alpasim_stage0_public_report.md)
 - [docs/pi05_alpasim_stage0_publish_checklist.md](C:\Users\brind\Documents\New project\docs\pi05_alpasim_stage0_publish_checklist.md)
+- [docs/pi05_alpasim_stage0_rerun_plan.md](C:\Users\brind\Documents\New project\docs\pi05_alpasim_stage0_rerun_plan.md)
+- [docs/pi05_alpasim_stage0_social_post.md](C:\Users\brind\Documents\New project\docs\pi05_alpasim_stage0_social_post.md)
 
 ### Artifacts
 

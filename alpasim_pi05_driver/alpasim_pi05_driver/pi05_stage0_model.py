@@ -1,7 +1,13 @@
 from __future__ import annotations
 
+import json
 import logging
 import math
+import os
+import time
+from dataclasses import dataclass
+from datetime import datetime, timezone
+from pathlib import Path
 from typing import Any
 
 import numpy as np
@@ -29,6 +35,45 @@ from pi05_alpasim_stage0.openpi_stage0 import make_stage0_train_config
 
 logger = logging.getLogger(__name__)
 
+DEFAULT_CAMERA_FRAME_SHAPE = (1080, 1920, 3)
+
+
+@dataclass(frozen=True)
+class CameraDiagnostic:
+    available: bool
+    nonzero: bool
+    mean_intensity: float
+    shape: tuple[int, int, int]
+    source: str
+    overridden: bool = False
+
+    def to_dict(self) -> dict[str, Any]:
+        return {
+            "available": self.available,
+            "nonzero": self.nonzero,
+            "mean_intensity": self.mean_intensity,
+            "shape": list(self.shape),
+            "source": self.source,
+            "overridden": self.overridden,
+        }
+
+
+@dataclass(frozen=True)
+class CameraRuntimeConfig:
+    mode: str
+    override_dir: Path | None
+    trace_log_path: Path | None
+
+    @classmethod
+    def from_env(cls) -> "CameraRuntimeConfig":
+        override_dir_raw = os.getenv("PI05_STAGE0_CAMERA_OVERRIDE_DIR")
+        trace_log_raw = os.getenv("PI05_STAGE0_TRACE_LOG")
+        return cls(
+            mode=os.getenv("PI05_STAGE0_CAMERA_MODE", "normal").strip().lower(),
+            override_dir=Path(override_dir_raw) if override_dir_raw else None,
+            trace_log_path=Path(trace_log_raw) if trace_log_raw else None,
+        )
+
 
 def _quat_to_yaw(quaternion: Any) -> float:
     return math.atan2(
@@ -49,11 +94,11 @@ def _command_to_prompt(command: DriveCommand) -> str:
     return "lane_follow"
 
 
-def _latest_camera_frame(camera_images: dict[str, list[Any]], camera_id: str) -> np.ndarray:
-    frames = camera_images[camera_id]
-    if not frames:
-        raise ValueError(f"No frames available for camera {camera_id}")
-    frame = frames[-1]
+def _utc_now_iso() -> str:
+    return datetime.now(timezone.utc).isoformat()
+
+
+def _frame_from_payload(frame: Any, camera_id: str) -> np.ndarray:
     if hasattr(frame, "image"):
         image = frame.image
     elif isinstance(frame, tuple) and len(frame) >= 2:
@@ -61,6 +106,42 @@ def _latest_camera_frame(camera_images: dict[str, list[Any]], camera_id: str) ->
     else:
         raise TypeError(f"Unsupported camera frame type for {camera_id}: {type(frame)!r}")
     return np.asarray(image, dtype=np.uint8)
+
+
+def _black_frame(shape: tuple[int, int, int]) -> np.ndarray:
+    return np.zeros(shape, dtype=np.uint8)
+
+
+def _frame_shape(frame: np.ndarray | None) -> tuple[int, int, int]:
+    if frame is None:
+        return DEFAULT_CAMERA_FRAME_SHAPE
+    if frame.ndim != 3:
+        return DEFAULT_CAMERA_FRAME_SHAPE
+    return (int(frame.shape[0]), int(frame.shape[1]), int(frame.shape[2]))
+
+
+def _camera_status(frame: np.ndarray, *, available: bool, source: str, overridden: bool = False) -> CameraDiagnostic:
+    return CameraDiagnostic(
+        available=available,
+        nonzero=bool(np.any(frame)),
+        mean_intensity=float(np.mean(frame)),
+        shape=_frame_shape(frame),
+        source=source,
+        overridden=overridden,
+    )
+
+
+def _latest_or_black(
+    camera_images: dict[str, list[Any]],
+    camera_id: str,
+    fallback_shape: tuple[int, int, int],
+) -> tuple[np.ndarray, CameraDiagnostic]:
+    frames = camera_images.get(camera_id, [])
+    if not frames:
+        black = _black_frame(fallback_shape)
+        return black, _camera_status(black, available=False, source="missing")
+    frame = _frame_from_payload(frames[-1], camera_id)
+    return frame, _camera_status(frame, available=True, source="live")
 
 
 def _build_route_array(route_waypoints: list[Any] | None) -> np.ndarray:
@@ -113,6 +194,10 @@ def _build_state_history(
     return np.stack([speeds, yaw_rates, accels], axis=-1).reshape(-1)
 
 
+def _override_filename(camera_alias: str) -> str:
+    return f"{camera_alias}.npy"
+
+
 class Pi05Stage0Model(BaseTrajectoryModel):
     @classmethod
     def from_config(
@@ -148,6 +233,9 @@ class Pi05Stage0Model(BaseTrajectoryModel):
         self._context_length_value = context_length
         self._output_frequency_hz_value = output_frequency_hz
         self._limits = KinematicLimits()
+        self._runtime_cfg = CameraRuntimeConfig.from_env()
+        self._call_index = 0
+        self._override_cache: dict[str, np.ndarray] = {}
         self._policy = policy_config.create_trained_policy(
             make_stage0_train_config(
                 repo_id="local/stage0_av_driving",
@@ -158,6 +246,12 @@ class Pi05Stage0Model(BaseTrajectoryModel):
             default_prompt="drive the route",
         )
         logger.info("Loaded PI 0.5 Stage 0 policy from %s", checkpoint_dir)
+        logger.info(
+            "Stage 0 runtime camera mode=%s override_dir=%s trace_log=%s",
+            self._runtime_cfg.mode,
+            self._runtime_cfg.override_dir,
+            self._runtime_cfg.trace_log_path,
+        )
 
     @property
     def camera_ids(self) -> list[str]:
@@ -174,14 +268,118 @@ class Pi05Stage0Model(BaseTrajectoryModel):
     def _encode_command(self, command: DriveCommand) -> str:
         return _command_to_prompt(command)
 
+    def _load_override_frame(self, camera_alias: str, fallback_shape: tuple[int, int, int]) -> np.ndarray:
+        if self._runtime_cfg.override_dir is None:
+            return _black_frame(fallback_shape)
+        cache_key = f"{camera_alias}:{fallback_shape}"
+        if cache_key in self._override_cache:
+            return self._override_cache[cache_key]
+        override_path = self._runtime_cfg.override_dir / _override_filename(camera_alias)
+        if not override_path.exists():
+            frame = _black_frame(fallback_shape)
+        else:
+            frame = np.asarray(np.load(override_path), dtype=np.uint8)
+            if frame.shape != fallback_shape:
+                frame = np.resize(frame, fallback_shape).astype(np.uint8)
+        self._override_cache[cache_key] = frame
+        return frame
+
+    def _resolve_camera_inputs(self, prediction_input: PredictionInput) -> tuple[dict[str, np.ndarray], dict[str, CameraDiagnostic]]:
+        live_frames: dict[str, np.ndarray] = {}
+        diagnostics: dict[str, CameraDiagnostic] = {}
+
+        reference_frame = None
+        for camera_id in REQUIRED_CAMERAS:
+            frames = prediction_input.camera_images.get(camera_id, [])
+            if frames:
+                reference_frame = _frame_from_payload(frames[-1], camera_id)
+                break
+        fallback_shape = _frame_shape(reference_frame)
+
+        camera_alias = {
+            REQUIRED_CAMERAS[0]: "front",
+            REQUIRED_CAMERAS[1]: "left",
+            REQUIRED_CAMERAS[2]: "right",
+        }
+
+        for camera_id in REQUIRED_CAMERAS:
+            frame, diagnostic = _latest_or_black(prediction_input.camera_images, camera_id, fallback_shape)
+            live_frames[camera_id] = frame
+            diagnostics[camera_id] = diagnostic
+
+        mode = self._runtime_cfg.mode
+        if mode == "front_only":
+            for camera_id in REQUIRED_CAMERAS[1:]:
+                live_frames[camera_id] = _black_frame(fallback_shape)
+                diagnostics[camera_id] = _camera_status(
+                    live_frames[camera_id],
+                    available=diagnostics[camera_id].available,
+                    source="front_only_blackout",
+                    overridden=True,
+                )
+        elif mode == "all_black":
+            for camera_id in REQUIRED_CAMERAS:
+                live_frames[camera_id] = _black_frame(fallback_shape)
+                diagnostics[camera_id] = _camera_status(
+                    live_frames[camera_id],
+                    available=diagnostics[camera_id].available,
+                    source="all_black_blackout",
+                    overridden=True,
+                )
+        elif mode == "override":
+            for camera_id in REQUIRED_CAMERAS:
+                alias = camera_alias[camera_id]
+                live_frames[camera_id] = self._load_override_frame(alias, fallback_shape)
+                diagnostics[camera_id] = _camera_status(
+                    live_frames[camera_id],
+                    available=diagnostics[camera_id].available,
+                    source="override_dir",
+                    overridden=True,
+                )
+        elif mode not in ("normal", ""):
+            raise ValueError(
+                "PI05_STAGE0_CAMERA_MODE must be one of: normal, front_only, all_black, override"
+            )
+
+        return live_frames, diagnostics
+
+    def _raw_action_summary(self, active_actions: np.ndarray) -> dict[str, Any]:
+        names = ("delta_s", "delta_yaw", "target_speed")
+
+        def _series_summary(values: np.ndarray) -> dict[str, float]:
+            return {
+                "first": float(values[0]),
+                "mean": float(np.mean(values)),
+                "min": float(np.min(values)),
+                "max": float(np.max(values)),
+            }
+
+        return {
+            name: _series_summary(active_actions[:, idx])
+            for idx, name in enumerate(names)
+        }
+
+    def _emit_trace(self, payload: dict[str, Any]) -> None:
+        trace_line = json.dumps(payload, separators=(",", ":"), sort_keys=True)
+        logger.info("stage0_trace %s", trace_line)
+        if self._runtime_cfg.trace_log_path is None:
+            return
+        self._runtime_cfg.trace_log_path.parent.mkdir(parents=True, exist_ok=True)
+        with self._runtime_cfg.trace_log_path.open("a", encoding="utf-8") as handle:
+            handle.write(trace_line + "\n")
+
     def predict(self, prediction_input: PredictionInput) -> ModelPrediction:
         self._validate_cameras(prediction_input.camera_images)
+        self._call_index += 1
+        wall_t0 = time.perf_counter()
+        time_in = _utc_now_iso()
 
+        camera_frames, camera_diagnostics = self._resolve_camera_inputs(prediction_input)
         obs = {
             "image": {
-                "front": _latest_camera_frame(prediction_input.camera_images, REQUIRED_CAMERAS[0]),
-                "left": _latest_camera_frame(prediction_input.camera_images, REQUIRED_CAMERAS[1]),
-                "right": _latest_camera_frame(prediction_input.camera_images, REQUIRED_CAMERAS[2]),
+                "front": camera_frames[REQUIRED_CAMERAS[0]],
+                "left": camera_frames[REQUIRED_CAMERAS[1]],
+                "right": camera_frames[REQUIRED_CAMERAS[2]],
             },
             "state": _build_state_history(
                 prediction_input.ego_pose_history,
@@ -207,10 +405,33 @@ class Pi05Stage0Model(BaseTrajectoryModel):
             self._limits,
             initial_speed_mps=prediction_input.speed,
         )
+
+        wall_t1 = time.perf_counter()
+        time_out = _utc_now_iso()
+        trace_payload = {
+            "call_index": self._call_index,
+            "timestamp_in_utc": time_in,
+            "timestamp_out_utc": time_out,
+            "latency_ms": float((wall_t1 - wall_t0) * 1000.0),
+            "policy_infer_ms": float(inference["policy_timing"]["infer_ms"]),
+            "camera_mode": self._runtime_cfg.mode or "normal",
+            "camera_status": {
+                camera_id: diagnostic.to_dict() for camera_id, diagnostic in camera_diagnostics.items()
+            },
+            "prompt": obs["prompt"],
+            "raw_action_dims_0_2": self._raw_action_summary(active_actions),
+            "clamp_report": clamp_report.to_dict(),
+            "speed_mps": float(prediction_input.speed),
+            "acceleration_mps2": float(prediction_input.acceleration),
+        }
+        self._emit_trace(trace_payload)
+
         reasoning = (
             f"prompt={obs['prompt']} infer_ms={inference['policy_timing']['infer_ms']:.1f} "
-            f"speed_clamps={clamp_report.speed_clamps} accel_clamps={clamp_report.accel_clamps} "
-            f"yaw_rate_clamps={clamp_report.yaw_rate_clamps} lat_accel_clamps={clamp_report.lateral_accel_clamps}"
+            f"latency_ms={(wall_t1 - wall_t0) * 1000.0:.1f} camera_mode={self._runtime_cfg.mode or 'normal'} "
+            f"any_clamp={clamp_report.any_clamp} speed_clamps={clamp_report.speed_clamps} "
+            f"accel_clamps={clamp_report.accel_clamps} yaw_rate_clamps={clamp_report.yaw_rate_clamps} "
+            f"lat_accel_clamps={clamp_report.lateral_accel_clamps}"
         )
         return ModelPrediction(
             trajectory_xy=trajectory_xy,
