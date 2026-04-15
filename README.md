@@ -1,39 +1,71 @@
-# PI0.5 AlpaSim Stage Progress
+# PI0.5 AlpaSim Driving Planner
 
-This repository contains the code, docs, and selected artifacts for a real PI0.5-to-AlpaSim transfer project.
+This repository contains the code, docs, and selected artifacts for a PI0.5-based driving-planner project built around NuRec / PhysicalAI AV data, fused surround RGB inputs, and AlpaSim-targeted evaluation.
 
-## What is proven
+## Public model
 
-- Stage 0 same-scene closed-loop transfer worked end-to-end.
-- Stage 1 LoRA training ran to checkpoint `1000`.
-- Stage 1 offline eval showed real turn geometry signal on held-out clips.
+- Hugging Face model repo: [monish133/pi05-stage12-av-800-v1](https://huggingface.co/monish133/pi05-stage12-av-800-v1)
+
+That HF repo currently contains:
+- the Stage 1.2 checkpoint at step `799`
+- norm stats and trajectory summary assets
+- the Stage 1.2 training log
+- the saved offline inference report
+- the exact Stage 1.2 wrapper and inference test code used for that run
+
+## Current project state
+
+### Proven
+
+- Stage 0 same-scene closed-loop transfer worked end to end.
+- Stage 1 LoRA training reached checkpoint `1000`.
+- Stage 1 offline eval showed real turn-geometry signal on held-out clips.
 - One real Stage 1 closed-loop AlpaSim rollout completed on a scene-valid 4-camera runtime rig.
+- Stage 1.2 fused-RGB training completed to checkpoint `799`.
+- Stage 1.2 offline checkpoint inference runs end to end on held-out eval clips.
 
-## What is not proven yet
+### Not proven yet
 
-- A real closed-loop Stage 1 rollout on a full 6/7-camera runtime scene.
-- Strong final driving performance.
-- A recovered copy of the lost trained checkpoint storage.
+- A real Stage 1.2 closed-loop AlpaSim runtime adapter.
+- Autoware-gated runtime integration.
+- Strong final planner quality from the current Stage 1.2 checkpoint.
 
-## Start Here
+### Important caveat on the current Stage 1.2 run
+
+The latest Stage 1.2 checkpoint is real and runnable, but the run should be treated as a debugging checkpoint rather than a final quality checkpoint.
+
+The offline inference test exposed two major implementation issues:
+
+- weak fusion coverage, especially on left/right fused views
+- incorrect action normalization statistics for the Stage 1.2 trajectory target space
+
+So the current architecture direction looks valid, but the current Stage 1.2 performance numbers are not the final quality claim for the project.
+
+## Start here
 
 - [Docs index](docs/README.md)
 - [Public artifacts](artifacts/public/README.md)
 - [Stage 1 handoff](docs/pi05_stage1_handoff_20260403.md)
-- [Stage 1 1k training run](docs/pi05_stage1_1k_training_run.md)
-- [Stage 1 4-camera E2E run](docs/pi05_stage1_e2e_run_20260403.md)
-- [Architecture dashboard](docs/pi05_alpasim_stage0_architecture_dashboard.html)
+- [Stage 1.1 architecture spec](docs/stage1_1_architecture_spec.md)
+- [Stage 1.2 architecture dashboard](docs/stage1_2_architecture_dashboard.html)
+- [Saved Stage 1.2 inference report](stage12_inference_eval_report.json)
 
-## Code
+## Code layout
 
-- `ops/pi05_alpasim_stage1/` contains the Stage 1 dataset, BEV, training, and manifest code.
-- `alpasim_pi05_driver/` contains the external driver and runtime configs.
+- `ops/pi05_alpasim_stage1/`
+  Stage 1 dataset, BEV, training, and manifest pipeline.
+- `ops/pi05_alpasim_stage12/`
+  Stage 1.2 fused-RGB dataset build, norm stats, training, and offline inference test.
+- `alpasim_pi05_driver/`
+  Existing external driver and runtime configs for earlier stages.
 
-## Current blocker
+## Repository intent
 
-The next important runtime test is finding a `clipgt-*` AlpaSim scene that actually exposes the full Stage 1 7-camera rig.
+This repo is intentionally transparent about:
 
-## Notes
+- what has actually been run
+- what is only designed but not integrated yet
+- where the latest failures came from
+- what is saved publicly on Hugging Face versus what remained server-local
 
-- This repo is intentionally transparent about the lost checkpoint and the remaining runtime mismatch.
-- Large raw run bundles are not part of the curated public surface. See [public artifacts](artifacts/public/README.md).
+Large raw run bundles are not part of the curated GitHub surface. See [public artifacts](artifacts/public/README.md).
